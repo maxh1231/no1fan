@@ -15,8 +15,14 @@
     margin: 0 auto;
 }
 
-#login-for input, #signup-form input {
+#login-form input, #signup-form input {
     margin: 5px;
+}
+
+#error-message {
+    color: rgba(255, 0, 0, 0.8);
+    margin: 5px;
+    text-align: center;
 }
 
 /* END -- LOGIN & SIGNUP PAGE STYLES -- END*/
