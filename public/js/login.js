@@ -21,6 +21,8 @@ const loginFormHandler = async (evt) => {
         return;
     }
     console.log('logged in');
+    document.location.reload();
+    // TODO: Load dashboard or homepage
 };
 
 document.querySelector('#login-form').addEventListener('submit', loginFormHandler);

@@ -25,6 +25,8 @@ const signupFormHandler = async (evt) => {
         return;
     } 
     console.log('user created');
+    document.location.reload();
+    // TODO: Load dashboard or homepage
 };
 
 document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);
