@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { Sequelize } = require('sequelize/dist');
 const { User } = require('../../models');
 
 // findAll
@@ -48,11 +49,16 @@ router.post('/', async (req, res) => {
             req.session.id = response.id;
             req.session.email = response.email
             req.session.username = response.username;
-            res.json( {user: response.username, message: 'Login Successful!'});
+            res.json({ user: response.username, message: 'Login Successful!' });
         });
     }
-    catch(err){
-        res.status(500).json(err);
+    catch(err) {
+        if (err instanceof Sequelize.UniqueConstraintError) {
+            const uniqueErr = err.errors[0].path;
+            res.status(409).json({ error: uniqueErr });
+        } else {
+            res.status(500).json(err);
+        }
     }
 });
 

@@ -19,7 +19,7 @@
     margin: 5px;
 }
 
-#error-message {
+#err-msg, #err-msg2, #err-msg3 {
     color: rgba(255, 0, 0, 0.8);
     margin: 5px;
     text-align: center;

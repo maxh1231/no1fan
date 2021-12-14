@@ -1,15 +1,15 @@
 const signupFormHandler = async (evt) => {
     evt.preventDefault();
-    const toggleErrMsg = () => {
-        document.querySelector('#error-message').classList.remove('display-none');
-        setTimeout(() => { document.querySelector('#error-message').classList.add('display-none') }, 2000);
+    const toggleErrMsg = (target) => {
+        document.querySelector(target).classList.remove('display-none');
+        setTimeout(() => { document.querySelector(target).classList.add('display-none') }, 2000);
     };
     const email = document.querySelector('#email-input').value.trim();
     const username = document.querySelector('#username-input').value.trim(); 
     const password = document.querySelector('#password-input').value.trim();
     const confirmPassword = document.querySelector('#confirm-password-input').value.trim();
     if (!email || !username || !password || !confirmPassword) {
-        toggleErrMsg();
+        toggleErrMsg('#err-msg');
         return;
     } else if (password !== confirmPassword) {
         toggleErrMsg();
@@ -21,8 +21,18 @@ const signupFormHandler = async (evt) => {
         body: JSON.stringify({ email: email, username: username, password: password })
     });
     if (!response.ok) {
-        toggleErrMsg();
-        return;
+        const errMsg = await response.json();
+        if (!errMsg.error) {
+            toggleErrMsg('#err-msg');
+            return;
+        }
+        if (errMsg.error === 'email') {
+            toggleErrMsg('#err-msg2');
+            return;
+        } else {
+            toggleErrMsg('#err-msg3');
+            return;
+        }
     } 
     console.log('user created');
     document.location.reload();
