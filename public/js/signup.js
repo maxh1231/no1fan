@@ -12,7 +12,7 @@ const signupFormHandler = async (evt) => {
         toggleErrMsg('#err-msg');
         return;
     } else if (password !== confirmPassword) {
-        toggleErrMsg();
+        toggleErrMsg('#err-msg');
         return;
     }
     const response = await fetch('/api/user/', {

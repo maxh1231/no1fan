@@ -84,7 +84,7 @@ router.post('/login', async (req, res) => {
             attributes: { exclude: ['password'] }
         });
         if (!response) {
-            res.status(401).json({ message: 'Invalid Username!'});
+            res.status(401).json({ message: 'Invalid Email!'});
             return;
         }
         const validPassword = response.checkPassword(req.body.password);
