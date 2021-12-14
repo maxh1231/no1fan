@@ -1,3 +1,17 @@
+/* START -- NAV STYLES -- START */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#home-btn {
+    cursor: pointer;
+}
+
+/* END -- NAV STYLES -- END*/
+/* ---------------------------- */
 /* START -- LOGIN & SIGNUP PAGE STYLES -- START */
 
 * {
@@ -31,14 +45,5 @@
     text-align: center;
 }
 
-/* START -- LOGIN & SIGNUP PAGE STYLES -- START */
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-}
-
-/* END -- LOGIN & SIGNUP PAGE STYLES -- END*/
 
 /* END -- LOGIN & SIGNUP PAGE STYLES -- END*/

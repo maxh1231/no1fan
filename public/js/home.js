@@ -1,3 +1,8 @@
+const home = (evt) => {
+    evt.preventDefault();
+    document.location.replace('/');
+}
+
 const login = (evt) => {
     evt.preventDefault();
     document.location.replace('/login');
@@ -25,18 +30,13 @@ const logout = async () => {
 // }
 
 // document.querySelector('#dashboard-btn').addEventListener('click', dashboard);
+document.querySelector('#home-btn').addEventListener('click', home);
 
 const loginBtn = document.querySelector('#login-btn')
-if (loginBtn) {
-loginBtn.addEventListener('click', login);
-}
+if (loginBtn) {loginBtn.addEventListener('click', login)};
 
 const signupBtn = document.querySelector('#signup-btn')
-if (signupBtn) {
-signupBtn.addEventListener('click', signup);
-}
+if (signupBtn) {signupBtn.addEventListener('click', signup)};
 
 const logoutBtn = document.querySelector('#logout-btn')
-if (logoutBtn) {
-logoutBtn.addEventListener('click', logout);
-}
+if (logoutBtn) {logoutBtn.addEventListener('click', logout)};
