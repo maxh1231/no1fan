@@ -8,8 +8,6 @@ router.use('/api', apiRoutes);
 // renders the artist info page with hardcoded info 
 router.use('/artistinfo', (req, res) => {
     
-    
-    
     res.render('artist-info', {
         artistName: "Eminem",
         Album1: "Music to be Murdered By",
@@ -23,11 +21,25 @@ router.use('/artistinfo', (req, res) => {
         });
 });
 
-router.use((req, res) => {
-    res.status(404).end();
+
+
+// renders the album info page with hardcoded info
+router.use('/albuminfo', (req, res) => {
+
+    res.render('album-info', {
+        albumName: "Music to be Murdered By",
+        track1: "Premonition (Intro)",
+        track2: "Unaccommodating",
+        track3: "You Gon' Learn",
+        track4: "Alfred",
+        track5: "Those kinda nights"
+    });
 });
 
 
+router.use((req, res) => {
+    res.status(404).end();
+});
 
 
 module.exports = router;
