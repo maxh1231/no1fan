@@ -35,8 +35,13 @@ const signupFormHandler = async (evt) => {
         }
     } 
     console.log('user created');
-    document.location.reload();
-    // TODO: Load dashboard or homepage
+    document.location.replace('/'); // TODO: Change to Dashboard? 
+};
+
+const gotoLogin = (evt) => {
+    evt.preventDefault();
+    document.location.replace('/login');
 };
 
 document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);
+document.querySelector('#goto-login-btn').addEventListener('click', gotoLogin);
