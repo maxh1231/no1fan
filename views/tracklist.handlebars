@@ -1,4 +1,4 @@
-<section class="tracklist">
+{{!-- <section class="tracklist">
 
     <div id="album-name">
         <h3>{{AlbumName}}</h3>
@@ -34,4 +34,10 @@
 </section>
 
 <script src=" js/tracklist.js">
-</script>
+</script> --}}
+
+{{> nav}}
+<h1>Tracklist Page</h1>
+{{#each data}}
+{{> track-card}}
+{{/each}}
