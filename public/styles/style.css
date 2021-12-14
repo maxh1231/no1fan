@@ -10,6 +10,10 @@ nav {
     cursor: pointer;
 }
 
+#home-btn:hover {
+    color: rgb(0, 0, 0, 0.7);
+}
+
 /* END -- NAV STYLES -- END*/
 /* ---------------------------- */
 /* START -- LOGIN & SIGNUP PAGE STYLES -- START */
@@ -42,6 +46,11 @@ nav {
 #err-msg, #err-msg2, #err-msg3 {
     color: rgba(255, 0, 0, 0.8);
     margin: 5px;
+    text-align: center;
+}
+
+.goto-container {
+    margin: 10px;
     text-align: center;
 }
 
