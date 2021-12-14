@@ -36,3 +36,31 @@
 }
 /*  end artist page css */
 
+/* START -- LOGIN & SIGNUP PAGE STYLES -- START */
+
+.display-none {
+    display: none;
+}
+
+#login-header, #signup-header {
+    text-align: center;
+}
+
+#login-form, #signup-form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#login-form input, #signup-form input {
+    margin: 5px;
+}
+
+#err-msg, #err-msg2, #err-msg3 {
+    color: rgba(255, 0, 0, 0.8);
+    margin: 5px;
+    text-align: center;
+}
+
+/* END -- LOGIN & SIGNUP PAGE STYLES -- END*/
