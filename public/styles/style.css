@@ -1,3 +1,41 @@
+/* styling for artist info page so that I can see what it looks like */
+
+#artist-info {
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#discography-wrapper {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    
+}
+
+.album-box {
+    border: 2px;
+    border: black;
+    border-style: solid;
+    margin: 20px;
+}
+
+#show-wrapper {
+    border: 2px;
+    border: black;
+    border-style: solid;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+/*  end artist page css */
+
 /* START -- NAV STYLES -- START */
 
 nav {
@@ -53,6 +91,5 @@ nav {
     margin: 10px;
     text-align: center;
 }
-
 
 /* END -- LOGIN & SIGNUP PAGE STYLES -- END*/
