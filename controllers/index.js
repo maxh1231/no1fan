@@ -32,7 +32,8 @@ router.use('/albuminfo', (req, res) => {
         track2: "Unaccommodating",
         track3: "You Gon' Learn",
         track4: "Alfred",
-        track5: "Those kinda nights"
+        track5: "Those kinda nights",
+        recommendedAlbum: "Like eminem? You might like ..."
     });
 });
 
