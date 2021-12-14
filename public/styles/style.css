@@ -1,5 +1,11 @@
 /* START -- LOGIN & SIGNUP PAGE STYLES -- START */
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .display-none {
     display: none;
 }
@@ -24,5 +30,15 @@
     margin: 5px;
     text-align: center;
 }
+
+/* START -- LOGIN & SIGNUP PAGE STYLES -- START */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+/* END -- LOGIN & SIGNUP PAGE STYLES -- END*/
 
 /* END -- LOGIN & SIGNUP PAGE STYLES -- END*/
