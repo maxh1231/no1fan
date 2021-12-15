@@ -1,2 +1,20 @@
 {{> nav}}
+
 <h1>Homepage</h1>
+
+<section id="top-artist-container">
+    <h2>Top 10 Artists of the Week!</h2>
+    {{#each topArtists.data}}
+    {{> top-artist-card}}
+    {{/each}}
+</section>
+
+<section id="home-search-container">
+    <form id="home-search-form">
+        <label for="home-search-input">Search for a band: </label>
+        <input type="text" id="home-search-input" name="home-search-input">
+        <button type="submit" id="home-search-btn">Search</button>
+    </form>
+</section>
+
+<script src="/js/home.js"></script>
