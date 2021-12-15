@@ -3,55 +3,52 @@ const homeRoutes = require('./home-routes');
 const apiRoutes = require('./api');
 const infoRoutes = require('./info')
 const fetch = require('node-fetch');
+const { restore } = require('../models/User');
 
 
 router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
-
-// renders the artist info page with hardcoded info 
+let artistID = '13';
+// renders the artist info page 
 router.use('/artistinfo', (req, res) => {
-    const deezerAlbumUrl = "https://api.deezer.com/artist/13"
-
-let album = async () => {
-    const response = await fetch(deezerAlbumUrl);
-    if (!response.ok) {
-        console.log('error');
+    
+    async function fetchArtist() {
+        const response = await fetch(`https://api.deezer.com/artist/${artistID}`);
+        const artistData = await response.json();
+        return artistData;
     }
-    return (response.json());
-};
+        fetchArtist().then(artistData => {
+            console.log(artistData);
+            
+            res.render('artist-info', artistData);
+        })
 
-album().then(res => {
-    console.log(res);
+        async function fetchAlbums() {
+            const response = await fetch(`https://api.deezer.com/artist/${artistID}/albums`);
+            const albumData = await response.json();
+            return albumData;
+        }
+            fetchAlbums().then(albumData => {
+                console.log(albumData);
+                console.log(albumData.data[1].title)
+                
+            })
+            // res.render('artist-info', albumData);
+    
+
+
 });
-    res.render('artist-info', {
-        artistName: res.name,
-        Album1: res.title,
-        Album2: "The Eminem Show",
-        Album3: "Killshot",
-        Album4: "Rap God",
-        Album5: "Scary Movies",
-        Album6: "Infinite",
-        Shows: "Tomorrow"
-     
-        });
-});
+
+
+
 
 // Do we need this route? What is it for 
 router.use('/info', infoRoutes);
 
 
-// renders the album info page with hardcoded info
-router.use('/albuminfo', (req, res) => {
-
-    res.render('album-info', {
-        albumName: "Music to be Murdered By",
-        track1: "Premonition (Intro)",
-        track2: "Unaccommodating",
-        track3: "You Gon' Learn",
-        track4: "Alfred",
-        track5: "Those kinda nights",
-        recommendedAlbum: "Like eminem? You might like ..."
-    });
+// renders the tracklist for album with hardcoded info
+router.get('/albuminfo', (req, res) => {
+    
 });
 
 // What is this route for? 
