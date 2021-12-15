@@ -65,7 +65,31 @@
     margin-bottom: 20px;
 }
 
+/* START -- NAV STYLES -- START */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#home-btn {
+    cursor: pointer;
+}
+
+#home-btn:hover {
+    color: rgb(0, 0, 0, 0.7);
+}
+
+/* END -- NAV STYLES -- END*/
+/* ---------------------------- */
 /* START -- LOGIN & SIGNUP PAGE STYLES -- START */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 .display-none {
     display: none;
@@ -89,6 +113,11 @@
 #err-msg, #err-msg2, #err-msg3 {
     color: rgba(255, 0, 0, 0.8);
     margin: 5px;
+    text-align: center;
+}
+
+.goto-container {
+    margin: 10px;
     text-align: center;
 }
 
