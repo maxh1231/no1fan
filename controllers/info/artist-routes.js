@@ -1,21 +1,26 @@
-// const router = require('express').Router();
+const router = require('express').Router();
+const fetch = require('node-fetch');
 
-// // renders the artist info page with hardcoded info 
-// router.get('/artist-info', (req, res) => {
+let artistID = '13';
+
+// renders the artist info page 
+// info/artist
+router.use('/', async (req, res) => {
+    // async function fetchInfo() {
+    const artistResponse = await fetch(`https://api.deezer.com/artist/${artistID}`);
+    const artistName = await artistResponse.json();
+    const albumResponse = await fetch(`https://api.deezer.com/artist/${artistID}/albums`);
+    const artistAlbums = await albumResponse.json();
+    // return {name: artistName, albums: artistAlbums};
+    console.log(artistAlbums);
+    console.log(artistName);
+    const albumData = {name: artistName.name, Shows: 'Awesome Shows' };
+    res.render('artist-info', albumData);
+    
+
+});
 
 
 
-//     res.render('artist-info', {
-//         artistName: "Daft Punk",
-//         Album1: "Music to be Murdered By",
-//         Album2: "The Eminem Show",
-//         Album3: "Killshot",
-//         Album4: "Rap God",
-//         Album5: "Scary Movies",
-//         Album6: "Infinite",
-//         Shows: "Tomorrow"
 
-//     });
-// });
-
-// module.exports = router;
+module.exports = router;
