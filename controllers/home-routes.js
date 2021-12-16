@@ -15,4 +15,9 @@ router.get('/login', (req, res) => {
     res.render('login', { loggedIn: req.session.loggedIn });
 });
 
+// get dashboard
+router.get('/dashboard', (req, res) => {
+    res.render('dashboard', { loggedIn: req.session.log });
+});
+
 module.exports = router;
