@@ -1,4 +1,95 @@
+/* styling for artist info page so that I can see what it looks like */
+
+#artist-info {
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#discography-wrapper {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    
+}
+
+.album-box {
+    border: 2px;
+    border: black;
+    border-style: solid;
+    margin: 20px;
+}
+
+#show-wrapper {
+    border: 2px;
+    border: black;
+    border-style: solid;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+/*  end artist page css */
+
+/* styling for the album info page */
+#album-info {
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#track-list-wrapper {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    flex-direction: column;
+}
+
+#recommended-wrapper {
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* START -- NAV STYLES -- START */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#home-btn {
+    cursor: pointer;
+}
+
+#home-btn:hover {
+    color: rgb(0, 0, 0, 0.7);
+}
+
+/* END -- NAV STYLES -- END*/
+/* ---------------------------- */
 /* START -- LOGIN & SIGNUP PAGE STYLES -- START */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 .display-none {
     display: none;
@@ -17,6 +108,7 @@
 
 #login-form input, #signup-form input {
     margin: 5px;
+    padding: 2px;
 }
 
 #err-msg, #err-msg2, #err-msg3 {
@@ -25,4 +117,35 @@
     text-align: center;
 }
 
+.goto-container {
+    margin: 10px;
+    text-align: center;
+}
+
 /* END -- LOGIN & SIGNUP PAGE STYLES -- END*/
+/* ---------------------------- */
+/* START -- HOMEPAGE STYLES -- START */
+
+#top-artist-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 20%;
+}
+
+#top-artist-card {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+    text-align: center;
+}
+
+#top-artist-img {
+    border-radius: 50%;
+}
+
+#home-search-input {
+    padding: 2px;
+}
+
+/* END -- HOMEPAGE STYLES -- END */

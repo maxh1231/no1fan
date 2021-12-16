@@ -7,7 +7,7 @@ const loginFormHandler = async (evt) => {
     const email = document.querySelector('#email-input').value.trim();
     const password = document.querySelector('#password-input').value.trim();
     if (!email || !password) {
-        toggleErrMsg();
+        toggleErrMsg('#err-msg');
         return;
     }
     const response = await fetch('/api/user/login', {
@@ -19,8 +19,13 @@ const loginFormHandler = async (evt) => {
         toggleErrMsg('#err-msg');
         return;
     }
-    document.location.reload();
-    // TODO: Load dashboard or homepage
+    document.location.replace('/'); // TODO: Change to Dashboard? 
+};
+
+const gotoSignup = (evt) => {
+    evt.preventDefault();
+    document.location.replace('/signup');
 };
 
 document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
+document.querySelector('#goto-signup-btn').addEventListener('click', gotoSignup);

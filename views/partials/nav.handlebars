@@ -1,0 +1,14 @@
+<nav>
+    <h1 id="home-btn">#1 Fan</h1>
+    <div id="btn-container">
+        {{#if loggedIn}}
+        <button id="dashboard-btn">Dashboard</button>
+        <button id="logout-btn">Logout</button>
+        {{else}}
+        <button id="login-btn">Login</button>
+        <button id="signup-btn">Signup</button>
+        {{/if}}
+    </div>
+</nav>
+
+<script src="/js/nav.js"></script>
