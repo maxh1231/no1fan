@@ -1,10 +1,38 @@
+{{> nav}}
+
+<section class="album-wrapper">
+
+    <div id="cover">
+        <img src="{{data.cover}}" alt="">
+    </div>
+
+    {{#if data.explicit_lyrics}}
+    <div id="explicit-bage">
+        <img src="https://img.shields.io/badge/-EXPLICIT-000??style=for-the-badge" alt="">
+    </div>
+    {{/if}}
+
+    <div id="title">{{data.title}}</div>
+    <div id="artist-name">{{data.artist.name}}</div>
+    <div id="album-info">
+        <span id="track-amount">{{data.nb_tracks}} tracks -</span>
+        <span id="album-duration"> {{data.duration}} mins -</span>
+        <span id="release-date">{{data.release_date}}</span>
+    </div>
+
+
+</section>
+
 <section class="tracklist-wrapper">
-    {{> nav}}
+
     <h1>Tracklist Page</h1>
-    {{#each data}}
-    {{> track-card}}
-    {{/each}}
+    <ol>
+        {{#each data.tracks.data}}
+        <li>{{> track-card}}</li>
+        {{/each}}
+
+    </ol>
 </section>
 
 
-<script src=" js/tracklist.js"></script>
+<script src="/js/tracklist.js"></script>
