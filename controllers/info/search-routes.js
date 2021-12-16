@@ -7,8 +7,8 @@ router.get('/:input', async (req, res) => {
     if (!response.ok) {
         alert(response.statusText);
     }
-    const artists = await response.json()
+    const artists = await response.json();
     res.render('search', {artists});
-})
+});
 
 module.exports = router;

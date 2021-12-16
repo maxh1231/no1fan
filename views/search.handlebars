@@ -1,5 +1,9 @@
 {{> nav}}
 <h1>Search Results Page</h1>
+<h2 id="top-result">Top Result</h2>
+
+{{> search-artist-card artists.data.[0]}}
+
 {{#each artists.data}}
-{{> search-artist-card}}
+{{> search-artist-card }}
 {{/each}}
