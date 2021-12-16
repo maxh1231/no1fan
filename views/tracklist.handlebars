@@ -1,11 +1,11 @@
 <section class="album-wrapper">
-    {{> album-card data2}}
+    {{> album-card data}}
 </section>
 
 <section class="tracklist-wrapper">
     {{> nav}}
     <h1>Tracklist Page</h1>
-    {{#each data1}}
+    {{#each tracklist.data}}
     {{> track-card}}
     {{/each}}
 </section>
