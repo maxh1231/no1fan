@@ -9,7 +9,7 @@ router.use('/', async (req, res) => {
     // async function fetchInfo() {
     const artistResponse = await fetch(`https://api.deezer.com/artist/${artistID}`);
     const artistName = await artistResponse.json();
-    const albumResponse = await fetch(`https://api.deezer.com/artist/${artistID}/albums`);
+    const albumResponse = await fetch(`https://api.deezer.com/artist/${artistID}/albums&limit=10`);
     const artistAlbums = await albumResponse.json();
     // return {name: artistName, albums: artistAlbums};
     console.log(artistAlbums);
