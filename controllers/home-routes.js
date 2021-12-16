@@ -1,8 +1,17 @@
 const router = require('express').Router();
+const fetch = require('node-fetch');
 
 // get home
-router.get('/', (req, res) => {
-    res.render('home', { loggedIn: req.session.loggedIn });
+router.get('/', async (req, res) => {
+    const response = await fetch('https://api.deezer.com/chart/0/artists');
+    if (!response.ok) {
+        alert(response.statusText);
+        return;
+    } else {
+        const topArtists = await response.json()
+        res.render('home', {  topArtists, loggedIn: req.session.loggedIn });
+        // console.log(topArtists.data)
+    }
 });
 
 // get signup

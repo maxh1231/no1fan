@@ -79,6 +79,7 @@ nav {
 
 #login-form input, #signup-form input {
     margin: 5px;
+    padding: 2px;
 }
 
 #err-msg, #err-msg2, #err-msg3 {
@@ -93,3 +94,29 @@ nav {
 }
 
 /* END -- LOGIN & SIGNUP PAGE STYLES -- END*/
+/* ---------------------------- */
+/* START -- HOMEPAGE STYLES -- START */
+
+#top-artist-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 20%;
+}
+
+#top-artist-card {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+    text-align: center;
+}
+
+#top-artist-img {
+    border-radius: 50%;
+}
+
+#home-search-input {
+    padding: 2px;
+}
+
+/* END -- HOMEPAGE STYLES -- END */
