@@ -33,8 +33,37 @@
     align-content: center;
     justify-content: center;
     align-items: center;
+    
 }
 /*  end artist page css */
+
+/* styling for the album info page */
+#album-info {
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#track-list-wrapper {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    flex-direction: column;
+}
+
+#recommended-wrapper {
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
 
 /* START -- NAV STYLES -- START */
 
