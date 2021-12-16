@@ -1,3 +1,5 @@
+{{> nav}}
+
 <section class="album-wrapper">
 
     <div id="cover">
@@ -10,7 +12,6 @@
     </div>
     {{/if}}
 
-    <div id="id">{{data.id}}</div>
     <div id="title">{{data.title}}</div>
     <div id="artist-name">{{data.artist.name}}</div>
     <div id="track-amount">{{data.nb_tracks}}</div>
@@ -21,11 +22,14 @@
 </section>
 
 <section class="tracklist-wrapper">
-    {{> nav}}
+
     <h1>Tracklist Page</h1>
-    {{#each data.tracks.data}}
-    {{> track-card}}
-    {{/each}}
+    <ol>
+        {{#each data.tracks.data}}
+        <li>{{> track-card}}</li>
+        {{/each}}
+
+    </ol>
 </section>
 
 
