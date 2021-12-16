@@ -8,15 +8,17 @@
 
     {{#if data.explicit_lyrics}}
     <div id="explicit-bage">
-        <img src="https://img.shields.io/badge/18%2B-explicit-red" alt="">
+        <img src="https://img.shields.io/badge/-EXPLICIT-000??style=for-the-badge" alt="">
     </div>
     {{/if}}
 
     <div id="title">{{data.title}}</div>
     <div id="artist-name">{{data.artist.name}}</div>
-    <div id="track-amount">{{data.nb_tracks}}</div>
-    <div id="album-duration">{{data.duration}} in minutes, will change later</div>
-    <div id="release-date">{{data.release_date}}</div>
+    <div id="album-info">
+        <span id="track-amount">{{data.nb_tracks}} tracks -</span>
+        <span id="album-duration"> {{data.duration}} mins -</span>
+        <span id="release-date">{{data.release_date}}</span>
+    </div>
 
 
 </section>
