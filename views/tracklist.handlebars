@@ -1,5 +1,23 @@
 <section class="album-wrapper">
-    {{> album-card data}}
+
+    <div id="cover">
+        <img src="{{data.cover}}" alt="">
+    </div>
+
+    {{#if data.explicit_lyrics}}
+    <div id="explicit-bage">
+        <img src="https://img.shields.io/badge/18%2B-explicit-red" alt="">
+    </div>
+    {{/if}}
+
+    <div id="id">{{data.id}}</div>
+    <div id="title">{{data.title}}</div>
+    <div id="artist-name">{{data.artist.name}}</div>
+    <div id="track-amount">{{data.nb_tracks}}</div>
+    <div id="album-duration">{{data.duration}} in minutes, will change later</div>
+    <div id="release-date">{{data.release_date}}</div>
+
+
 </section>
 
 <section class="tracklist-wrapper">
