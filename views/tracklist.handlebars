@@ -23,16 +23,23 @@
 
 </section>
 
-<section class="tracklist-wrapper">
-
-    <h1>Tracklist Page</h1>
-    <ol>
-        {{#each data.tracks.data}}
-        <li>{{> track-card}}</li>
-        {{/each}}
-
-    </ol>
+<section id="track-results">
+    <h2 id="track-results-header" class="text-xl font-bold m-2">Tracks</h2>
+    <div id="track-results-container">
+        <table class="table-fixed w-full">
+            <thead>
+                <tr class="bg-gray-400 h-10">
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Duration</th>
+                    <th>Preview</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each data.tracks.data}}
+                {{> search-track-card}}
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
 </section>
-
-
-<script src="/js/tracklist.js"></script>
