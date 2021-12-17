@@ -1,20 +1,29 @@
 {{> nav}}
 
 <section id="top-result">
-    <h2 id="top-result-header" class="text-xl font-bold">Top Result</h2>
-    {{> search-artist-card artists.data.[0]}}
+    <h2 id="top-result-header" class="text-xl font-bold m-2">Top Result</h2>
+    <div id="top-result-container" class="p-2 m-2">
+        <div id="search-artist-card" class="m-2">
+            <img id="search-artist-img" src="{{artists.data.[0].picture_medium}}" class="rounded-md">
+            <div id="search-artist-name">{{artists.data.[0].name}}</div>
+        </div>
+    </div>
 </section>
 
 <section id="track-results">
-    <h2 id="track-results-header" class="text-xl font-bold">Tracks</h2>
-    {{#each tracks.data}}
-        {{> search-track-card}}
-    {{/each}}
+    <h2 id="track-results-header" class="text-xl font-bold m-2">Tracks</h2>
+    <div id="track-results-container" class="p-2 m-2">
+        {{#each tracks.data}}
+            {{> search-track-card}}
+        {{/each}}
+    </div>
 </section>
 
-<section id="search-results" class="flex">
-    <h2 id="search-results-header" class="text-xl font-bold">Artists</h2>
-    {{#each artists.data}}
-        {{> search-artist-card}}
-    {{/each}}
+<section id="search-results">
+    <h2 id="search-results-header" class="text-xl font-bold m-2">Artists</h2>
+    <div id="search-results-container" class="flex p-2 m-2">
+        {{#each artists.data}}
+            {{> search-artist-card}}
+        {{/each}}
+    </div>
 </section>
