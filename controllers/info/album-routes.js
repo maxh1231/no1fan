@@ -10,8 +10,8 @@ router.get('/', async (req, res) => {
         alert(response.statusText)
     } else {
         const data = await response.json();
-        // console.log(data);
-        console.log(data.tracks)
+        console.log(data);
+        // console.log(data.tracks)
         res.render('tracklist', { data });
     }
 });

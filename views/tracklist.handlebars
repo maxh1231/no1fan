@@ -20,7 +20,7 @@
         <div id="album-info">
             <span id="track-amount">{{data.nb_tracks}} tracks -</span>
             <span id="album-duration"> {{data.duration}} mins -</span>
-            <span id="release-date">{{data.release_date}}</span>
+            <span id="date">{{ format_date data.release_date}}</span>
         </div>
     </div>
 
@@ -47,3 +47,4 @@
 </section>
 
 <script src="/js/tracklist.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
