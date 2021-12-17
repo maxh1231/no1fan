@@ -1,9 +1,7 @@
 {{> nav}}
 
-<h1>Homepage</h1>
-
 <section id="top-artist-container">
-    <h2>Top 10 Artists of the Week!</h2>
+    <h2 class="text-xl font-bold">Top 10 Artists of the Week!</h2>
     <div class="grid grid-cols-3 w-1/4">
         {{#each topArtists.data}}
         {{> top-artist-card}}

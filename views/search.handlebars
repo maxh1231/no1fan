@@ -1,18 +1,19 @@
 {{> nav}}
-<h1>Search Results Page</h1>
 
 <section id="top-result">
-    <h2 id="top-result">Top Result</h2>
+    <h2 id="top-result-header" class="text-xl font-bold">Top Result</h2>
     {{> search-artist-card artists.data.[0]}}
 </section>
 
 <section id="track-results">
+    <h2 id="track-results-header" class="text-xl font-bold">Tracks</h2>
     {{#each tracks.data}}
         {{> search-track-card}}
     {{/each}}
 </section>
 
 <section id="search-results" class="flex">
+    <h2 id="search-results-header" class="text-xl font-bold">Artists</h2>
     {{#each artists.data}}
         {{> search-artist-card}}
     {{/each}}
