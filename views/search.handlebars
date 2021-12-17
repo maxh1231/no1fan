@@ -1,0 +1,43 @@
+{{> nav}}
+
+<section id="top-result">
+    <h2 id="top-result-header" class="text-xl font-bold m-2">Top Result</h2>
+    <div id="top-result-container" class="p-2 m-2">
+        <div id="top-artist-card" class="inline-block m-2 p-2 border cursor-pointer">
+            <div id="top-artist-id" class="hidden">{{artists.data.[0].id}}</div>
+            <img id="top-artist-img" src="{{artists.data.[0].picture_medium}}" class="rounded-md">
+            <div id="top-artist-name">{{artists.data.[0].name}}</div>
+        </div>
+    </div>
+</section>
+
+<section id="track-results">
+    <h2 id="track-results-header" class="text-xl font-bold m-2">Tracks</h2>
+    <div id="track-results-container">
+        <table class="table-fixed w-full">
+            <thead>
+                <tr class="bg-gray-400 h-10">
+                    <th>Name</th>
+                    <th>Duration</th>
+                    <th>Preview</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each tracks.data}}
+                    {{> search-track-card}}
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section id="search-results">
+    <h2 id="search-results-header" class="text-xl font-bold m-2">Artists</h2>
+    <div id="search-results-container" class="flex p-2 m-2">
+        {{#each artists.data}}
+            {{> search-artist-card}}
+        {{/each}}
+    </div>
+</section>
+
+<script src="/js/search.js"></script>

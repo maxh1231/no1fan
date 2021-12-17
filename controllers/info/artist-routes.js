@@ -21,11 +21,11 @@ router.use('/:id', async (req, res) => {
     
    
     console.log(recommended);
-    console.log(recommended.data[0].name);
+    // console.log(recommended.data[0].name);
 
     
     
-    const artistData = {name: artistName.name, picture: artistName.picture_medium, Shows: 'Awesome Shows', recommended: recommended.data[0].name, artistAlbums };
+    const artistData = {name: artistName.name, picture: artistName.picture_medium, Shows: 'Awesome Shows', recommended: recommended, artistAlbums };
     res.render('artist-info', artistData);
     
 

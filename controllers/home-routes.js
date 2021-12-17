@@ -7,11 +7,9 @@ router.get('/', async (req, res) => {
     if (!response.ok) {
         alert(response.statusText);
         return;
-    } else {
-        const topArtists = await response.json()
-        res.render('home', {  topArtists, loggedIn: req.session.loggedIn });
-        // console.log(topArtists.data)
     }
+    const topArtists = await response.json()
+    res.render('home', {  topArtists, loggedIn: req.session.loggedIn });
 });
 
 // get signup
