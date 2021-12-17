@@ -1,5 +1,9 @@
 <div class="tracklist-card">
-    <div id="id">{{id}}</div>
     <div id="title">{{title}}</div>
-    <div id="link">{{link}}</div>
+
+    {{#if explicit_lyrics}}
+    <img src="https://img.shields.io/badge/-EXPLICIT-000??style=for-the-badge" alt="">
+    {{/if}}
+
+    <div id="song-duration">{{duration}} in seconds</div>
 </div>
