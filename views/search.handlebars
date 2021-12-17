@@ -3,9 +3,10 @@
 <section id="top-result">
     <h2 id="top-result-header" class="text-xl font-bold m-2">Top Result</h2>
     <div id="top-result-container" class="p-2 m-2">
-        <div id="search-artist-card" class="m-2">
-            <img id="search-artist-img" src="{{artists.data.[0].picture_medium}}" class="rounded-md">
-            <div id="search-artist-name">{{artists.data.[0].name}}</div>
+        <div id="top-artist-card" class="inline-block m-2 p-2 border cursor-pointer">
+            <div id="top-artist-id" class="hidden">{{artists.data.[0].id}}</div>
+            <img id="top-artist-img" src="{{artists.data.[0].picture_medium}}" class="rounded-md">
+            <div id="top-artist-name">{{artists.data.[0].name}}</div>
         </div>
     </div>
 </section>
@@ -38,3 +39,5 @@
         {{/each}}
     </div>
 </section>
+
+<script src="/js/search.js"></script>
