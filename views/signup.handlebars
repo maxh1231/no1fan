@@ -4,16 +4,19 @@
     <label for="email">Email:</label>
     <input type="text" id="email-input" name="email">
     <label for="username">Username:</label>
-    <input type="text" id="username-input" name="username">
+    <input type="text" id="username-input" name="username" class="border-solid border-2 border-black-500 p-1 m-1">
     <label for="password">Password:</label>
-    <input type="password" id="password-input" name="password">
+    <input type="password" id="password-input" name="password" class="border-solid border-2 border-black-500 p-1 m-1">
     <label for="confirm-password">Confirm Password:</label>
-    <input type="password" id="confirm-password-input" name="confirm-password">
-    <span id="err-msg" class="display-none">Invalid sign up credentials!</span>
-    <span id="err-msg2" class="display-none">This email is already in use!</span>
-    <span id="err-msg3" class="display-none">This username is already in use!</span>
-    <button type="submit" id="signup-form-btn">Sign Up</button>
+    <input type="password" id="confirm-password-input" name="confirm-password" class="border-solid border-2 border-black-500 p-1 m-1">
+    <span id="err-msg" class="hidden text-red-500">Invalid sign up credentials!</span>
+    <span id="err-msg2" class="hidden text-red-500">This email is already in use!</span>
+    <span id="err-msg3" class="hidden text-red-500">This username is already in use!</span>
+    <button type="submit" id="signup-form-btn" class="border-solid border-2 border-blue-500 p-1">Sign Up</button>
 </form>
-<div class="goto-container">Already have an account? <button id="goto-login-btn">Login</button></div>
+
+<div class="goto-container">Already have an account? 
+    <button id="goto-login-btn" class="border-solid border-2 border-blue-500 p-1">Login</button>
+</div>
 
 <script src="js/signup.js"></script>

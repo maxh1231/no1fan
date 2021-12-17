@@ -1,12 +1,12 @@
-<nav>
-    <h1 id="home-btn">#1 Fan</h1>
+<nav class="flex justify-between p-3 bg-gray-300 items-center">
+    <h1 id="home-btn" class="text-xl font-bold cursor-pointer">#1 Fan</h1>
     <div id="btn-container">
         {{#if loggedIn}}
-        <button id="dashboard-btn">Dashboard</button>
-        <button id="logout-btn">Logout</button>
+        <button id="dashboard-btn" class="border-solid border-2 border-blue-500 p-1 m-1">Dashboard</button>
+        <button id="logout-btn" class="border-solid border-2 border-blue-500 p-1 m-1">Logout</button>
         {{else}}
-        <button id="login-btn">Login</button>
-        <button id="signup-btn">Signup</button>
+        <button id="login-btn" class="border-solid border-2 border-blue-500 p-1 m-1">Login</button>
+        <button id="signup-btn" class="border-solid border-2 border-blue-500 p-1 m-1">Signup</button>
         {{/if}}
     </div>
 </nav>
