@@ -11,18 +11,25 @@
     <!-- nav bar goes here -->
     <div class ="artist-wrapper">
         <div id="artist-info">
-            <h3>{{name}}</h3>
+            <span id="artist-pic"><img src="{{picture}}"></span><h3>{{name}}</h3>
         </div>
         <div id ="discography-wrapper">
-            <div class="album-box">{{Album1}}</div>
-            <div class="album-box">{{Album2}}</div>
-            <div class="album-box">{{Album3}}</div>
-            <div class="album-box">{{Album4}}</div>
-            <div class="album-box">{{Album5}}</div>
-            <div class="album-box">{{Album6}}</div>
-        </div>
-        <div id="show-wrapper">
+            {{#each artistAlbums.data}}
+            {{> album-card}}
+            {{/each}}
+
+        
+       
+    </div>
+
+     <div id="show-wrapper">
             <h5>{{Shows}}</h5>
+        </div>
+
+    <div id="recommended-wrapper">
+        <div class="recommended-box">
+            <!-- make this a link to recommended's page -->
+            <p>Like {{name}} ? You might like {{recommended}}</p>
         </div>
     </div>
    <!-- footer goes here--> 
