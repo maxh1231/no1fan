@@ -17,16 +17,6 @@ Use a better box model (opinionated).
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
-/* #discography-wrapper {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-    
-} */
-=======
 /**
 Use a more readable tab size (opinionated).
 */
@@ -36,7 +26,6 @@ html {
   -o-tab-size: 4;
      tab-size: 4;
 }
->>>>>>> develop
 
 /**
 1. Correct the line height in all browsers.
