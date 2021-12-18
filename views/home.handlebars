@@ -1,20 +1,20 @@
 {{> nav}}
 
-<section id="top-artist-container">
-    <h2 class="text-xl font-bold">Top 10 Artists of the Week!</h2>
-    <div class="grid grid-cols-3 w-1/4">
-        {{#each topArtists.data}}
-        {{> top-artist-card}}
-        {{/each}}
-    </div>
-</section>
-
-<section id="home-search-container">
+<section id="home-search-container" class="m-2">
     <form id="home-search-form">
         <label for="home-search-input">Search for a band: </label>
         <input type="text" id="home-search-input" name="home-search-input" class="border-solid border-2 border-black-500 p-1 m-1">
         <button type="submit" id="home-search-btn" class="border-solid border-2 border-blue-500 p-1">Search</button>
     </form>
+</section>
+
+<section id="top-artist-container" class="m-2 w-1/4">
+    <h2 class="text-xl font-bold text-center">Top 10 Artists of the Week!</h2>
+    <div id="top-artist-container" class="grid grid-cols-3">
+        {{#each topArtists.data}}
+            {{> top-artist-card}}
+        {{/each}}
+    </div>
 </section>
 
 <script src="/js/home.js"></script>
