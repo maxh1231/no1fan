@@ -1,10 +1,15 @@
 const loginFormHandler = async (evt) => {
     evt.preventDefault();
     const toggleErrMsg = (target) => {
+<<<<<<< HEAD
         document.querySelector(target).classList.remove('display-none');
         setTimeout(() => {
             document.querySelector(target).classList.add('display-none');
         }, 2000);
+=======
+        document.querySelector(target).classList.remove('hidden');
+        setTimeout(() => { document.querySelector(target).classList.add('hidden') }, 2000);
+>>>>>>> develop
     };
     const email = document.querySelector('#email-input').value.trim();
     const password = document.querySelector('#password-input').value.trim();

@@ -1,31 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artist Info Page</title>
-    <link rel="stylesheet" href="styles/style.css">
-</head>
-<body>
-    <!-- nav bar goes here -->
-    <div class ="artist-wrapper">
-        <div id="artist-info">
-            <h3>{{name}}</h3>
-        </div>
-        <div id ="discography-wrapper">
-            <div class="album-box">{{Album1}}</div>
-            <div class="album-box">{{Album2}}</div>
-            <div class="album-box">{{Album3}}</div>
-            <div class="album-box">{{Album4}}</div>
-            <div class="album-box">{{Album5}}</div>
-            <div class="album-box">{{Album6}}</div>
-        </div>
-        <div id="show-wrapper">
-            <h5>{{Shows}}</h5>
-        </div>
+{{> nav }}
+
+<div class ="artist-wrapper">
+    <div id="artist-info">
+        <span id="artist-pic"><img src="{{picture}}"></span><h3>{{name}}</h3>
     </div>
-   <!-- footer goes here--> 
+    <div id ="discography-wrapper">
+        {{#each artistAlbums.data}}
+        {{> album-card}}
+        {{/each}}
+
+    
+    
+</div>
+
+    <div id="show-wrapper">
+        <h5>{{Shows}}</h5>
+    </div>
+
+<div id="recommended-wrapper">
+    <div class="recommended-box">
+        <!-- make this a link to recommended's page -->
+        <p>Like {{name}} ? You might like {{recommended}}</p>
+    </div>
+</div>
+
 <script src="/js/artist-info.js"></script>
-</body>
-</html>
