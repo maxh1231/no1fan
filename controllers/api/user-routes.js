@@ -50,6 +50,7 @@ router.post('/', async (req, res) => {
             req.session.id = response.id;
             req.session.email = response.email
             req.session.username = response.username;
+            req.session.loggedIn = true;
             res.json({ user: response.username, message: 'Login Successful!' });
         });
     }

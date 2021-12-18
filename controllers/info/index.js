@@ -7,4 +7,8 @@ router.use('/artist', artistRoutes);
 router.use('/album', albumRoutes);
 router.use('/search', searchRoutes);
 
+router.use((req, res) => {
+    res.redirect('/');
+});
+
 module.exports = router;
