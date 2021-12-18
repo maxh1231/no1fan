@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 module.exports = {
     plus_one: index => {
         return index + 1
@@ -10,5 +12,8 @@ module.exports = {
         } else {
             return `${min}:${sec}`;
         }
+    },
+    format_date: release_date => {
+        return moment(release_date).format("MM-DD-YYYY");
     }
 }
