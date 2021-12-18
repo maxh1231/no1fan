@@ -495,12 +495,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 25%;
 }
 
-.w-3\/4 {
-  width: 75%;
+.w-1\/2 {
+  width: 50%;
 }
 
 .w-full {
   width: 100%;
+}
+
+.max-w-full {
+  max-width: 100%;
 }
 
 .table-fixed {
