@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
     } else {
         const data = await response.json();
         console.log(data);
-        // console.log(data.tracks)
+        console.log(data.tracks)
         res.render('tracklist', { data });
     }
 });
