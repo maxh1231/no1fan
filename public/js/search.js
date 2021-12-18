@@ -6,7 +6,7 @@ const topInfo = (evt) => {
     } else {
         current = evt.target.childNodes[1].innerText;
     }
-    document.location.replace(`/info/artist/${current}`);
+    document.location.assign(`/info/artist/${current}`);
 }
 
 const otherInfo = (evt) => {
@@ -17,8 +17,8 @@ const otherInfo = (evt) => {
     } else {
         current = evt.target.childNodes[1].innerText;
     }
-    document.location.replace(`/info/artist/${current}`);
+    document.location.assign(`/info/artist/${current}`);
 }
 
 document.querySelector('#top-artist-card').addEventListener('click', topInfo);
-document.querySelector('#search-results-container').addEventListener('click', otherInfo);
+document.querySelector('#artist-results-container').addEventListener('click', otherInfo);
