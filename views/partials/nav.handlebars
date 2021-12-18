@@ -5,8 +5,10 @@
         <button id="dashboard-btn" class="border-solid border-2 border-gray-700 p-1 m-1">Dashboard</button>
         <button id="logout-btn" class="border-solid border-2 border-gray-700 p-1 m-1">Logout</button>
         {{else}}
+        {{#unless hideBtn}}
         <button id="login-btn" class="border-solid border-2 border-gray-700 p-1 m-1">Login</button>
         <button id="signup-btn" class="border-solid border-2 border-gray-700 p-1 m-1">Signup</button>
+        {{/unless}}
         {{/if}}
     </div>
 </nav>
