@@ -9,12 +9,8 @@ router.use('/album', albumRoutes);
 router.use('/search', searchRoutes);
 router.use('/setlists', setlistRoutes);
 
-<<<<<<< HEAD
-module.exports = router;
-=======
 router.use((req, res) => {
     res.redirect('/');
 });
 
 module.exports = router;
->>>>>>> develop
