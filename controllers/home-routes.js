@@ -3,13 +3,15 @@ const fetch = require('node-fetch');
 
 // get home
 router.get('/', async (req, res) => {
-    const response = await fetch('https://api.deezer.com/chart/0/artists');
-    if (!response.ok) {
-        alert(response.statusText);
+    const artistRes = await fetch('https://api.deezer.com/chart/0/artists');
+    const trackRes = await fetch('https://api.deezer.com/chart/0/tracks&limit=5');
+    if (!artistRes.ok || !trackRes.ok) {
+        alert(artistRes.statusText);
         return;
     }
-    const topArtists = await response.json()
-    res.render('home', {  topArtists, loggedIn: req.session.loggedIn });
+    const topArtists = await artistRes.json()
+    const topTracks = await trackRes.json()
+    res.render('home', { topArtists, topTracks, loggedIn: req.session.loggedIn });
 });
 
 // get signup

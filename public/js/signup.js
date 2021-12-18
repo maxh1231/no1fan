@@ -25,8 +25,7 @@ const signupFormHandler = async (evt) => {
         if (!errMsg.error) {
             toggleErrMsg('#err-msg');
             return;
-        }
-        if (errMsg.error === 'email') {
+        } else if (errMsg.error === 'email') {
             toggleErrMsg('#err-msg2');
             return;
         } else {
