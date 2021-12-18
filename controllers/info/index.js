@@ -7,6 +7,6 @@ const setlistRoutes = require('./setlist-routes');
 router.use('/artist', artistRoutes);
 router.use('/album', albumRoutes);
 router.use('/search', searchRoutes);
-router.use('/setlist', setlistRoutes);
+router.use('/setlists', setlistRoutes);
 
 module.exports = router;
