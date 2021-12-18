@@ -2,8 +2,12 @@
     <td class="p-2">{{title}}</td>
     <td class="text-center p-2">{{format_time duration}}</td>
     <td class="p-2">
+        {{#if preview}}
         <audio controls class="mx-auto">
             <source src="{{preview}}" type="audio/mpeg">
         </audio>
+        {{else}}
+        <span>No preview available!</span>
+        {{/if}}
     </td>
 </tr>

@@ -428,12 +428,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
+.m-2 {
+  margin: 0.5rem;
+}
+
 .m-1 {
   margin: 0.25rem;
 }
 
-.m-2 {
-  margin: 0.5rem;
+.m-auto {
+  margin: auto;
 }
 
 .my-12 {
