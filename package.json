@@ -5,7 +5,7 @@
     "main": "server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build:css": "npx tailwindcss-cli build public/styles/tailwind.css -o public/styles/style.css",
+        "build:css": "npx tailwindcss build -i public/styles/tailwind.css -o public/styles/style.css",
         "start": "npm run build:css && node server.js"
     },
     "keywords": [],
