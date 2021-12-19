@@ -508,15 +508,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100%;
 }
 
-<<<<<<< HEAD
-=======
 .w-fit {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
 
->>>>>>> develop
 .table-auto {
   table-layout: auto;
 }

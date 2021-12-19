@@ -2,7 +2,7 @@
 const router = require('express').Router();
 const fetch = require('node-fetch');
 
-// Endpoint is ./info/setlists/artist
+// Endpoint is ./info/setlists/
 
 // Get most recent setlists for one artist
 router.get('/artist/:input', async (req, res) => {
@@ -20,6 +20,7 @@ router.get('/artist/:input', async (req, res) => {
             )
         ).json()
     ).artist[0].mbid;
+    // Use MBID to get recent setlists
     const artistSetlist = await (
         await fetch(
             `https://api.setlist.fm/rest/1.0/artist/${artistMBID}/setlists?p=1`,
@@ -31,7 +32,8 @@ router.get('/artist/:input', async (req, res) => {
             }
         )
     ).json();
-    console.log(artistSetlist);
+    // Send setlist body back
+    res.send(artistSetlist);
 });
 
 // Exports
