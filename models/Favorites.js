@@ -13,18 +13,17 @@ Favorites.init(
             primaryKey: true,
             autoIncrement: true
         },
-        arist_id: {
-            type: DataTypes.STRING,
+        artist_id: {
+            type: DataTypes.INTEGER,
             allowNull: false,
-            unique: true,
-            validate: {
-                isEmail: true
-            }
         },
         user_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false,
-            unique: true
+            references: {
+                model: 'user',
+                key: 'id'
+            }
         },
     },
     {
