@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Sequelize } = require('sequelize/dist');
-const { User, Favorites } = require('../../models');
+const { User, ArtistFavorites, AlbumFavorites } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // findAll
@@ -10,8 +10,12 @@ router.get('/', async (req, res) => {
             attributes: { exclude: ['password'] },
             include: [
                 {
-                    model: Favorites,
-                    attributes: ['id', 'artist_id', 'user_id']
+                    model: ArtistFavorites,
+                    attributes: ['id', 'artist_id', 'artist_name', 'user_id']
+                },
+                {
+                    model: AlbumFavorites,
+                    attributes: ['id', 'album_id', 'album_name', 'user_id']
                 }
             ]
         });
@@ -34,8 +38,12 @@ router.get('/:id', async (req, res) => {
             attributes: { exclude: ['password'] },
             include: [
                 {
-                    model: Favorites,
-                    attributes: ['id', 'artist_id', 'user_id']
+                    model: ArtistFavorites,
+                    attributes: ['id', 'artist_id', 'artist_name', 'user_id']
+                },
+                {
+                    model: AlbumFavorites,
+                    attributes: ['id', 'album_id', 'album_name', 'user_id']
                 }
             ]
         });
