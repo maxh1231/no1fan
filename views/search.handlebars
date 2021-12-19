@@ -31,11 +31,20 @@
     </div>
 </section>
 
-<section id="search-results">
-    <h2 id="search-results-header" class="text-xl font-bold m-2">Artists</h2>
-    <div id="search-results-container" class="flex p-2 m-2">
+<section id="artist-results">
+    <h2 id="artist-results-header" class="text-xl font-bold m-2">Artists</h2>
+    <div id="artist-results-container" class="flex p-2 m-2">
         {{#each artists.data}}
             {{> search-artist-card}}
+        {{/each}}
+    </div>
+</section>
+
+<section id="album-results">
+    <h2 id="album-results-header" class="text-xl font-bold m-2">Albums</h2>
+    <div id="album-results-container" class="flex p-2 m-2">
+        {{#each albums.data}}
+            {{> search-album-card}}
         {{/each}}
     </div>
 </section>

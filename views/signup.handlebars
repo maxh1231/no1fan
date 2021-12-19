@@ -1,8 +1,8 @@
 {{> nav}}
-<h1 id="signup-header">Sign Up Page</h1>
-<form id="signup-form">
+
+<form id="signup-form" class="border mx-auto my-5 w-fit p-3 flex flex-col">
     <label for="email">Email:</label>
-    <input type="text" id="email-input" name="email">
+    <input type="text" id="email-input" name="email" class="border-solid border-2 border-black-500 p-1 m-1">
     <label for="username">Username:</label>
     <input type="text" id="username-input" name="username" class="border-solid border-2 border-black-500 p-1 m-1">
     <label for="password">Password:</label>
@@ -12,11 +12,11 @@
     <span id="err-msg" class="hidden text-red-500">Invalid sign up credentials!</span>
     <span id="err-msg2" class="hidden text-red-500">This email is already in use!</span>
     <span id="err-msg3" class="hidden text-red-500">This username is already in use!</span>
-    <button type="submit" id="signup-form-btn" class="border-solid border-2 border-blue-500 p-1">Sign Up</button>
+    <button type="submit" id="signup-form-btn" class="border-solid border-2 border-gray-700 m-1 p-1">Sign Up</button>
 </form>
 
-<div class="goto-container">Already have an account? 
-    <button id="goto-login-btn" class="border-solid border-2 border-blue-500 p-1">Login</button>
+<div id="goto-container" class="mx-auto w-fit">Already have an account? 
+    <button id="goto-login-btn" class="border-solid border-2 border-gray-700 m-1 p-1">Login</button>
 </div>
 
 <script src="js/signup.js"></script>

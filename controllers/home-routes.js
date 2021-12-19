@@ -16,12 +16,12 @@ router.get('/', async (req, res) => {
 
 // get signup
 router.get('/signup', (req, res) => {
-    res.render('signup', { loggedIn: req.session.loggedIn });
+    res.render('signup', { loggedIn: req.session.loggedIn, hideBtn: true });
 });
 
 // get login
 router.get('/login', (req, res) => {
-    res.render('login', { loggedIn: req.session.loggedIn });
+    res.render('login', { loggedIn: req.session.loggedIn, hideBtn: true });
 });
 
 // get dashboard
