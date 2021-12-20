@@ -15,6 +15,7 @@ const getRecommended = (evt) => {
     if (evt.target.id === 'recommended-artist-card') {
         recommended = evt.target.childNodes[1].innerText;
         
+        
     } else {
         recommended = evt.target.parentElement.childNodes[1].innerText
     }

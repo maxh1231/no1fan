@@ -21,7 +21,9 @@ router.use('/:id', async (req, res) => {
     
    
     console.log(recommended);
-    // console.log(recommended.data[1].name);
+   
+    
+    
 
     
     
