@@ -1,28 +1,26 @@
-
-
-
-<div class ="artist-wrapper">
+<div class="artist-wrapper">
     <div id="artist-info">
-        <span id="artist-pic"><img src="{{picture}}"></span><h3>{{name}}</h3>
+        <span id="artist-pic"><img src="{{picture}}"></span>
+        <h3>{{name}}</h3>
     </div>
-    <div id ="discography-wrapper">
+    <div id="discography-wrapper">
         {{#each artistAlbums.data}}
         {{> album-card}}
         {{/each}}
 
-    
-    
-</div>
+
+
+    </div>
 
     <div id="show-wrapper">
         <h5>{{Shows}}</h5>
     </div>
 
-<div id="recommended-wrapper">
-    <div class="recommended-box">
-        <!-- make this a link to recommended's page -->
-        <p>Like {{name}} ? You might like {{recommended}}</p>
+    <div id="recommended-wrapper">
+        <div class="recommended-box">
+            <!-- make this a link to recommended's page -->
+            <p>Like {{name}} ? You might like {{recommended}}</p>
+        </div>
     </div>
-</div>
 
-<script src="/js/artist-info.js"></script>
+    <script src="/js/artist-info.js"></script>
