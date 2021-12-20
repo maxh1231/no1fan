@@ -1,27 +1,34 @@
-{{> nav }}
+{{> nav}}
 
-<div class ="artist-wrapper">
+
+<div class="artist-wrapper class="flex p-2 m-2">
     <div id="artist-info">
-        <span id="artist-pic"><img src="{{picture}}"></span><h3>{{name}}</h3>
+        <span id="artist-pic"><img src="{{picture}}" class="rounded-full"></span>
+        <h3>{{name}}</h3>
     </div>
-    <div id ="discography-wrapper">
+
+     <div id="show-wrapper">
+        <h5>Shows Near Me</h5>
+        {{Shows}}
+    </div>
+
+</div>    
+
+
+
+    <div id="discography-wrapper" class="flex p-2 m-2">
         {{#each artistAlbums.data}}
         {{> album-card}}
         {{/each}}
 
-    
-    
-</div>
 
-    <div id="show-wrapper">
-        <h5>{{Shows}}</h5>
+
     </div>
 
-<div id="recommended-wrapper">
-    <div class="recommended-box">
-        <!-- make this a link to recommended's page -->
-        <p>Like {{name}} ? You might like {{recommended}}</p>
-    </div>
-</div>
+   
 
-<script src="/js/artist-info.js"></script>
+    <div id="recommended-wrapper">
+       {{> recommended-artist-card}}
+    </div>
+
+    <script src="/js/artist-info.js"></script>
