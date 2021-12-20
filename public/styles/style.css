@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.0.6 | MIT License | https://tailwindcss.com
+! tailwindcss v3.0.7 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -609,4 +609,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
+
+
+.artist-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
