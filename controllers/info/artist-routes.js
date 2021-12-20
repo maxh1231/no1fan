@@ -15,17 +15,17 @@ router.use('/:id', async (req, res) => {
     const artistName = await artistResponse.json();
     const albumResponse = await fetch(`https://api.deezer.com/artist/${artistID}/albums`);
     const artistAlbums = await albumResponse.json();
-    const recommendedResponse = await fetch(`https://api.deezer.com/artist/${artistID}/related&limit=1`);
+    const recommendedResponse = await fetch(`https://api.deezer.com/artist/${artistID}/related`);
     const recommended = await recommendedResponse.json();
     
     
    
     console.log(recommended);
-    console.log(recommended.data[0].name);
+    // console.log(recommended.data[1].name);
 
     
     
-    const artistData = {name: artistName.name, picture: artistName.picture_medium, Shows: 'Awesome Shows', recommended: recommended.data[0].name, artistAlbums };
+    const artistData = {name: artistName.name, picture: artistName.picture_medium, Shows: 'Awesome Shows', recommended: recommended, artistAlbums };
     res.render('artist-info', artistData);
     
 
