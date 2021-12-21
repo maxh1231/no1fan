@@ -1,10 +1,12 @@
 const router = require('express').Router();
 const userRoutes = require('./user-routes');
-const ArtistFavorites = require('./artist-routes');
+const artistFavorites = require('./artist-routes');
+const albumFavorites = require('./album-routes');
 
 
 router.use('/user', userRoutes);
-router.use('/artistfavorites', ArtistFavorites);
+router.use('/artistfavorites', artistFavorites);
+router.use('/albumfavorites', albumFavorites);
 
 
 router.use((req, res) => {
