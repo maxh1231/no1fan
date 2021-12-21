@@ -40,6 +40,8 @@ router.get('/artist/:input', async (req, res) => {
 router.get('/venue/:input', async (req, res) => {
     // https://api.setlist.fm/rest/1.0/search/venues?p=1&cityName=salt%20lake%20city&name=the%20complex
     // How to pull two different sets of params?
+    // req.body / req.params;
+    // venue/:city/:input
     // Get venue ID to feed into Setlist API
     const venueID = (
         await (
