@@ -7,10 +7,10 @@ const search = (evt) => {
 const getInfo = (evt) => {
     evt.preventDefault();
     let current = '';
-    if (evt.target.id !== 'top-artist-card') {
-        current = evt.target.parentElement.childNodes[1].innerText;
-    } else {
+    if (evt.target.id === 'artist-card') {
         current = evt.target.childNodes[1].innerText;
+    } else {
+        current = evt.target.parentElement.childNodes[1].innerText;
     }
     document.location.assign(`/info/artist/${current}`);
 }

@@ -1,31 +1,47 @@
 const router = require('express').Router();
 const fetch = require('node-fetch');
 
-// let artistID = '13';
+
 
 
 // renders the artist info page 
 // info/artist
 router.use('/:id', async (req, res) => {
-    
+    // gets artist id for the page 
     let artistID = req.params.id;
-    // async function fetchInfo() {
-   
+    // gets artist info
     const artistResponse = await fetch(`https://api.deezer.com/artist/${artistID}`);
     const artistName = await artistResponse.json();
-    const albumResponse = await fetch(`https://api.deezer.com/artist/${artistID}/albums&limit=10`);
+    
+    
+    // gets album info
+    const albumResponse = await fetch(`https://api.deezer.com/artist/${artistID}/albums`);
     const artistAlbums = await albumResponse.json();
-    const recommendedResponse = await fetch(`https://api.deezer.com/artist/${artistID}/related&limit=1`);
+    // gets recommended artist info
+    const recommendedResponse = await fetch(`https://api.deezer.com/artist/${artistID}/related`);
     const recommended = await recommendedResponse.json();
+    // pulls the artist bio for the page 
+    let searchName = artistName.name;
+    const artistBioResponse = await fetch(`https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${searchName}&api_key=0b84f9d0c28085fc5510cb51682d69de&format=json`);
+    const artistBio = await artistBioResponse.json();
+    console.log(artistBio.artist.bio.summary);
     
     
+    // pulls recommended artists into an array
+    let recommendedArray = [];
+    for (let i = 0; i < recommended.data.length; i++) {
+        recommendedArray.push(recommended.data[i]);
+        // console.log(recommendedArray[i]);
+        
+        
+        
+        
+    }
+    // selects a random recommended artist from the array
+    const myRecommendation = recommendedArray[Math.floor(Math.random() * recommendedArray.length)];
    
-    console.log(recommended);
-    // console.log(recommended.data[0].name);
-
-    
-    
-    const artistData = {name: artistName.name, picture: artistName.picture_medium, Shows: 'Awesome Shows', recommended: recommended, artistAlbums };
+    // passes data to handle bars to render in html 
+    const artistData = {name: artistName.name, picture: artistName.picture_medium, Shows: 'Awesome Shows', myRecommendation: myRecommendation, artistAlbums, artistBio: artistBio};
     res.render('artist-info', artistData);
     
 

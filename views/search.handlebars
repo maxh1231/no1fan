@@ -3,11 +3,7 @@
 <section id="top-result">
     <h2 id="top-result-header" class="text-xl font-bold m-2">Top Result</h2>
     <div id="top-result-container" class="p-2 m-2">
-        <div id="top-artist-card" class="inline-block m-2 p-2 border cursor-pointer">
-            <div id="top-artist-id" class="hidden">{{artists.data.[0].id}}</div>
-            <img id="top-artist-img" src="{{artists.data.[0].picture_medium}}" class="rounded-md">
-            <div id="top-artist-name">{{artists.data.[0].name}}</div>
-        </div>
+        {{> artist-card artists.data.[0] medium='true'}}
     </div>
 </section>
 
@@ -24,7 +20,7 @@
             </thead>
             <tbody>
                 {{#each tracks.data}}
-                    {{> search-track-card}}
+                    {{> track-card}}
                 {{/each}}
             </tbody>
         </table>
@@ -35,7 +31,7 @@
     <h2 id="artist-results-header" class="text-xl font-bold m-2">Artists</h2>
     <div id="artist-results-container" class="flex p-2 m-2">
         {{#each artists.data}}
-            {{> search-artist-card}}
+            {{> artist-card round='true' medium='true'}}
         {{/each}}
     </div>
 </section>
@@ -44,7 +40,7 @@
     <h2 id="album-results-header" class="text-xl font-bold m-2">Albums</h2>
     <div id="album-results-container" class="flex p-2 m-2">
         {{#each albums.data}}
-            {{> search-album-card}}
+            {{> album-card}}
         {{/each}}
     </div>
 </section>
