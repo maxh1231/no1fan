@@ -6,11 +6,11 @@
         <span id="artist-pic"><img src="{{picture}}" class="rounded-full"></span>
         <h3>{{name}}</h3>
     </div>
-
-     <div id="show-wrapper">
-        <h5>Shows Near Me</h5>
-        {{Shows}}
+    <div id = "artist-bio">
+        {{artistBio.artist.bio.summary}}
     </div>
+
+    
 
 </div>    
 
@@ -32,6 +32,11 @@
 
     <div id="recommended-wrapper">
        {{> recommended-artist-card}}
+    </div>
+
+     <div id="show-wrapper">
+        <h5>Shows Near Me</h5>
+        {{Shows}}
     </div>
 
     <script src="/js/artist-info.js"></script>
