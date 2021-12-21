@@ -1,6 +1,5 @@
 const router = require('express').Router();
-const sequelize = require('../../config/connection');
-const { User, AristFavorites, AlbumFavorites, ArtistFavorites } = require('../../models');
+const { User, AristFavorites, AlbumFavorites, } = require('../../models');
 
 // get all favorites by all users
 router.get('/', (req, res) => {
@@ -64,7 +63,7 @@ router.delete('/:id', (req, res) => {
     })
         .then(favorites => {
             if (favorites) {
-                res.status(404).json({ message: 'No post found with this id' });
+                res.status(404).json({ message: 'No favorite found with this id' });
                 return;
             }
             res.json(favorites);
@@ -74,7 +73,5 @@ router.delete('/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
-
-module.exports = router;
 
 module.exports = router;
