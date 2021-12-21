@@ -12,7 +12,7 @@ const artistInfo = (evt) => {
 const albumInfo = (evt) => {
     evt.preventDefault();
     let current = '';
-    if (evt.target.id === 'search-album-card') {
+    if (evt.target.id === 'album-card') {
         current = evt.target.childNodes[1].innerText;
     } else {
         current = evt.target.parentElement.childNodes[1].innerText;

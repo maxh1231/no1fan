@@ -11,7 +11,7 @@ router.get('/:id', async (req, res) => {
         alert(response.statusText)
     } else {
         const data = await response.json();
-        res.render('tracklist', { data, loggedIn: req.session.loggedIn });
+        res.render('album-info', { data, loggedIn: req.session.loggedIn });
     }
 });
 

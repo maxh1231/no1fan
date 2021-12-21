@@ -31,7 +31,7 @@
     <h2 id="artist-results-header" class="text-xl font-bold m-2">Artists</h2>
     <div id="artist-results-container" class="flex p-2 m-2">
         {{#each artists.data}}
-            {{> artist-card round='true'}}
+            {{> artist-card round='true' medium='true'}}
         {{/each}}
     </div>
 </section>
@@ -40,7 +40,7 @@
     <h2 id="album-results-header" class="text-xl font-bold m-2">Albums</h2>
     <div id="album-results-container" class="flex p-2 m-2">
         {{#each albums.data}}
-            {{> search-album-card}}
+            {{> album-card}}
         {{/each}}
     </div>
 </section>
