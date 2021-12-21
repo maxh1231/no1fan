@@ -3,7 +3,6 @@ const { AlbumFavorites, ArtistFavorites } = require('../../models');
 
 router.get('/', (req, res) => {
     ArtistFavorites.findAll({
-
         where: {
             user_id: req.session.id
         },
