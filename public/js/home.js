@@ -18,17 +18,19 @@ const getInfo = (evt) => {
 document.querySelector('#top-artist-container').addEventListener('click', getInfo);
 document.querySelector('#home-search-form').addEventListener('submit', search);
 
-var x = document.getElementById("location");
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.watchPosition(showPosition);
+    navigator.geolocation.getCurrentPosition(showPosition);
   } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
+    console.log("Geolocation is not supported or allowed.");
   }
 }
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude +
-  "<br>Longitude: " + position.coords.longitude;
+ 
+const showPosition =  async (position) => {
+  console.log("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
+  const response = await fetch(`https://api.seatgeek.com/2/events?lat=${position.coords.latitude}&lon=${position.coords.longitude}&type=concert&client_id=MjUwMzA3ODd8MTYzOTc5ODE1MS45NDE3NTg2`);
+  const data = await response.json();
+  console.log(data);
 }
 
 getLocation();

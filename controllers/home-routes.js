@@ -9,8 +9,8 @@ router.get('/', async (req, res) => {
         alert(artistRes.statusText);
         return;
     }
-    const topArtists = await artistRes.json()
-    const topTracks = await trackRes.json()
+    const topArtists = await artistRes.json();
+    const topTracks = await trackRes.json();
     res.render('home', { topArtists, topTracks, loggedIn: req.session.loggedIn });
 });
 
