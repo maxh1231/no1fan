@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const userRoutes = require('./user-routes');
-const artistFavorites = require('./artist-routes');
-const albumFavorites = require('./album-routes');
+const artistFavorites = require('./artist-fav-routes');
+const albumFavorites = require('./album-fav-routes');
 
 
 router.use('/user', userRoutes);
