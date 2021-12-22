@@ -24,18 +24,11 @@ router.use('/:id', async (req, res) => {
     let searchName = artistName.name;
     const artistBioResponse = await fetch(`https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${searchName}&api_key=0b84f9d0c28085fc5510cb51682d69de&format=json`);
     const artistBio = await artistBioResponse.json();
-    console.log(artistBio.artist.bio.summary);
-    
-    
+ 
     // pulls recommended artists into an array
     let recommendedArray = [];
     for (let i = 0; i < recommended.data.length; i++) {
-        recommendedArray.push(recommended.data[i]);
-        // console.log(recommendedArray[i]);
-        
-        
-        
-        
+        recommendedArray.push(recommended.data[i]);    
     }
     // selects a random recommended artist from the array
     const myRecommendation = recommendedArray[Math.floor(Math.random() * recommendedArray.length)];

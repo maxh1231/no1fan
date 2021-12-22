@@ -7,7 +7,7 @@
         <h3>{{name}}</h3>
     </div>
     <div id = "artist-bio">
-        {{artistBio.artist.bio.summary}}
+        {{{artistBio.artist.bio.summary}}}
     </div>
 
     
@@ -17,9 +17,11 @@
 
 
     <div id="discography-wrapper" class="flex p-2 m-2">
-        {{#each artistAlbums.data}}
+        {{!-- {{#each artistAlbums.data}}
         {{> album-card small='true'}}
-        {{/each}}
+        {{/each}} --}}
+
+        {{> carousel}}
         
 
 
@@ -40,4 +42,4 @@
     </div>
 
     <script src="/js/artist-info.js"></script>
-    <script src="/js/carousel.js"></script>
+    

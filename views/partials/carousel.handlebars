@@ -1,0 +1,9 @@
+<div class="carousel">
+    <h2>Albums</h2>
+    <!-- Need to dynamically create divs for the album cards -->
+    {{#each artistAlbums.data}}
+    <div class="carousel__item">
+        {{>album-card small="true"}}
+    </div>
+    {{/each}}
+</div>
