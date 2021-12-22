@@ -472,6 +472,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 2rem;
 }
 
+.block {
+  display: block;
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -496,16 +500,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 2.5rem;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .w-1\/4 {
   width: 25%;
 }
 
 .w-1\/2 {
   width: 50%;
-}
-
-.w-full {
-  width: 100%;
 }
 
 .w-fit {
@@ -609,4 +613,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
+.text-sky-400 {
+  --tw-text-opacity: 1;
+  color: rgb(56 189 248 / var(--tw-text-opacity));
 }

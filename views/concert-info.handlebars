@@ -11,15 +11,15 @@
             <p id="artist-name">
                 Artist: {{artistSetlists.setlist.[0].artist.name}}
             </p>
-            <p>Recent Concerts:</p>
+            <p>Recent Concerts</p>
         </div>
         <div id="concert-info-container">
             <table class="table-fixed w-full" id="concerts-table">
                 <thead>
                     <tr class="bg-gray-400 h-10">
-                        <th>Tour</th>
                         <th>Date</th>
                         <th>Venue</th>
+                        <th>Tour</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,11 +32,23 @@
     {{/if}}
     {{!-- If template is being populated from SeatGeek call --}}
     {{#if seatGeekType}}
-        <div>Seatgeek</div>
+        <div id="concert-info-container">
+            <table class="table-fixed w-full" id="concerts-table">
+                <thead>
+                    <tr class="bg-gray-400 h-10">
+                        <th>Artist</th>
+                        <th>Date</th>
+                        <th>Venue</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each concerts.events}}
+                        {{>concert-card}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
     {{/if}}
-    {{!-- {{#each}}
-        {{}}
-    {{/each}} --}}
 </section>
 
 {{!-- JS link --}}
