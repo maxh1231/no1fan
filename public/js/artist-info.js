@@ -23,7 +23,5 @@ const getRecommended = (evt) => {
     
 }
 
-
 document.querySelector('#discography-wrapper').addEventListener('click', getTracks);
 document.querySelector('#recommended-wrapper').addEventListener('click', getRecommended);
-
