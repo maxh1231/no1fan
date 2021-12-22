@@ -1,0 +1,43 @@
+{{!-- Navbar --}}
+{{> nav}}
+
+{{!-- Content --}}
+<h1 id="dashboard-header">Concert Info</h1>
+
+<section id="concert-div">
+    {{!-- If template is being populated from Setlist.FM call --}}
+    {{#if setlistType}}
+        <div id="general-info-container">
+            <p id="artist-name">
+                Artist: {{artistSetlists.setlist.[0].artist.name}}
+            </p>
+            <p>Recent Concerts:</p>
+        </div>
+        <div id="concert-info-container">
+            <table class="table-fixed w-full" id="concerts-table">
+                <thead>
+                    <tr class="bg-gray-400 h-10">
+                        <th>Tour</th>
+                        <th>Date</th>
+                        <th>Venue</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each artistSetlists.setlist}}
+                        {{>setlist-card}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    {{/if}}
+    {{!-- If template is being populated from SeatGeek call --}}
+    {{#if seatGeekType}}
+        <div>Seatgeek</div>
+    {{/if}}
+    {{!-- {{#each}}
+        {{}}
+    {{/each}} --}}
+</section>
+
+{{!-- JS link --}}
+<script src="/js/dashboard.js"></script>

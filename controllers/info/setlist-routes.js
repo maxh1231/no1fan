@@ -32,8 +32,8 @@ router.get('/artist/:input', async (req, res) => {
             }
         )
     ).json();
-    // Send setlist body back
-    res.send(artistSetlists);
+    // Render concert info with indicator that it's coming from Setlist.fm
+    res.render('concert-info', { artistSetlists, setlistType: true });
 });
 
 // Get most recent setlists/shows for one venue
