@@ -12,6 +12,7 @@ router.use('/:id', async (req, res) => {
     // gets artist info
     const artistResponse = await fetch(`https://api.deezer.com/artist/${artistID}`);
     const artistName = await artistResponse.json();
+    console.log(artistName);
     
     
     // gets album info
@@ -34,7 +35,7 @@ router.use('/:id', async (req, res) => {
     const myRecommendation = recommendedArray[Math.floor(Math.random() * recommendedArray.length)];
    
     // passes data to handle bars to render in html 
-    const artistData = {name: artistName.name, picture: artistName.picture_medium, Shows: 'Awesome Shows', myRecommendation: myRecommendation, artistAlbums, artistBio: artistBio};
+    const artistData = {name: artistName.name, picture: artistName.picture_big, Shows: 'Awesome Shows', myRecommendation: myRecommendation, artistAlbums, artistBio: artistBio};
     res.render('artist-info', artistData);
     
 
