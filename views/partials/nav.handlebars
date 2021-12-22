@@ -2,12 +2,12 @@
     <h1 id="home-btn" class="text-xl font-bold cursor-pointer">#1 Fan</h1>
     <div id="btn-container">
         {{#if loggedIn}}
-        <button id="dashboard-btn" class="border-solid border-2 border-gray-700 p-1 m-1">Dashboard</button>
-        <button id="logout-btn" class="border-solid border-2 border-gray-700 p-1 m-1">Logout</button>
+        <button id="dashboard-btn" class="border-solid border-2 border-gray-700 p-1 m-1 rounded-md">Dashboard</button>
+        <button id="logout-btn" class="border-solid border-2 border-gray-700 p-1 m-1 rounded-md">Logout</button>
         {{else}}
         {{#unless hideBtn}}
-        <button id="login-btn" class="border-solid border-2 border-gray-700 p-1 m-1">Login</button>
-        <button id="signup-btn" class="border-solid border-2 border-gray-700 p-1 m-1">Signup</button>
+        <button id="login-btn" class="border-solid border-2 border-gray-700 p-1 m-1 rounded-md">Login</button>
+        <button id="signup-btn" class="border-solid border-2 border-gray-700 p-1 m-1 rounded-md">Signup</button>
         {{/unless}}
         {{/if}}
     </div>
