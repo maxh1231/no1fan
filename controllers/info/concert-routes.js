@@ -11,7 +11,10 @@ router.get('/artist/:input', async (req, res) => {
             `https://api.seatgeek.com/2/events?performers.slug=${req.params.input}&client_id=${process.env.SEATGEEK_CLIENT_ID}&client_secret=${process.env.SEATGEEK_SECRET}`
         )
     ).json();
-    res.send(concerts);
+    res.render('concert-info', {
+        concerts,
+        seatGeekType: true,
+    });
 });
 
 // Get upcoming concerts using user's location

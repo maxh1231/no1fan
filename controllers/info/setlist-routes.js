@@ -21,7 +21,7 @@ router.get('/artist/:input', async (req, res) => {
         ).json()
     ).artist[0].mbid;
     // Use MBID to get recent setlists
-    const artistSetlists = await (
+    const setlists = await (
         await fetch(
             `https://api.setlist.fm/rest/1.0/artist/${artistMBID}/setlists?p=1`,
             {
@@ -33,7 +33,10 @@ router.get('/artist/:input', async (req, res) => {
         )
     ).json();
     // Render concert info with indicator that it's coming from Setlist.fm
-    res.render('concert-info', { artistSetlists, setlistType: true });
+    res.render('setlist-info', {
+        setlists,
+        artistType: true,
+    });
 });
 
 // Get most recent setlists/shows for one venue
@@ -57,7 +60,7 @@ router.get('/venue/:input', async (req, res) => {
         ).json()
     ).venue[0].id;
     // Use venue ID to get recent setlists
-    const venueSetlists = await (
+    const setlists = await (
         await fetch(
             `https://api.setlist.fm/rest/1.0/venue/${venueID}/setlists?p=1`,
             {
@@ -69,7 +72,10 @@ router.get('/venue/:input', async (req, res) => {
         )
     ).json();
     // Send setlist body back
-    res.send(venueSetlists);
+    res.render('setlist-info', {
+        setlists,
+        venueType: true,
+    });
 });
 
 // Exports

@@ -9,7 +9,7 @@
     {{#if setlistType}}
         <div id="general-info-container">
             <p id="artist-name">
-                Artist: {{artistSetlists.setlist.[0].artist.name}}
+                Artist: {{setlists.setlist.[0].artist.name}}
             </p>
             <p>Recent Concerts</p>
         </div>
@@ -23,7 +23,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{#each artistSetlists.setlist}}
+                    {{#each setlists.setlist}}
                         {{>setlist-card}}
                     {{/each}}
                 </tbody>

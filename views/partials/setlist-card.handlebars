@@ -1,13 +1,25 @@
-<tr class='border-b'>
-    <td class='p-2 text-center'><a
-            class='text-sky-400'
-            href='{{url}}'
-            target='_blank'
-        >{{eventDate}}</a></td>
-    <td class='p-2 text-center'>{{venue.name}}</td>
-    <td class='p-2 text-center'>{{tour.name}}</td>
-</tr>
-
+{{#if artistType}}
+    <tr class='border-b'>
+        <td class='p-2 text-center'><a
+                class='text-sky-400'
+                href='{{url}}'
+                target='_blank'
+            >{{eventDate}}</a></td>
+        <td class='p-2 text-center'>{{venue.name}}</td>
+        <td class='p-2 text-center'>{{tour.name}}</td>
+    </tr>
+{{/if}}
+{{#if venueType}}
+    <tr class='border-b'>
+        <td class='p-2 text-center'>{{artist.name}}</td>
+        <td class='p-2 text-center'><a
+                class='text-sky-400'
+                href='{{url}}'
+                target='_blank'
+            >{{eventDate}}</a></td>
+        <td class='p-2 text-center'>{{tour.name}}</td>
+    </tr>
+{{/if}}
 {{! 
 Setlist info is returned as follows:
 
