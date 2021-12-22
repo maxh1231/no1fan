@@ -1,9 +1,13 @@
 <tr class='border-b'>
-    <td class='p-2 text-center'><a
-            class='text-sky-400'
-            href='{{url}}'
-            target='_blank'
-        >{{performers.0.name}}</a></td>
+    <td class='p-2 text-center'>
+        <a class='text-sky-400' href='{{url}}' target='_blank'>
+            {{#if artistType}}
+                {{venue.city}}
+            {{/if}}
+            {{#if locationType}}
+                {{performers.0.name}}
+            {{/if}}
+        </a></td>
     <td class='p-2 text-center'>{{datetime_utc}}</td>
     <td class='p-2 text-center'>{{venue.name_v2}}</td>
 </tr>

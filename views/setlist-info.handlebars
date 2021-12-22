@@ -2,53 +2,52 @@
 {{> nav}}
 
 {{!-- Content --}}
-<h1 id="dashboard-header">Concert Info</h1>
+<h1 id="dashboard-header">Past Concert Info</h1>
 <section id="concert-div">
-        <div id="general-info-container">
-            {{#if artistType}}    
-                <p id="artist-name">
-                    Artist: {{setlists.setlist.[0].artist.name}}
-                </p>
+    <div id="general-info-container">
+        {{#if artistType}}    
+            <p id="artist-name">
+                Artist: {{setlists.setlist.[0].artist.name}}
+            </p>
+        {{/if}}
+        {{#if venueType}}    
+            <p id="venue-name">
+                Venue: {{setlists.setlist.[0].venue.name}}
+            </p>
+        {{/if}}
+    </div>
+    <div id="concert-info-container">
+        <table class="table-fixed w-full" id="concerts-table">
+            {{#if artistType}}
+                <thead>
+                    <tr class="bg-gray-400 h-10">
+                        <th>Date</th>
+                        <th>Venue</th>
+                        <th>Tour</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each setlists.setlist}}
+                        {{>setlist-card artistType="true"}}
+                    {{/each}}
+                </tbody>
             {{/if}}
-            {{#if venueType}}    
-                <p id="venue-name">
-                    Venue: {{setlists.setlist.[0].venue.name}}
-                </p>
+            {{#if venueType}}
+                <thead>
+                    <tr class="bg-gray-400 h-10">
+                        <th>Artist</th>
+                        <th>Date</th>
+                        <th>Tour</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each setlists.setlist}}
+                        {{>setlist-card venueType="true"}}
+                    {{/each}}
+                </tbody>
             {{/if}}
-            <p>Recent Concerts</p>
-        </div>
-        <div id="concert-info-container">
-            <table class="table-fixed w-full" id="concerts-table">
-                {{#if artistType}}
-                    <thead>
-                        <tr class="bg-gray-400 h-10">
-                            <th>Date</th>
-                            <th>Venue</th>
-                            <th>Tour</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{#each setlists.setlist}}
-                            {{>setlist-card artistType="true"}}
-                        {{/each}}
-                    </tbody>
-                {{/if}}
-                {{#if venueType}}
-                    <thead>
-                        <tr class="bg-gray-400 h-10">
-                            <th>Artist</th>
-                            <th>Date</th>
-                            <th>Tour</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{#each setlists.setlist}}
-                            {{>setlist-card venueType="true"}}
-                        {{/each}}
-                    </tbody>
-                {{/if}}
-            </table>
-        </div>
+        </table>
+    </div>
 </section>
 
 {{!-- JS link --}}

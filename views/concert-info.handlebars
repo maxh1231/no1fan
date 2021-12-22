@@ -2,38 +2,33 @@
 {{> nav}}
 
 {{!-- Content --}}
-<h1 id="dashboard-header">Concert Info</h1>
+<h1 id="dashboard-header">Upcoming Concert Info</h1>
 
 <section id="concert-div">
-    {{!-- If template is being populated from Setlist.FM call --}}
-    {{#if setlistType}}
-        <div id="general-info-container">
+    <div id="general-info-container">
+        {{#if artistType}}    
             <p id="artist-name">
-                Artist: {{setlists.setlist.[0].artist.name}}
+                Artist: {{concerts.events.[0].performers.[0].name}}
             </p>
-            <p>Recent Concerts</p>
-        </div>
-        <div id="concert-info-container">
-            <table class="table-fixed w-full" id="concerts-table">
+        {{/if}}
+    </div>
+    <div id="concert-info-container">
+        <table class="table-fixed w-full" id="concerts-table">
+            {{#if artistType}}
                 <thead>
                     <tr class="bg-gray-400 h-10">
+                        <th>City</th>
                         <th>Date</th>
                         <th>Venue</th>
-                        <th>Tour</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {{#each setlists.setlist}}
-                        {{>setlist-card}}
+                    {{#each concerts.events}}
+                        {{>concert-card artistType="true"}}
                     {{/each}}
                 </tbody>
-            </table>
-        </div>
-    {{/if}}
-    {{!-- If template is being populated from SeatGeek call --}}
-    {{#if seatGeekType}}
-        <div id="concert-info-container">
-            <table class="table-fixed w-full" id="concerts-table">
+            {{/if}}
+            {{#if locationType}}
                 <thead>
                     <tr class="bg-gray-400 h-10">
                         <th>Artist</th>
@@ -43,12 +38,12 @@
                 </thead>
                 <tbody>
                     {{#each concerts.events}}
-                        {{>concert-card}}
+                        {{>concert-card locationType="true"}}
                     {{/each}}
                 </tbody>
-            </table>
-        </div>
-    {{/if}}
+            {{/if}}
+        </table>
+    </div>
 </section>
 
 {{!-- JS link --}}
