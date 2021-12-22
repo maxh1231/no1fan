@@ -35,12 +35,26 @@
                     {{> track-card}}
                 {{/each}}
             </tbody>
-        </table>
+            </table>
         </div>
     </section>
 
     <section>
-        <div id="location-container">
+        <div id="location-container" class="m-2">
+            <table class="table-auto w-full">
+            <thead>
+                <tr class="bg-gray-400 h-10">
+                    <th>Artist</th>
+                    <th>Venue</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each shows.events}}
+                    {{> show-card}}
+                {{/each}}
+            </tbody>
+            </table>
         </div>
     </section>
 

@@ -13,7 +13,10 @@ module.exports = {
             return `${min}:${sec}`;
         }
     },
-    format_date: release_date => {
-        return moment(release_date).format("MM-DD-YYYY");
+    format_date: date => {
+        if (date.length === 10) {
+            return moment(date).format("MM-DD-YYYY")
+        } 
+        return moment(date).format("MM-DD-YYYY h:mma");
     }
 }
