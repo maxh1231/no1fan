@@ -1,9 +1,6 @@
 const router = require('express').Router();
 const fetch = require('node-fetch');
 
-
-
-
 // renders the artist info page 
 // info/artist
 router.use('/:id', async (req, res) => {

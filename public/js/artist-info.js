@@ -1,3 +1,4 @@
+// function to get tracklist from an album 
 const getTracks = (evt) => {
     evt.preventDefault();
     let current = '';
@@ -9,6 +10,7 @@ const getTracks = (evt) => {
     document.location.assign(`/info/album/${current}`);
 }
 
+// function to get a random recommended artist
 const getRecommended = (evt) => {
     evt.preventDefault();
     let recommended = '';
@@ -23,6 +25,7 @@ const getRecommended = (evt) => {
     
 }
 
+// code for the carousel display
 document.querySelectorAll(".carousel").forEach((carousel) => {
     // sees how many items we have 
     const items = carousel.querySelectorAll(".carousel__item");
