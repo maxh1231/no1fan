@@ -10,6 +10,8 @@ let favBtnDeactive = function () {
     btn.classList.add('deactive');
 }
 
+
+// Post favorite
 let postDB = async (req, res) => {
     let url = window.location.pathname;
     let album_id = url.replace(/^\D+/g, '')
@@ -29,9 +31,28 @@ let postDB = async (req, res) => {
     console.log(postData);
 }
 
+// Delete favorite
+let deleteDB = async (req, res) => {
+    let url = window.location.pathname;
+    let album_id = url.replace(/^\D+/g, '')
+    const response = await fetch('/api/albumfavorites', {
+        method: 'DELETE',
+        headers: {
+            'Accept': 'application.json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            album_id: album_id,
+        })
+    });
+    const postData = await response.json();
+    console.log(postData);
+}
+
 btn.addEventListener('click', function () {
     if (btn.classList.contains('active')) {
         favBtnDeactive();
+        deleteDB();
     } else {
         favBtnActive();
         postDB();

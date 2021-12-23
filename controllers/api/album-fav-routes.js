@@ -35,10 +35,11 @@ router.post('/', (req, res) => {
         });
 })
 
-router.delete('/:id', (req, res) => {
+router.delete('/', (req, res) => {
     AlbumFavorites.destroy({
         where: {
-            id: req.params.id
+            user_id: req.session.user_id,
+            album_id: req.body.album_id
         }
     })
         .then(favorites => {
