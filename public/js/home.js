@@ -8,7 +8,8 @@ const getInfo = (evt) => {
     evt.preventDefault();
     let current = '';
     if (evt.target.id === 'artist-card') {
-        current = evt.target.childNodes[1].innerText;
+        current = evt.target.childNodes[1]
+          artist.innerText = data.events[i].title;
     } else {
         current = evt.target.parentElement.childNodes[1].innerText;
     }
