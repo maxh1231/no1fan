@@ -4,10 +4,10 @@
 <div id="artist-wrapper" class="flex justify-between p-2 m-2">
     <div id="artist-info">
         <span id="artist-pic"><img src="{{picture}}" class="rounded-full"></span>
-        <h3>{{name}}</h3>
+        <h3 class="text-center">{{name}}</h3>
     </div>
     <div id = "artist-bio">
-        {{artistBio.artist.bio.summary}}
+        {{{artistBio.artist.bio.summary}}}
     </div>
 
     
@@ -16,15 +16,13 @@
 
 
 
-    <div id="discography-wrapper" class="flex p-2 m-2">
-        {{#each artistAlbums.data}}
-        {{> album-card small='true'}}
-        {{/each}}
+    
+
+        {{> carousel}}
         
 
 
 
-    </div>
 
   
 
@@ -40,4 +38,4 @@
     </div>
 
     <script src="/js/artist-info.js"></script>
-    <script src="/js/carousel.js"></script>
+    
