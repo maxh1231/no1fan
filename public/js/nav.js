@@ -1,16 +1,16 @@
 const home = (evt) => {
     evt.preventDefault();
-    document.location.replace('/');
+    document.location.assign('/');
 }
 
 const login = (evt) => {
     evt.preventDefault();
-    document.location.replace('/login');
+    document.location.assign('/login');
 }
 
 const signup = (evt) => {
     evt.preventDefault();
-    document.location.replace('/signup');
+    document.location.assign('/signup');
 }
 
 const logout = async () => {
@@ -21,7 +21,7 @@ const logout = async () => {
         alert(response.statusText);  // TODO: Remove this alert before pushing!!
         return;
     }
-    document.location.replace('/');
+    document.location.assign('/');
 }
 
 // const dashboard = (evt) => {

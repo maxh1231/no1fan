@@ -1,0 +1,5 @@
+<div id="artist-card" class="m-2 p-2 border cursor-pointer">
+    <div id="artist-id" class="hidden">{{id}}</div>
+    <img id="artist-img" src="{{#if medium}}{{picture_medium}}{{else}}{{picture_small}}{{/if}}" class="{{#if round}}rounded-full{{else}}rounded-md{{/if}} m-auto">
+    <div id="artist-name" class="text-center">{{name}}</div>
+</div>

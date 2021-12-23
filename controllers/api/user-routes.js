@@ -1,21 +1,31 @@
 const router = require('express').Router();
 const { Sequelize } = require('sequelize/dist');
-const { User } = require('../../models');
+const { User, ArtistFavorites, AlbumFavorites } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // findAll
 router.get('/', async (req, res) => {
     try {
         const response = await User.findAll({
-            attributes: { exclude: ['password'] }
+            attributes: { exclude: ['password'] },
+            include: [
+                {
+                    model: ArtistFavorites,
+                    attributes: ['id', 'artist_id', 'artist_name', 'user_id']
+                },
+                {
+                    model: AlbumFavorites,
+                    attributes: ['id', 'album_id', 'album_name', 'user_id']
+                }
+            ]
         });
         if (response.length === 0) {
-            res.status(204).json({ message: 'No users found!'});
+            res.status(204).json({ message: 'No users found!' });
         } else {
             res.json(response);
         }
     }
-    catch(err) {
+    catch (err) {
         res.status(500).json(err);
     }
 });
@@ -25,15 +35,25 @@ router.get('/:id', async (req, res) => {
     try {
         const response = await User.findOne({
             where: { id: req.params.id },
-            attributes: { exclude: ['password'] }
+            attributes: { exclude: ['password'] },
+            include: [
+                {
+                    model: ArtistFavorites,
+                    attributes: ['id', 'artist_id', 'artist_name', 'user_id']
+                },
+                {
+                    model: AlbumFavorites,
+                    attributes: ['id', 'album_id', 'album_name', 'user_id']
+                }
+            ]
         });
         if (!response) {
-            res.status(204).json({ message: 'No user found with that ID!'});
+            res.status(204).json({ message: 'No user found with that ID!' });
         } else {
             res.json(response);
         }
     }
-    catch(err) {
+    catch (err) {
         res.status(500).json(err);
     }
 });
@@ -47,13 +67,14 @@ router.post('/', async (req, res) => {
             password: req.body.password,
         });
         req.session.save(() => {
-            req.session.id = response.id;
+            req.session.user_id = response.id;
             req.session.email = response.email
             req.session.username = response.username;
+            req.session.loggedIn = true;
             res.json({ user: response.username, message: 'Login Successful!' });
         });
     }
-    catch(err) {
+    catch (err) {
         if (err instanceof Sequelize.UniqueConstraintError) {
             const uniqueErr = err.errors[0].path;
             res.status(409).json({ error: uniqueErr });
@@ -70,9 +91,9 @@ router.put('/:id', async (req, res) => {
             individualHooks: true,
             where: { id: req.params.id },
         });
-        res.json( {user: response.username, message: 'Update Successful!'});
+        res.json({ user: response.username, message: 'Update Successful!' });
     }
-    catch(err) {
+    catch (err) {
         res.status(500).json(err);
     }
 });
@@ -85,22 +106,22 @@ router.post('/login', async (req, res) => {
             attributes: { exclude: ['password'] }
         });
         if (!response) {
-            res.status(401).json({ message: 'Invalid Email!'});
+            res.status(401).json({ message: 'Invalid Email!' });
             return;
         }
         const validPassword = response.checkPassword(req.body.password);
         if (!validPassword) {
-            res.status(401).json({ message: 'Invalid Password!'});
+            res.status(401).json({ message: 'Invalid Password!' });
             return;
         }
         req.session.save(() => {
             req.session.username = response.username;
-            req.session.id = response.id;
+            req.session.user_id = response.id;
             req.session.loggedIn = true;
             res.json(response);
         });
     }
-    catch(err) {
+    catch (err) {
         res.status(500).json(err);
     }
 });
@@ -115,7 +136,7 @@ router.post('/logout', (req, res) => {
             res.status(200).end();
         });
     }
-    catch(err) {
+    catch (err) {
         res.status(500).json(err);
     }
 });
@@ -132,7 +153,7 @@ router.delete('/:id', async (req, res) => {
         }
         res.json(response);
     }
-    catch(err) {
+    catch (err) {
         res.status(500).json(err);
     }
 });

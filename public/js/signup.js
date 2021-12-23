@@ -1,8 +1,8 @@
 const signupFormHandler = async (evt) => {
     evt.preventDefault();
     const toggleErrMsg = (target) => {
-        document.querySelector(target).classList.remove('display-none');
-        setTimeout(() => { document.querySelector(target).classList.add('display-none') }, 2000);
+        document.querySelector(target).classList.remove('hidden');
+        setTimeout(() => {document.querySelector(target).classList.add('hidden')}, 2000);
     };
     const email = document.querySelector('#email-input').value.trim();
     const username = document.querySelector('#username-input').value.trim(); 
@@ -25,8 +25,7 @@ const signupFormHandler = async (evt) => {
         if (!errMsg.error) {
             toggleErrMsg('#err-msg');
             return;
-        }
-        if (errMsg.error === 'email') {
+        } else if (errMsg.error === 'email') {
             toggleErrMsg('#err-msg2');
             return;
         } else {

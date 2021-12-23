@@ -1,18 +1,17 @@
 const router = require('express').Router();
 const fetch = require('node-fetch');
-let albumID = '103248';
+
 
 
 // renders the tracklist for album with hardcoded info
-router.get('/', async (req, res) => {
+router.get('/:id', async (req, res) => {
+    let albumID = req.params.id;
     const response = await fetch(`https://api.deezer.com/album/${albumID}/`)
     if (!response.ok) {
         alert(response.statusText)
     } else {
         const data = await response.json();
-        // console.log(data);
-        console.log(data.tracks)
-        res.render('tracklist', { data });
+        res.render('album-info', { data, loggedIn: req.session.loggedIn });
     }
 });
 
