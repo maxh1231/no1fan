@@ -22,8 +22,12 @@
             <span id="album-duration"> {{data.duration}} mins -</span>
             <span id="date">{{ format_date data.release_date}}</span>
         </div>
+        {{#if loggedIn}}
+        <div>
+            <img src="/assets/fav.svg" alt="" class="deactive" id="favBtn">
+        </div>
+        {{/if}}
     </div>
-
 </section>
 
 <section id="album-tracklist">

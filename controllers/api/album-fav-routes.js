@@ -4,7 +4,7 @@ const { AlbumFavorites, ArtistFavorites } = require('../../models');
 router.get('/', (req, res) => {
     AlbumFavorites.findAll({
         where: {
-            user_id: req.session.id
+            user_id: req.session.user_id
         },
         attributes: [
             'id',
@@ -24,7 +24,7 @@ router.post('/', (req, res) => {
     AlbumFavorites.create({
         album_id: req.body.album_id,
         album_name: req.body.album_name,
-        user_id: req.session.id
+        user_id: req.session.user_id
 
     })
 
@@ -35,10 +35,11 @@ router.post('/', (req, res) => {
         });
 })
 
-router.delete('/:id', (req, res) => {
+router.delete('/', (req, res) => {
     AlbumFavorites.destroy({
         where: {
-            id: req.params.id
+            user_id: req.session.user_id,
+            album_id: req.body.album_id
         }
     })
         .then(favorites => {
