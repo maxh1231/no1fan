@@ -23,7 +23,6 @@ let postDB = async (req, res) => {
         body: JSON.stringify({
             album_id: album_id,
             album_name: album_name,
-            user_id: 1
         })
     });
     const postData = await response.json();

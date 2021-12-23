@@ -24,7 +24,7 @@ router.post('/', (req, res) => {
     AlbumFavorites.create({
         album_id: req.body.album_id,
         album_name: req.body.album_name,
-        user_id: req.session.id
+        user_id: req.session.user_id
 
     })
 

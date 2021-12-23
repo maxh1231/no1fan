@@ -7,7 +7,7 @@ User.hasMany(ArtistFavorites, {
 })
 
 ArtistFavorites.belongsTo(User, {
-    foreignKey: 'id'
+    foreignKey: 'user_id'
 })
 
 User.hasMany(AlbumFavorites, {
@@ -15,7 +15,7 @@ User.hasMany(AlbumFavorites, {
 })
 
 AlbumFavorites.belongsTo(User, {
-    foreignKey: 'id'
+    foreignKey: 'user_id'
 })
 
 module.exports = { User, ArtistFavorites, AlbumFavorites };
