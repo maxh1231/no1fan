@@ -12,8 +12,14 @@ router.use('/:id', async (req, res) => {
     // gets artist info
     const artistResponse = await fetch(`https://api.deezer.com/artist/${artistID}`);
     const artistName = await artistResponse.json();
+<<<<<<< HEAD
 
 
+=======
+    console.log(artistName);
+    
+    
+>>>>>>> develop
     // gets album info
     const albumResponse = await fetch(`https://api.deezer.com/artist/${artistID}/albums`);
     const artistAlbums = await albumResponse.json();
@@ -24,6 +30,7 @@ router.use('/:id', async (req, res) => {
     let searchName = artistName.name;
     const artistBioResponse = await fetch(`https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${searchName}&api_key=0b84f9d0c28085fc5510cb51682d69de&format=json`);
     const artistBio = await artistBioResponse.json();
+<<<<<<< HEAD
     console.log(artistBio.artist.bio.summary);
 
 
@@ -36,12 +43,23 @@ router.use('/:id', async (req, res) => {
 
 
 
+=======
+ 
+    // pulls recommended artists into an array
+    let recommendedArray = [];
+    for (let i = 0; i < recommended.data.length; i++) {
+        recommendedArray.push(recommended.data[i]);    
+>>>>>>> develop
     }
     // selects a random recommended artist from the array
     const myRecommendation = recommendedArray[Math.floor(Math.random() * recommendedArray.length)];
 
     // passes data to handle bars to render in html 
+<<<<<<< HEAD
     const artistData = { name: artistName.name, picture: artistName.picture_medium, Shows: 'Awesome Shows', myRecommendation: myRecommendation, artistAlbums, artistBio: artistBio };
+=======
+    const artistData = {name: artistName.name, picture: artistName.picture_big, Shows: 'Awesome Shows', myRecommendation: myRecommendation, artistAlbums, artistBio: artistBio};
+>>>>>>> develop
     res.render('artist-info', artistData);
 
 
