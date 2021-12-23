@@ -67,7 +67,7 @@ router.post('/', async (req, res) => {
             password: req.body.password,
         });
         req.session.save(() => {
-            req.session.id = response.id;
+            req.session.user_id = response.id;
             req.session.email = response.email
             req.session.username = response.username;
             req.session.loggedIn = true;
@@ -116,7 +116,7 @@ router.post('/login', async (req, res) => {
         }
         req.session.save(() => {
             req.session.username = response.username;
-            req.session.id = response.id;
+            req.session.user_id = response.id;
             req.session.loggedIn = true;
             res.json(response);
         });
