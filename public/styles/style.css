@@ -476,6 +476,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 2rem;
 }
 
+.mt-4 {
+  margin-top: 1rem;
+}
+
 .block {
   display: block;
 }
@@ -651,4 +655,51 @@ Ensure the default browser behavior of the `hidden` attribute.
   cursor: pointer;
 }
 
+.carousel__item--selected {
+  display: block;
+}
 
+/* carousel style start */
+
+.carousel {
+  position: relative;
+}
+
+.carousel-display-item {
+  height: 500px;
+  width: 100%;
+  background: white;
+  padding: 1em;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  font-size: 2em;
+  color: black;
+  display: none;
+}
+
+.carousel-display-item-selected {
+  display: block;
+}
+
+.carousel-navigation {
+  width: 100%;
+  padding: 20px 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+.carousel-button {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-color: rgba(99, 17, 17, 0.2);
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.carousel-button-selected {
+  background-color: rgba(99, 17, 17, 0.5);
+}

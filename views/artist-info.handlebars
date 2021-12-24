@@ -2,11 +2,16 @@
 
 
 <div id="artist-wrapper" class="flex justify-between items-center p-2 m-2 space-x-4">
-    <div id="artist-info">
+    <div id="artist-info mt-4">
         <div id="artist-pic"><img src="{{picture}}" class="rounded-full"></div>
         <h3 class="text-center text-xl font-bold m-2">{{name}}</h3>
+         {{#if loggedIn}}
+        <div>
+            <img src="/assets/fav.svg" alt="" class="deactive" id="favBtn">
+        </div>
+        {{/if}}
     </div>
-    <div id = "artist-bio" class="m-3 text-center">
+    <div id = "artist-bio" class="m-3 text-center font-bold">
         {{{artistBio.artist.bio.summary}}}
     </div>
 
