@@ -1,10 +1,10 @@
 <div class="carousel">
-    <h2 class="text-center">Albums</h2>
+    <h5 class="text-center text-xl font-bold m-2">Albums</h5>
     <div id="discography-wrapper">
     <!-- Need to dynamically create divs for the album cards -->
     {{#each artistAlbums.data}}
-    <div class="carousel__item">
-        {{>album-card small="true"}}
+    <div class="carousel-display-item">
+        {{>carousel-card}}
     </div>
     
     {{/each}}

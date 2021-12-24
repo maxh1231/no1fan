@@ -432,6 +432,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin: 0.5rem;
 }
 
+.m-3 {
+  margin: 0.75rem;
+}
+
 .m-1 {
   margin: 0.25rem;
 }
@@ -542,8 +546,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   align-items: center;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .justify-between {
   justify-content: space-between;
+}
+
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .rounded-full {
@@ -620,49 +634,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(56 189 248 / var(--tw-text-opacity));
 }
 
-/* carousel style start */
-
-.carousel {
-  position: relative;
+.deactive {
+  filter: invert(49%) sepia(4%) saturate(4%) hue-rotate(322deg) brightness(101%) contrast(88%);
 }
 
-.carousel__item {
-  height: 500px;
-  width: 100%;
-  background: white;
-  padding: 1em;
-  font-family: "Quicksand", sans-serif;
-  font-weight: bold;
-  font-size: 2em;
-  color: black;
-  display: none;
+.active {
+  filter: invert(41%) sepia(65%) saturate(6599%) hue-rotate(345deg) brightness(101%) contrast(106%);
 }
 
-.carousel__item--selected {
-    display: block;
-
+#favBtn {
+  width: 50px;
+  height: 50px;
 }
 
-.carousel__nav {
-  width: 100%;
-  padding: 20px 0;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  text-align: center;
-
+#favBtn:hover {
+  cursor: pointer;
 }
 
-.carousel__button {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-color: rgba(99, 17, 17, 0.2);
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-}
 
-.carousel__button--selected {
-    background-color: rgba(99, 17, 17, 0.5);
-}
