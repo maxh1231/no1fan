@@ -657,11 +657,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(148 1 16 / var(--tw-border-opacity));
 }
 
-.border-red {
-  --tw-border-opacity: 1;
-  border-color: rgb(218 0 55 / var(--tw-border-opacity));
-}
-
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(102 102 102 / var(--tw-border-opacity));
@@ -687,14 +682,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(34 34 34 / var(--tw-bg-opacity));
 }
 
-.bg-gray-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(102 102 102 / var(--tw-bg-opacity));
-}
-
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(23 23 23 / var(--tw-bg-opacity));
+}
+
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(102 102 102 / var(--tw-bg-opacity));
 }
 
 .p-2 {
@@ -715,6 +710,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .p-1\.5 {
   padding: 0.375rem;
+}
+
+.text-left {
+  text-align: left;
 }
 
 .text-center {
@@ -817,19 +816,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgba(148, 1, 16, 0.8);
 }
 
-.placeholder\:text-gray-100::-moz-placeholder {
+.placeholder\:text-gray-300::-moz-placeholder {
   --tw-text-opacity: 1;
-  color: rgb(153 153 153 / var(--tw-text-opacity));
+  color: rgb(68 68 68 / var(--tw-text-opacity));
 }
 
-.placeholder\:text-gray-100:-ms-input-placeholder {
+.placeholder\:text-gray-300:-ms-input-placeholder {
   --tw-text-opacity: 1;
-  color: rgb(153 153 153 / var(--tw-text-opacity));
+  color: rgb(68 68 68 / var(--tw-text-opacity));
 }
 
-.placeholder\:text-gray-100::placeholder {
+.placeholder\:text-gray-300::placeholder {
   --tw-text-opacity: 1;
-  color: rgb(153 153 153 / var(--tw-text-opacity));
+  color: rgb(68 68 68 / var(--tw-text-opacity));
 }
 
 .active\:bg-black:active {
