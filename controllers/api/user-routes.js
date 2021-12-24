@@ -102,8 +102,7 @@ router.put('/:id', async (req, res) => {
 router.post('/login', async (req, res) => {
     try {
         const response = await User.findOne({
-            where: { email: req.body.email, },
-            attributes: { exclude: ['password'] }
+            where: { email: req.body.email, }
         });
         if (!response) {
             res.status(401).json({ message: 'Invalid Email!' });
