@@ -3,7 +3,7 @@
 <main class="flex justify-between">
     
     <section id="top-artists" class="m-2 w-1/3 inline-block">
-        <h2 class="text-xl font-bold text-center">Top 10 Artists!</h2>
+        <h2 class="text-xl font-bold text-center m-2">Top 10 Artists!</h2>
         <div id="top-artist-container" class="h-[700px] m-auto w-fit p-5 overflow-y-auto overflow-x-hidden">
             {{#each topArtists.data}}
                 {{> artist-card medium='true'}}
@@ -12,7 +12,7 @@
     </section>
 
     <section id="top-track-container" class="m-3 w-1/3 inline-block">
-        <h2 class="text-xl font-bold text-center">Top 5 Tracks!</h2>
+        <h2 class="text-xl font-bold text-center m-2">Top 5 Tracks!</h2>
         <div id="top-track-container" class="">
             <table class="table-auto w-full">
             <thead>
@@ -32,7 +32,7 @@
     </section>
 
     <section id="upcoming-shows-container" class="m-3 w-1/3">
-        <h2 class="text-xl font-bold text-center">Upcoming concerts in your area!</h2>
+        <h2 class="text-xl font-bold text-center m-2">Upcoming concerts in your area!</h2>
         <div id="location-container" class="m-2">
             <table class="table-auto w-full">
             <thead>
