@@ -1,8 +1,8 @@
-const search = (evt) => {
-    evt.preventDefault();
-    const input = document.querySelector('#home-search-input').value.trim();
-    document.location.assign(`/info/search/${input}`)
-}
+// const search = (evt) => {
+//     evt.preventDefault();
+//     const input = document.querySelector('#home-search-input').value.trim();
+//     document.location.assign(`/info/search/${input}`)
+// }
 
 const getInfo = (evt) => {
     evt.preventDefault();
@@ -17,4 +17,4 @@ const getInfo = (evt) => {
 }
 
 document.querySelector('#top-artist-container').addEventListener('click', getInfo);
-document.querySelector('#home-search-form').addEventListener('submit', search);
+// document.querySelector('#home-search-form').addEventListener('submit', search);
