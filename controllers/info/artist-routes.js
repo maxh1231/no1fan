@@ -34,7 +34,7 @@ router.use('/:id', async (req, res) => {
 
     // passes data to handle bars to render in html 
     const artistData = { name: artistName.name, picture: artistName.picture_big, Shows: 'Awesome Shows', myRecommendation: myRecommendation, artistAlbums, artistBio: artistBio, recommendedArray };
-    res.render('artist-info', artistData);
+    res.render('artist-info', {  name: artistName.name, picture: artistName.picture_big, Shows: 'Awesome Shows', myRecommendation: myRecommendation, artistAlbums, artistBio: artistBio, recommendedArray, loggedIn: req.session.loggedIn });
 
 
 });
