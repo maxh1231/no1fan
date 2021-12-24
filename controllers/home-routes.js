@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const fetch = require('node-fetch');
-const navigator = require('navigator');
 
 // get home
 router.get('/', async (req, res) => {
