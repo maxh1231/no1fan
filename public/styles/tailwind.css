@@ -20,10 +20,7 @@
     cursor: pointer;
 }
 
-.carousel__item--selected {
-    display: block;
 
-}
 /* carousel style start */
 
 .carousel {
@@ -33,7 +30,7 @@
   .carousel-display-item {
     height: 550px;
     width: 100%;
-    background: white;
+    background: #999999;
     padding: 1em;
     font-family: "Quicksand", sans-serif;
     font-weight: bold;
@@ -61,12 +58,12 @@
     width: 20px;
     height: 20px;
     display: inline-block;
-    background-color: rgba(99, 17, 17, 0.2);
+    background-color: rgba(148, 1, 16, 0.5);
     border-radius: 50%;
     margin: 0 5px;
     cursor: pointer;
   }
   
   .carousel-button-selected {
-    background-color: rgba(99, 17, 17, 0.5);
+    background-color: rgba(148, 1, 16, 0.8);
   }

@@ -11,6 +11,7 @@ module.exports = {
                     200: '#444444'
                 },
                 'red': '#DA0037',
+                'red-dark': '#940110',
                 'white': '#EDEDED',
             },
             width: {
