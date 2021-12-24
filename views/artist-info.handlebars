@@ -1,12 +1,12 @@
 {{> nav}}
 
 
-<div id="artist-wrapper" class="flex justify-between p-2 m-2">
+<div id="artist-wrapper" class="flex justify-between items-center p-2 m-2 space-x-4">
     <div id="artist-info">
-        <span id="artist-pic"><img src="{{picture}}" class="rounded-full"></span>
+        <div id="artist-pic"><img src="{{picture}}" class="rounded-full"></div>
         <h3 class="text-center">{{name}}</h3>
     </div>
-    <div id = "artist-bio">
+    <div id = "artist-bio" class="m-3 text-center">
         {{{artistBio.artist.bio.summary}}}
     </div>
 
@@ -17,19 +17,22 @@
 
 
     
-
+<div id="main-carousel-div">
         {{> carousel}}
         
 
-
+</div>
 
 
   
 
    
-
-    <div id="recommended-wrapper">
+    <h5 class="text-center">If you like {{name}} , you might like these artists</h5>
+    <div id="recommended-wrapper" class="flex">
+        
+        {{#each recommendedArray}}
        {{> recommended-artist-card}}
+       {{/each}}
     </div>
 
      <div id="show-wrapper">
