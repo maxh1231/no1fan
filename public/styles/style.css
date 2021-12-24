@@ -432,6 +432,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin: 0.5rem;
 }
 
+.m-3 {
+  margin: 0.75rem;
+}
+
 .m-1 {
   margin: 0.25rem;
 }
@@ -542,8 +546,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   align-items: center;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .justify-between {
   justify-content: space-between;
+}
+
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .rounded-full {
@@ -619,4 +633,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(56 189 248 / var(--tw-text-opacity));
 }
+
+.deactive {
+  filter: invert(49%) sepia(4%) saturate(4%) hue-rotate(322deg) brightness(101%) contrast(88%);
+}
+
+.active {
+  filter: invert(41%) sepia(65%) saturate(6599%) hue-rotate(345deg) brightness(101%) contrast(106%);
+}
+
+#favBtn {
+  width: 50px;
+  height: 50px;
+}
+
+#favBtn:hover {
+  cursor: pointer;
+}
+
 
