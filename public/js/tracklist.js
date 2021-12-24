@@ -9,8 +9,6 @@ let favBtnDeactive = function () {
     btn.classList.remove('active');
     btn.classList.add('deactive');
 }
-
-
 // Post favorite
 let postDB = async (req, res) => {
     let url = window.location.pathname;
@@ -30,7 +28,6 @@ let postDB = async (req, res) => {
     const postData = await response.json();
     console.log(postData);
 }
-
 // Delete favorite
 let deleteDB = async (req, res) => {
     let url = window.location.pathname;
