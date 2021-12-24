@@ -507,6 +507,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 700px;
 }
 
+.h-\[325px\] {
+  height: 325px;
+}
+
 .w-full {
   width: 100%;
 }
@@ -563,6 +567,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
 .overflow-y-auto {
   overflow-y: auto;
 }
@@ -616,6 +624,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .p-3 {
   padding: 0.75rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
 }
 
 .text-center {
