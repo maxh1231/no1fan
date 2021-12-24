@@ -35,7 +35,7 @@ router.use('/:id', async (req, res) => {
             `https://api.seatgeek.com/2/events?performers.slug=${searchName.replace(
                 ' ',
                 '-'
-            )}&per_page=25&client_id=${
+            )}&per_page=10&client_id=${
                 process.env.SEATGEEK_CLIENT_ID
             }&client_secret=${process.env.SEATGEEK_SECRET}`
         )

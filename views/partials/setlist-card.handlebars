@@ -4,9 +4,9 @@
                 class='text-sky-400'
                 href='{{url}}'
                 target='_blank'
-            >{{eventDate}}</a></td>
+            >{{venue.city.name}}</a></td>
         <td class='p-2 text-center'>{{venue.name}}</td>
-        <td class='p-2 text-center'>{{tour.name}}</td>
+        <td class='p-2 text-center'>{{eventDate}}</td>
     </tr>
 {{/if}}
 {{#if venueType}}
