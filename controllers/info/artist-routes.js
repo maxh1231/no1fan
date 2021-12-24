@@ -1,9 +1,6 @@
 const router = require('express').Router();
 const fetch = require('node-fetch');
 
-
-
-
 // renders the artist info page 
 // info/artist
 router.use('/:id', async (req, res) => {
@@ -31,11 +28,12 @@ router.use('/:id', async (req, res) => {
     for (let i = 0; i < recommended.data.length; i++) {
         recommendedArray.push(recommended.data[i]);
     }
+    
     // selects a random recommended artist from the array
     const myRecommendation = recommendedArray[Math.floor(Math.random() * recommendedArray.length)];
 
     // passes data to handle bars to render in html 
-    const artistData = { name: artistName.name, picture: artistName.picture_big, Shows: 'Awesome Shows', myRecommendation: myRecommendation, artistAlbums, artistBio: artistBio };
+    const artistData = { name: artistName.name, picture: artistName.picture_big, Shows: 'Awesome Shows', myRecommendation: myRecommendation, artistAlbums, artistBio: artistBio, recommendedArray };
     res.render('artist-info', artistData);
 
 
