@@ -431,6 +431,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin: 0.5rem;
 }
 
+.m-3 {
+  margin: 0.75rem;
+}
+
 .m-1 {
   margin: 0.25rem;
 }
@@ -545,8 +549,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   align-items: center;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .justify-between {
   justify-content: space-between;
+}
+
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .rounded-full {
@@ -638,4 +652,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 #favBtn:hover {
   cursor: pointer;
+<<<<<<< HEAD
 }
+=======
+}
+
+
+>>>>>>> develop
