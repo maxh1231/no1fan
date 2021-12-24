@@ -13,9 +13,9 @@
         </div>
         {{/if}}
 
-        <div id="title" class="mb-8">{{data.title}}</div>
-        <div id="artist-name" class="mb-8">
-            <a href="/info/artist/">{{data.artist.name}}</a>
+        <div id="title" class="text-4xl mb-8">{{data.title}}</div>
+        <div id="artist-name" class="text-xl mb-8">
+            <a href="/info/artist/" class="no-underline hover:underline">{{data.artist.name}}</a>
         </div>
         <div id="album-info">
             <span id="track-amount">{{data.nb_tracks}} tracks -</span>
@@ -23,15 +23,15 @@
             <span id="date">{{ format_date data.release_date}}</span>
         </div>
         {{#if loggedIn}}
-        <div>
-            <img src="/assets/fav.svg" alt="" class="deactive" id="favBtn">
+        <div class="mt-3">
+            <img src="/assets/fav.svg" alt="" class="deactive" id="favBtn" width="35px" height="35px">
         </div>
         {{/if}}
     </div>
 </section>
 
 <section id="album-tracklist">
-    <div id="album-tracklist-container">
+    <div id="album-tracklist-container" class="p-2 m-2">
         <table class="table-fixed w-full">
             <thead>
                 <tr class="bg-gray-300 h-10">
