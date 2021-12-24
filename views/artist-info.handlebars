@@ -1,6 +1,5 @@
 {{> nav}}
 
-
 <div id="artist-wrapper" class="flex justify-between items-center p-2 m-2 space-x-4">
     <div id="artist-info">
         <div id="artist-pic"><img src="{{picture}}" class="rounded-full"></div>
@@ -9,36 +8,51 @@
     <div id = "artist-bio" class="m-3 text-center">
         {{{artistBio.artist.bio.summary}}}
     </div>
-
-    
-
 </div>    
-
-
-
-    
 <div id="main-carousel-div">
         {{> carousel}}
-        
-
+</div>
+<h5 class="text-center text-xl font-bold m-2">If you like {{name}} , you might like these artists</h5>
+<div id="recommended-wrapper" class="flex justify-center">
+    {{#each recommendedArray}}
+        {{> recommended-artist-card}}
+    {{/each}}
+</div>
+{{!-- Upcoming concerts --}}
+<div id="upcoming-concert-container">
+    <h5 class="text-center text-xl font-bold m-2">Upcoming concerts by {{name}}</h5>
+    <table class="table-fixed w-full" id="concerts-table">
+        <thead>
+            <tr class="bg-gray-400 h-10">
+                <th>City</th>
+                <th>Date</th>
+                <th>Venue</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each upcomingConcerts.events}}
+                {{>concert-card artistType="true"}}
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+{{!-- Recent concerts --}}
+<div id="recent-concert-container">
+    <h5 class="text-center text-xl font-bold m-2">Recent concerts by {{name}}</h5>
+    <table class="table-fixed w-full" id="concerts-table">
+        <thead>
+            <tr class="bg-gray-400 h-10">
+                <th>Date</th>
+                <th>Venue</th>
+                <th>Tour</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each pastConcerts.setlist}}
+                {{>setlist-card artistType="true"}}
+            {{/each}}
+        </tbody>
+    </table>
 </div>
 
-
-  
-
-   
-    <h5 class="text-center text-xl font-bold m-2">If you like {{name}} , you might like these artists</h5>
-    <div id="recommended-wrapper" class="flex justify-center">
-        
-        {{#each recommendedArray}}
-       {{> recommended-artist-card}}
-       {{/each}}
-    </div>
-
-     <div id="show-wrapper">
-        <h5 class="text-center text-xl font-bold m-2">Upcoming concerts by {{name}}</h5>
-        <!-- shows go here -->
-    </div>
-
-    <script src="/js/artist-info.js"></script>
-    
+<script src="/js/artist-info.js"></script>
