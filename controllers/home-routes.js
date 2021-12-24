@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
         'https://api.deezer.com/chart/0/tracks&limit=5'
     );
     const showRes = await fetch(
-        `https://api.seatgeek.com/2/events?geoip=true&type=concert&client_id=${process.env.SG_ID}`
+        `https://api.seatgeek.com/2/events?geoip=true&type=concert&client_id=${process.env.SEATGEEK_CLIENT_ID}`
     );
     if (!artistRes.ok || !trackRes.ok || !showRes) {
         alert(artistRes.statusText);
