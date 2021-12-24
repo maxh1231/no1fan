@@ -521,8 +521,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 2.5rem;
 }
 
-.h-\[700px\] {
-  height: 700px;
+.h-\[85vh\] {
+  height: 85vh;
 }
 
 .h-\[325px\] {
@@ -652,6 +652,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(55 65 81 / var(--tw-border-opacity));
 }
 
+.border-red-dark {
+  --tw-border-opacity: 1;
+  border-color: rgb(148 1 16 / var(--tw-border-opacity));
+}
+
 .border-red {
   --tw-border-opacity: 1;
   border-color: rgb(218 0 55 / var(--tw-border-opacity));
@@ -660,11 +665,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(102 102 102 / var(--tw-border-opacity));
-}
-
-.border-red-dark {
-  --tw-border-opacity: 1;
-  border-color: rgb(148 1 16 / var(--tw-border-opacity));
 }
 
 .border-gray-100 {
