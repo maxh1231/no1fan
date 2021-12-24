@@ -489,6 +489,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 0.75rem;
 }
 
+.mt-4 {
+  margin-top: 1rem;
+}
+
 .ml-auto {
   margin-left: auto;
 }
@@ -617,6 +621,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 0.125rem;
 }
 
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
 .rounded-l-sm {
   border-top-left-radius: 0.125rem;
   border-bottom-left-radius: 0.125rem;
@@ -658,9 +666,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(102 102 102 / var(--tw-border-opacity));
 }
 
+.border-red-dark {
+  --tw-border-opacity: 1;
+  border-color: rgb(148 1 16 / var(--tw-border-opacity));
+}
+
+.border-gray-100 {
+  --tw-border-opacity: 1;
+  border-color: rgb(153 153 153 / var(--tw-border-opacity));
+}
+
 .bg-gray-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(68 68 68 / var(--tw-bg-opacity));
+}
+
+.bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(153 153 153 / var(--tw-bg-opacity));
 }
 
 .bg-gray-400 {
@@ -712,6 +735,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.75rem;
 }
 
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -726,14 +754,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(237 237 237 / var(--tw-text-opacity));
 }
 
+.text-red-dark {
+  --tw-text-opacity: 1;
+  color: rgb(148 1 16 / var(--tw-text-opacity));
+}
+
 .text-sky-400 {
   --tw-text-opacity: 1;
   color: rgb(56 189 248 / var(--tw-text-opacity));
-}
-
-.text-red {
-  --tw-text-opacity: 1;
-  color: rgb(218 0 55 / var(--tw-text-opacity));
 }
 
 .no-underline {
@@ -753,10 +781,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   cursor: pointer;
 }
 
-.carousel__item--selected {
-  display: block;
-}
-
 /* carousel style start */
 
 .carousel {
@@ -764,9 +788,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .carousel-display-item {
-  height: 500px;
+  height: 550px;
   width: 100%;
-  background: white;
+  background: #999999;
   padding: 1em;
   font-family: "Quicksand", sans-serif;
   font-weight: bold;
@@ -792,14 +816,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 20px;
   height: 20px;
   display: inline-block;
-  background-color: rgba(99, 17, 17, 0.2);
+  background-color: rgba(148, 1, 16, 0.5);
   border-radius: 50%;
   margin: 0 5px;
   cursor: pointer;
 }
 
 .carousel-button-selected {
-  background-color: rgba(99, 17, 17, 0.5);
+  background-color: rgba(148, 1, 16, 0.8);
 }
 
 .placeholder\:text-gray-100::-moz-placeholder {

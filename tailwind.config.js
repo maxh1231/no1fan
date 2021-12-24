@@ -13,6 +13,7 @@ module.exports = {
                     400: '#222222',
                 },
                 'red': '#DA0037',
+                'red-dark': '#940110',
                 'white': '#EDEDED',
             },
             width: {
