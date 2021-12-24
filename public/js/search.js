@@ -20,6 +20,6 @@ const albumInfo = (evt) => {
     document.location.assign(`/info/album/${current}`);
 }
 
-document.querySelector('#top-result-container').addEventListener('click', artistInfo);
+document.querySelector('#artist-card').addEventListener('click', artistInfo);
 document.querySelector('#artist-results-container').addEventListener('click', artistInfo);
 document.querySelector('#album-results-container').addEventListener('click', albumInfo);

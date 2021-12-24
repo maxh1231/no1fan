@@ -6,9 +6,18 @@ module.exports = {
                 transparent: 'transparent',
                 current: 'currentColor',
                 'black': '#171717',
-                'gray': '#444444',
+                'gray': {
+                    100: '#999999',
+                    200: '#666666',
+                    300: '#444444',
+                    400: '#222222',
+                },
                 'red': '#DA0037',
+                'red-dark': '#940110',
                 'white': '#EDEDED',
+            },
+            width: {
+                '250': '250px',
             }
         },
     },

@@ -43,7 +43,7 @@ router.delete('/', (req, res) => {
         }
     })
         .then(favorites => {
-            if (favorites) {
+            if (!favorites) {
                 res.status(404).json({ message: 'No favorite found with this id' });
                 return;
             }

@@ -42,7 +42,7 @@ let deleteDB = async (req, res) => {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            album_id: album_id,
+            album_id,
         })
     });
     const postData = await response.json();

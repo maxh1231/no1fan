@@ -3,6 +3,12 @@ const home = (evt) => {
     document.location.assign('/');
 };
 
+const search = (evt) => {
+    evt.preventDefault();
+    const input = document.querySelector('#home-search-input').value.trim();
+    document.location.assign(`/info/search/${input}`)
+}
+
 const login = (evt) => {
     evt.preventDefault();
     document.location.assign('/login');
@@ -31,6 +37,7 @@ const dashboard = (evt) => {
 
 document.querySelector('#dashboard-btn').addEventListener('click', dashboard);
 document.querySelector('#home-btn').addEventListener('click', home);
+document.querySelector('#home-search-form').addEventListener('submit', search);
 
 const loginBtn = document.querySelector('#login-btn');
 if (loginBtn) {
