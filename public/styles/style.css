@@ -468,6 +468,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 1.25rem;
 }
 
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .ml-8 {
   margin-left: 2rem;
 }
@@ -512,10 +517,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 2.5rem;
 }
 
-.h-5 {
-  height: 1.25rem;
-}
-
 .h-\[700px\] {
   height: 700px;
 }
@@ -524,12 +525,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 325px;
 }
 
-.w-full {
-  width: 100%;
+.h-5 {
+  height: 1.25rem;
 }
 
-.w-5 {
-  width: 1.25rem;
+.w-full {
+  width: 100%;
 }
 
 .w-1\/3 {
@@ -544,6 +545,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-250 {
   width: 250px;
+}
+
+.w-5 {
+  width: 1.25rem;
 }
 
 .table-auto {
@@ -604,12 +609,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 0.125rem;
 }
 
-.border-2 {
-  border-width: 2px;
-}
-
 .border {
   border-width: 1px;
+}
+
+.border-2 {
+  border-width: 2px;
 }
 
 .border-b {
@@ -620,14 +625,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-style: solid;
 }
 
-.border-gray-200 {
-  --tw-border-opacity: 1;
-  border-color: rgb(68 68 68 / var(--tw-border-opacity));
-}
-
 .border-gray-700 {
   --tw-border-opacity: 1;
   border-color: rgb(55 65 81 / var(--tw-border-opacity));
+}
+
+.border-gray-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(68 68 68 / var(--tw-border-opacity));
 }
 
 .border-gray-100 {
@@ -664,12 +669,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding: 0.5rem;
 }
 
-.p-1 {
-  padding: 0.25rem;
-}
-
 .p-3 {
   padding: 0.75rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
 }
 
 .p-5 {
@@ -773,16 +778,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .carousel-button-selected {
   background-color: rgba(99, 17, 17, 0.5);
-}
-
-.autofill\:bg-black:-webkit-autofill {
-  --tw-bg-opacity: 1;
-  background-color: rgb(23 23 23 / var(--tw-bg-opacity));
-}
-
-.autofill\:bg-black:autofill {
-  --tw-bg-opacity: 1;
-  background-color: rgb(23 23 23 / var(--tw-bg-opacity));
 }
 
 .active\:bg-black:active {
