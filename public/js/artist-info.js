@@ -1,3 +1,69 @@
+// logic for the favorite button
+let btn = document.getElementById('favBtn');
+
+let favBtnActive = function () {
+    btn.classList.remove('deactive');
+    btn.classList.add('active');
+}
+
+let favBtnDeactive = function () {
+    btn.classList.remove('active');
+    btn.classList.add('deactive');
+}
+
+// add favorite artist
+let addArtistFav = async (req, res) => {
+    let url = window.location.pathname;
+    let artist_id = url.replace(/^\D+/g, '');
+    let artist_name = document.getElementById('name').textContent;
+    const response = await fetch('/api/artistfavorites', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application.json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            artist_id: artist_id,
+            artist_name: artist_name
+        })
+    });
+    const postData = await response.json();
+    console.log(postData);
+}
+
+
+// delete favorite artist 
+let deleteArtistFav = async (req, res) => {
+    let url = window.location.pathname;
+    let artist_id = url.replace(/^\D+/g, '');
+    const response = await fetch('/api/artistfavorites', {
+        method: 'DELETE',
+        headers: {
+            'Accept': 'application.json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            artist_id,
+        })
+    });
+    const postData = await response.json();
+    console.log(postData);
+}
+
+btn.addEventListener('click', function () {
+    if (btn.classList.contains('active')) {
+        favBtnDeactive();
+        deleteArtistFav();
+    } else {
+        favBtnActive();
+        addArtistFav();
+    }
+});
+
+
+
+
+
 // function to get tracklist from an album 
 const getTracks = (evt) => {
     evt.preventDefault();
@@ -64,6 +130,6 @@ items[0].classList.add('carousel-display-item-selected');
 
 
 
-
+// buttons to link to pages 
 document.querySelector('#discography-wrapper').addEventListener('click', getTracks);
 document.querySelector('#recommended-wrapper').addEventListener('click', getRecommended);
