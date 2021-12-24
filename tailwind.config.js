@@ -9,6 +9,9 @@ module.exports = {
                 'gray': '#444444',
                 'red': '#DA0037',
                 'white': '#EDEDED',
+            },
+            width: {
+                '250': '250px',
             }
         },
     },

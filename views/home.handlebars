@@ -12,9 +12,9 @@
     
     <section id="top-artists" class="m-2 w-1/4 inline-block">
         <h2 class="text-xl font-bold text-center">Top 10 Artists!</h2>
-        <div id="top-artist-container" class="grid grid-cols-3">
+        <div id="top-artist-container" class="h-[700px] overflow-y-auto">
             {{#each topArtists.data}}
-                {{> artist-card}}
+                {{> artist-card medium='true'}}
             {{/each}}
         </div>
     </section>

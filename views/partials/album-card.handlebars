@@ -1,5 +1,5 @@
 <div id="album-card" class="m-2 p-1 cursor-pointer">
     <div id="album-id" class="hidden">{{id}}</div>
     <img id="album-picture" src="{{#if small}}{{cover_small}}{{else}}{{cover_medium}}{{/if}}" class="rounded-md m-auto">
-    <div id="album-name" class="text-center">{{title}}</div>
+    <div id="album-name" class="text-center {{#unless small}}w-250{{/unless}}">{{title}}</div>
 </div>
