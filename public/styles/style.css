@@ -424,8 +424,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 *, ::before, ::after {
-  --tw-border-opacity: 1;
-  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  border-color: currentColor;
 }
 
 .m-2 {
@@ -482,6 +481,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .inline-block {
   display: inline-block;
+}
+
+.inline {
+  display: inline;
 }
 
 .flex {
@@ -584,19 +587,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-style: solid;
 }
 
-.border-gray-700 {
+.border-black {
   --tw-border-opacity: 1;
-  border-color: rgb(55 65 81 / var(--tw-border-opacity));
+  border-color: rgb(23 23 23 / var(--tw-border-opacity));
 }
 
-.bg-gray-400 {
+.bg-gray {
   --tw-bg-opacity: 1;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+  background-color: rgb(68 68 68 / var(--tw-bg-opacity));
 }
 
-.bg-gray-300 {
+.bg-black {
   --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+  background-color: rgb(23 23 23 / var(--tw-bg-opacity));
 }
 
 .p-2 {
@@ -624,9 +627,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-weight: 700;
 }
 
-.text-red-500 {
+.text-black {
   --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
+  color: rgb(23 23 23 / var(--tw-text-opacity));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(237 237 237 / var(--tw-text-opacity));
 }
 
 .text-sky-400 {
@@ -651,4 +659,51 @@ Ensure the default browser behavior of the `hidden` attribute.
   cursor: pointer;
 }
 
+.carousel__item--selected {
+  display: block;
+}
 
+/* carousel style start */
+
+.carousel {
+  position: relative;
+}
+
+.carousel-display-item {
+  height: 500px;
+  width: 100%;
+  background: white;
+  padding: 1em;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  font-size: 2em;
+  color: black;
+  display: none;
+}
+
+.carousel-display-item-selected {
+  display: block;
+}
+
+.carousel-navigation {
+  width: 100%;
+  padding: 20px 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+.carousel-button {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-color: rgba(99, 17, 17, 0.2);
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.carousel-button-selected {
+  background-color: rgba(99, 17, 17, 0.5);
+}
