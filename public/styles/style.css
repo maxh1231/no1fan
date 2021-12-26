@@ -725,6 +725,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding: 0.375rem;
 }
 
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -771,6 +776,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .no-underline {
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .deactive {
