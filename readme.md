@@ -9,7 +9,6 @@
   -[Usage](#usage)
   -[License](#license)
   -[Contributing](#contributing)
-  -[Tests](#tests)
   -[Questions](#questions)
 
 
@@ -31,9 +30,6 @@
   ### How can you contribute?
   Fork a copy of the repo and have fun!
 
-  ### Tests 
-  n/a
-
   ### Credits and Contributors 
   Leithan Crider, Jill Holmes, Benjamin Holt, Max Humphreys
 
@@ -44,6 +40,6 @@
   ### Questions
   -------------------------------------------------------------------------------------------------------
   
-  Check me out on Github!: (https://github.com/Thenlie) (https://github.com/Jillium) (https://github.com/Thorulfr) (https://github.com/maxh1231)
+  Any quesitons? Check us out on Github!: (https://github.com/Thenlie) (https://github.com/Jillium) (https://github.com/Thorulfr) (https://github.com/maxh1231)
   
-  Any questions? Email at holmesjillanne@gmail.com, maxhumpherys@gmail.com
+  
