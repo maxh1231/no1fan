@@ -11,7 +11,7 @@ SavedConcerts.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        artist_id: {
+        concert_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },

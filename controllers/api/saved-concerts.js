@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
         },
         attributes: [
             'id',
-            'artist_id',
+            'concert_id',
             'artist_name',
             'venue_name',
             'date',
@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
 // Add a saved concert
 router.post('/', (req, res) => {
     SavedConcerts.create({
-        artist_id: req.body.artist_id,
+        concert_id: req.body.concert_id,
         artist_name: req.body.artist_name,
         venue_name: req.body.venue_name,
         date: req.body.date,
@@ -39,3 +39,27 @@ router.post('/', (req, res) => {
             res.status(500).json(err);
         });
 });
+
+// Delete a saved concert
+router.delete('/', (req, res) => {
+    SavedConcerts.destroy({
+        where: {
+            user_id: req.session.user_id,
+            concert_id: req.body.concert_id,
+        },
+    }),
+        then((concert) => {
+            if (!concert) {
+                res.status(404).json({
+                    message: 'No concert found with this id!',
+                });
+                return;
+            }
+            res.json(concert);
+        }).catch((err) => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+module.exports = router;
