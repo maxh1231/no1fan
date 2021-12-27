@@ -22,7 +22,7 @@ router.use('/:id', async (req, res) => {
         `https://api.deezer.com/artist/${artistID}/related`
     );
     const recommended = await recommendedResponse.json();
-    console.log(recommended.data.length);
+    // console.log(recommended.data.length);
     // pulls the artist bio for the page
     let searchName = artistName.name;
     const artistBioResponse = await fetch(
