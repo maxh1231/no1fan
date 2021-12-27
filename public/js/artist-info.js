@@ -1,11 +1,33 @@
 // logic for the favorite button
 let btn = document.getElementById('favBtn');
+let url = window.location.pathname;
+let artist_id = url.replace(/^\D+/g, '');
 
+// function to have favorite heart be active color if artist is in user's favorites
+let getHeart = async (req, res) => {
+    const response = await fetch('/api/artistfavorites', {
+        method: 'GET',
+        headers: {
+            'Accept': 'application.json',
+            'Content-Type': 'application/json'
+        }
+    });
+    const getData = await response.json();
+    for (var i = 0; i <getData.length; i++) {
+        if (getData[i].artist_id == artist_id) {
+            btn.classList.remove('deactive');
+            btn.classList.add('active');
+        }
+    }
+}
+
+// give Favorite Button red(active) color
 let favBtnActive = function () {
     btn.classList.remove('deactive');
     btn.classList.add('active');
 }
 
+// give favorite button grey(deactive) color 
 let favBtnDeactive = function () {
     btn.classList.remove('active');
     btn.classList.add('deactive');
@@ -13,8 +35,8 @@ let favBtnDeactive = function () {
 
 // add favorite artist
 let addArtistFav = async (req, res) => {
-    let url = window.location.pathname;
-    let artist_id = url.replace(/^\D+/g, '');
+    
+    
     let artist_name = document.getElementById('name').textContent;
     const response = await fetch('/api/artistfavorites', {
         method: 'POST',
@@ -133,3 +155,5 @@ items[0].classList.add('carousel-display-item-selected');
 // buttons to link to pages 
 document.querySelector('#discography-wrapper').addEventListener('click', getTracks);
 document.querySelector('#recommended-wrapper').addEventListener('click', getRecommended);
+
+window.onload = getHeart();
