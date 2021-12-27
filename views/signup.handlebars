@@ -1,22 +1,18 @@
 {{> nav}}
 
-<form id="signup-form" class="border mx-auto my-5 w-fit p-3 flex flex-col">
-    <label for="email">Email:</label>
-    <input type="text" id="email-input" name="email" class="border-solid border-2 border-black-500 p-1 m-1 text-black">
-    <label for="username">Username:</label>
-    <input type="text" id="username-input" name="username" class="border-solid border-2 border-black-500 p-1 m-1 text-black">
-    <label for="password">Password:</label>
-    <input type="password" id="password-input" name="password" class="border-solid border-2 border-black-500 p-1 m-1 text-black">
-    <label for="confirm-password">Confirm Password:</label>
-    <input type="password" id="confirm-password-input" name="confirm-password" class="border-solid border-2 border-black-500 p-1 m-1 text-black">
-    <span id="err-msg" class="hidden text-red-500">Invalid sign up credentials!</span>
-    <span id="err-msg2" class="hidden text-red-500">This email is already in use!</span>
-    <span id="err-msg3" class="hidden text-red-500">This username is already in use!</span>
-    <button type="submit" id="signup-form-btn" class="border-solid border-2 border-gray-700 m-1 p-1">Sign Up</button>
+<form id="signup-form" class="border-2 border-red-dark bg-gray-400 mx-auto my-5 w-fit p-3 flex flex-col">
+    <input type="text" id="email-input" name="email" placeholder="Email" class="border-solid border-2 border-black-500 p-2 m-1 text-white bg-black focus-visible:outline-0 placeholder:text-gray-300">
+    <input type="text" id="username-input" name="username" placeholder="Username" class="border-solid border-2 border-black-500 p-2 m-1 text-white bg-black focus-visible:outline-0 placeholder:text-gray-300">
+    <input type="password" id="password-input" name="password" placeholder="Password" class="border-solid border-2 border-black-500 p-2 m-1 text-white bg-black focus-visible:outline-0 placeholder:text-gray-300">
+    <input type="password" id="confirm-password-input" name="confirm-password" placeholder="Confirm Password" class="border-solid border-2 border-black-500 p-2 m-1 text-white bg-black focus-visible:outline-0 placeholder:text-gray-300">
+    <span id="err-msg" class="hidden text-red">Invalid sign up credentials!</span>
+    <span id="err-msg2" class="hidden text-red">This email is already in use!</span>
+    <span id="err-msg3" class="hidden text-red">This username is already in use!</span>
+    <button type="submit" id="signup-form-btn" class="border-solid border-2 border-gray-700 bg-black m-1 p-1 hover:opacity-75">Sign Up</button>
 </form>
 
 <div id="goto-container" class="mx-auto w-fit">Already have an account? 
-    <button id="goto-login-btn" class="border-solid border-2 border-gray-700 m-1 p-1">Login</button>
+    <button id="goto-login-btn" class="border-solid border-2 border-gray-700 bg-gray-400 m-1 p-1 hover:opacity-75">Login</button>
 </div>
 
 <script src="js/signup.js"></script>

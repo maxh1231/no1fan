@@ -22,6 +22,7 @@ router.use('/:id', async (req, res) => {
         `https://api.deezer.com/artist/${artistID}/related`
     );
     const recommended = await recommendedResponse.json();
+    console.log(recommended.data.length);
     // pulls the artist bio for the page
     let searchName = artistName.name;
     const artistBioResponse = await fetch(
@@ -73,6 +74,9 @@ router.use('/:id', async (req, res) => {
         recommendedArray.push(recommended.data[i]);
     }
 
+    // // selects a random recommended artist from the array
+    // const myRecommendation = recommendedArray[Math.floor(Math.random() * recommendedArray.length)];
+
     // selects a random recommended artist from the array
     const myRecommendation =
         recommendedArray[Math.floor(Math.random() * recommendedArray.length)];
@@ -88,6 +92,7 @@ router.use('/:id', async (req, res) => {
         upcomingConcerts: upcomingConcerts,
         pastConcerts: pastConcerts,
         recommendedArray,
+        loggedIn: req.session.loggedIn,
     };
     res.render('artist-info', artistData);
 });

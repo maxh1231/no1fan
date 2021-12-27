@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
 .deactive {
     
     filter: invert(49%) sepia(4%) saturate(4%) hue-rotate(322deg) brightness(101%) contrast(88%);
@@ -9,11 +13,6 @@
 
 .active {
     filter: invert(41%) sepia(65%) saturate(6599%) hue-rotate(345deg) brightness(101%) contrast(106%);
-}
-
-#favBtn {
-    width: 50px;
-    height: 50px;
 }
 
 #favBtn:hover {
