@@ -72,15 +72,17 @@ let deleteArtistFav = async (req, res) => {
     console.log(postData);
 }
 
-btn.addEventListener('click', function () {
-    if (btn.classList.contains('active')) {
-        favBtnDeactive();
-        deleteArtistFav();
-    } else {
-        favBtnActive();
-        addArtistFav();
-    }
-});
+if (btn) {
+    btn.addEventListener('click', function () {
+        if (btn.classList.contains('active')) {
+            favBtnDeactive();
+            deleteArtistFav();
+        } else {
+            favBtnActive();
+            addArtistFav();
+        }
+    });
+}
 
 
 
