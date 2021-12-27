@@ -1,16 +1,35 @@
 let btn = document.getElementById('favBtn');
+let url = window.location.pathname;
+let album_id = url.replace(/^\D+/g, '')
 
+let getFav = async (req, res) => {
+    const response = await fetch('/api/albumfavorites', {
+        method: 'GET',
+        headers: {
+            'Accept': 'application.json',
+            'Content-Type': 'application/json',
+        },
+    });
+    const getData = await response.json();
+    for (var i = 0; i < getData.length; i++) {
+        if (getData[i].album_id == album_id) {
+            btn.classList.remove('deactive');
+            btn.classList.add('active');
+        }
+    }
+}
+
+// give Favorite Button red(active) color
 let favBtnActive = function () {
     btn.classList.remove('deactive');
     btn.classList.add('active');
 }
 
+// give Favorite Button grey(deactive) color
 let favBtnDeactive = function () {
     btn.classList.remove('active');
     btn.classList.add('deactive');
 }
-
-
 // Post favorite
 let postDB = async (req, res) => {
     let url = window.location.pathname;
@@ -30,7 +49,6 @@ let postDB = async (req, res) => {
     const postData = await response.json();
     console.log(postData);
 }
-
 // Delete favorite
 let deleteDB = async (req, res) => {
     let url = window.location.pathname;
@@ -58,3 +76,5 @@ btn.addEventListener('click', function () {
         postDB();
     }
 });
+
+window.onload = getFav();
