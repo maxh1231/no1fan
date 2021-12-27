@@ -1,16 +1,22 @@
 const home = (evt) => {
     evt.preventDefault();
-    document.location.replace('/');
+    document.location.assign('/');
+}
+
+const search = (evt) => {
+    evt.preventDefault();
+    const input = document.querySelector('#home-search-input').value.trim();
+    document.location.assign(`/info/search/${input}`)
 }
 
 const login = (evt) => {
     evt.preventDefault();
-    document.location.replace('/login');
+    document.location.assign('/login');
 }
 
 const signup = (evt) => {
     evt.preventDefault();
-    document.location.replace('/signup');
+    document.location.assign('/signup');
 }
 
 const logout = async () => {
@@ -21,7 +27,7 @@ const logout = async () => {
         alert(response.statusText);  // TODO: Remove this alert before pushing!!
         return;
     }
-    document.location.replace('/');
+    document.location.assign('/');
 }
 
 // const dashboard = (evt) => {
@@ -31,6 +37,7 @@ const logout = async () => {
 
 // document.querySelector('#dashboard-btn').addEventListener('click', dashboard);
 document.querySelector('#home-btn').addEventListener('click', home);
+document.querySelector('#home-search-form').addEventListener('submit', search);
 
 const loginBtn = document.querySelector('#login-btn')
 if (loginBtn) {loginBtn.addEventListener('click', login)};

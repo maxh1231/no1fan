@@ -1,0 +1,44 @@
+{{!-- Navbar --}}
+{{> nav}}
+
+{{!-- Content --}}
+<h1 id="dashboard-header">Dashboard</h1>
+
+{{!-- Profile bar --}}
+<div id="profile-bar">
+    <div id="profile-pic">
+        <img src="https://via.placeholder.com/150/000000/FFFFFF/?Text=Badass+Profile+Pic" alt="Profile Picture">
+    </div>
+    <div id="user-info">
+        <span id="username">User Name</span>
+        <p id="user-details">Random user details</p>
+    </div>
+</div>
+
+{{!-- Favorite bands box --}}
+<div id="favorite-bands">
+    {{!-- Flexbox --}}
+    <div>Band 1</div>
+    <div>Band 2</div>
+    <div>Band 3</div>
+</div>
+
+{{!-- Shows attended box --}}
+<div id="shows-attended">
+    {{!-- Flexbox, but vertically aligned --}}
+    <div>Show Card 1</div>
+    <div>Show Card 2</div>
+    <div>Show Card 3</div>
+    <div>Show Card 4</div>
+    <div>Show Card 5</div>
+    <div>Show Card 6</div>
+</div>
+
+<div id="test-div">
+    {{artistSetlists.setlist.[0].id}}
+    {{!-- {{#each}}
+        {{}}
+    {{/each}} --}}
+</div>
+{{!-- JS link --}}
+<script src="/js/dashboard.js"></script>

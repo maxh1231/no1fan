@@ -1,0 +1,50 @@
+{{!-- Navbar --}}
+{{> nav}}
+
+{{!-- Content --}}
+<h1 id="dashboard-header">Upcoming Concert Info</h1>
+
+<section id="concert-div">
+    <div id="general-info-container">
+        {{#if artistType}}    
+            <p id="artist-name">
+                Artist: {{concerts.events.[0].performers.[0].name}}
+            </p>
+        {{/if}}
+    </div>
+    <div id="concert-info-container">
+        <table class="table-fixed w-full" id="concerts-table">
+            {{#if artistType}}
+                <thead>
+                    <tr class="bg-gray-400 h-10">
+                        <th>City</th>
+                        <th>Date</th>
+                        <th>Venue</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each concerts.events}}
+                        {{>concert-card artistType="true"}}
+                    {{/each}}
+                </tbody>
+            {{/if}}
+            {{#if locationType}}
+                <thead>
+                    <tr class="bg-gray-400 h-10">
+                        <th>Artist</th>
+                        <th>Date</th>
+                        <th>Venue</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each concerts.events}}
+                        {{>concert-card locationType="true"}}
+                    {{/each}}
+                </tbody>
+            {{/if}}
+        </table>
+    </div>
+</section>
+
+{{!-- JS link --}}
+<script src="/js/dashboard.js"></script>

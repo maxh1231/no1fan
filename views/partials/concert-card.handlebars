@@ -1,0 +1,256 @@
+<tr class='border-b'>
+    <td class='p-2 text-center'>
+        <a class='text-sky-400' href='{{url}}' target='_blank'>
+            {{#if artistType}}
+                {{venue.city}}
+            {{/if}}
+            {{#if locationType}}
+                {{performers.0.name}}
+            {{/if}}
+        </a></td>
+    <td class='p-2 text-center'>{{datetime_utc}}</td>
+    <td class='p-2 text-center'>{{venue.name_v2}}</td>
+</tr>
+
+{{! 
+
+Concert info is returned as follows:
+
+{
+	"events": [
+		{
+			"type": "concert",
+			"id": 5490879,
+			"datetime_utc": "2021-12-20T02:30:00",
+			"venue": {
+				"state": "UT",
+				"name_v2": "George S. and Dolores Dore Eccles Theater",
+				"postal_code": "84111",
+				"name": "George S. and Dolores Dore Eccles Theater",
+				"links": [],
+				"timezone": "America\/Denver",
+				"url": "https:\/\/seatgeek.com\/venues\/george-s-and-dolores-dore-eccles-theater\/tickets",
+				"score": 0.6,
+				"location": {
+					"lat": 40.7664,
+					"lon": -111.891
+				},
+				"address": "131 South Main St",
+				"country": "US",
+				"has_upcoming_events": true,
+				"num_upcoming_events": 104,
+				"city": "Salt Lake City",
+				"slug": "george-s-and-dolores-dore-eccles-theater",
+				"extended_address": "Salt Lake City, UT 84111",
+				"id": 300446,
+				"popularity": 0,
+				"access_method": null,
+				"metro_code": 770,
+				"capacity": 0,
+				"last_full_index_at": "2021-12-19T04:23:46Z",
+				"display_location": "Salt Lake City, UT"
+			},
+			"datetime_tbd": false,
+			"performers": [
+				{
+					"type": "band",
+					"name": "Jason Mraz",
+					"image": "https:\/\/seatgeek.com\/images\/performers-landscape\/jason-mraz-b43f6e\/922\/15668\/huge.jpg",
+					"id": 922,
+					"images": {
+						"huge": "https:\/\/seatgeek.com\/images\/performers-landscape\/jason-mraz-b43f6e\/922\/15668\/huge.jpg"
+					},
+					"divisions": null,
+					"has_upcoming_events": true,
+					"primary": true,
+					"stats": {
+						"event_count": 2
+					},
+					"taxonomies": [
+						{
+							"id": 2000000,
+							"name": "concerts",
+							"parent_id": null,
+							"document_source": {
+								"source_type": "ELASTIC",
+								"generation_type": "FULL"
+							},
+							"rank": 0,
+							"last_full_index_at": "2021-12-18T20:22:21Z"
+						}
+					],
+					"image_attribution": "VCG \/ Visual China Group \/ Getty Images",
+					"url": "https:\/\/seatgeek.com\/jason-mraz-tickets",
+					"score": 0.19,
+					"slug": "jason-mraz",
+					"home_venue_id": null,
+					"short_name": "Jason Mraz",
+					"num_upcoming_events": 2,
+					"colors": null,
+					"image_license": "rightsmanaged",
+					"genres": [
+						{
+							"id": 456,
+							"name": "Rock",
+							"slug": "rock",
+							"primary": true,
+							"images": {
+								"1200x525": "https:\/\/seatgeek.com\/images\/performers-landscape\/david-byrne-s-american-utopia-55186a\/555\/1200x525.jpg",
+								"1200x627": "https:\/\/seatgeek.com\/images\/performers-landscape\/david-byrne-s-american-utopia-1bf631\/555\/1200x627.jpg",
+								"136x136": "https:\/\/seatgeek.com\/images\/performers-landscape\/david-byrne-s-american-utopia-8d3cec\/555\/136x136.jpg",
+								"500_700": "https:\/\/seatgeek.com\/images\/performers-landscape\/david-byrne-s-american-utopia-22c331\/555\/500_700.jpg",
+								"800x320": "https:\/\/seatgeek.com\/images\/performers-landscape\/david-byrne-s-american-utopia-1d63b6\/555\/800x320.jpg",
+								"banner": "https:\/\/seatgeek.com\/images\/performers-landscape\/david-byrne-s-american-utopia-f0d8df\/555\/banner.jpg",
+								"block": "https:\/\/seatgeek.com\/images\/performers-landscape\/david-byrne-s-american-utopia-4797cb\/555\/block.jpg",
+								"criteo_130_160": "https:\/\/seatgeek.com\/images\/performers-landscape\/david-byrne-s-american-utopia-c9a3ed\/555\/criteo_130_160.jpg",
+								"criteo_170_235": "https:\/\/seatgeek.com\/images\/performers-landscape\/david-byrne-s-american-utopia-aeb18e\/555\/criteo_170_235.jpg",
+								"criteo_205_100": "https:\/\/seatgeek.com\/images\/performers-landscape\/david-byrne-s-american-utopia-3b5355\/555\/criteo_205_100.jpg",
+								"criteo_400_300": "https:\/\/seatgeek.com\/images\/performers-landscape\/david-byrne-s-american-utopia-9c63f0\/555\/criteo_400_300.jpg",
+								"fb_100x72": "https:\/\/seatgeek.com\/images\/performers-landscape\/david-byrne-s-american-utopia-897119\/555\/fb_100x72.jpg",
+								"fb_600_315": "https:\/\/seatgeek.com\/images\/performers-landscape\/david-byrne-s-american-utopia-ecf4c7\/555\/fb_600_315.jpg",
+								"huge": "https:\/\/seatgeek.com\/images\/performers-landscape\/david-byrne-s-american-utopia-51bbeb\/555\/huge.jpg",
+								"ipad_event_modal": "https:\/\/seatgeek.com\/images\/performers-landscape\/david-byrne-s-american-utopia-5fb144\/555\/ipad_event_modal.jpg",
+								"ipad_header": "https:\/\/seatgeek.com\/images\/performers-landscape\/david-byrne-s-american-utopia-549df9\/555\/ipad_header.jpg",
+								"ipad_mini_explore": "https:\/\/seatgeek.com\/images\/performers-landscape\/david-byrne-s-american-utopia-4ada20\/555\/ipad_mini_explore.jpg",
+								"mongo": "https:\/\/seatgeek.com\/images\/performers-landscape\/david-byrne-s-american-utopia-f65973\/555\/mongo.jpg",
+								"square_mid": "https:\/\/seatgeek.com\/images\/performers-landscape\/david-byrne-s-american-utopia-393dec\/555\/square_mid.jpg",
+								"triggit_fb_ad": "https:\/\/seatgeek.com\/images\/performers-landscape\/david-byrne-s-american-utopia-941fc8\/555\/triggit_fb_ad.jpg"
+							},
+							"image": "https:\/\/seatgeek.com\/images\/performers-landscape\/david-byrne-s-american-utopia-51bbeb\/555\/huge.jpg",
+							"document_source": {
+								"source_type": "ELASTIC",
+								"generation_type": "FULL"
+							},
+							"last_full_index_at": "2021-12-18T00:22:19Z"
+						},
+						{
+							"id": 452,
+							"name": "Pop",
+							"slug": "pop",
+							"primary": false,
+							"images": {
+								"1200x525": "https:\/\/seatgeek.com\/images\/performers-landscape\/adele-72b1fe\/141\/1200x525.jpg",
+								"1200x627": "https:\/\/seatgeek.com\/images\/performers-landscape\/adele-f88c23\/141\/1200x627.jpg",
+								"136x136": "https:\/\/seatgeek.com\/images\/performers-landscape\/adele-65f362\/141\/136x136.jpg",
+								"500_700": "https:\/\/seatgeek.com\/images\/performers-landscape\/adele-04f89f\/141\/500_700.jpg",
+								"800x320": "https:\/\/seatgeek.com\/images\/performers-landscape\/adele-3ee0eb\/141\/800x320.jpg",
+								"banner": "https:\/\/seatgeek.com\/images\/performers-landscape\/adele-7256bc\/141\/banner.jpg",
+								"block": "https:\/\/seatgeek.com\/images\/performers-landscape\/adele-d3cddd\/141\/block.jpg",
+								"criteo_130_160": "https:\/\/seatgeek.com\/images\/performers-landscape\/adele-7149d5\/141\/criteo_130_160.jpg",
+								"criteo_170_235": "https:\/\/seatgeek.com\/images\/performers-landscape\/adele-1a92e0\/141\/criteo_170_235.jpg",
+								"criteo_205_100": "https:\/\/seatgeek.com\/images\/performers-landscape\/adele-271cad\/141\/criteo_205_100.jpg",
+								"criteo_400_300": "https:\/\/seatgeek.com\/images\/performers-landscape\/adele-e8c506\/141\/criteo_400_300.jpg",
+								"fb_100x72": "https:\/\/seatgeek.com\/images\/performers-landscape\/adele-47b09c\/141\/fb_100x72.jpg",
+								"fb_600_315": "https:\/\/seatgeek.com\/images\/performers-landscape\/adele-fcc932\/141\/fb_600_315.jpg",
+								"huge": "https:\/\/seatgeek.com\/images\/performers-landscape\/adele-644fd6\/141\/huge.jpg",
+								"ipad_event_modal": "https:\/\/seatgeek.com\/images\/performers-landscape\/adele-8388e6\/141\/ipad_event_modal.jpg",
+								"ipad_header": "https:\/\/seatgeek.com\/images\/performers-landscape\/adele-5642f9\/141\/ipad_header.jpg",
+								"ipad_mini_explore": "https:\/\/seatgeek.com\/images\/performers-landscape\/adele-9b75ce\/141\/ipad_mini_explore.jpg",
+								"mongo": "https:\/\/seatgeek.com\/images\/performers-landscape\/adele-19e592\/141\/mongo.jpg",
+								"square_mid": "https:\/\/seatgeek.com\/images\/performers-landscape\/adele-49d390\/141\/square_mid.jpg",
+								"triggit_fb_ad": "https:\/\/seatgeek.com\/images\/performers-landscape\/adele-2506ae\/141\/triggit_fb_ad.jpg"
+							},
+							"image": "https:\/\/seatgeek.com\/images\/performers-landscape\/adele-644fd6\/141\/huge.jpg",
+							"document_source": {
+								"source_type": "ELASTIC",
+								"generation_type": "FULL"
+							},
+							"last_full_index_at": "2021-12-13T12:22:26Z"
+						},
+						{
+							"id": 457,
+							"name": "Alternative",
+							"slug": "alternative",
+							"primary": false,
+							"images": {
+								"1200x525": "https:\/\/seatgeek.com\/images\/performers-landscape\/h-e-r-660be5\/77787\/1200x525.jpg",
+								"1200x627": "https:\/\/seatgeek.com\/images\/performers-landscape\/h-e-r-e01add\/77787\/1200x627.jpg",
+								"136x136": "https:\/\/seatgeek.com\/images\/performers-landscape\/h-e-r-1899fd\/77787\/136x136.jpg",
+								"500_700": "https:\/\/seatgeek.com\/images\/performers-landscape\/h-e-r-133d9b\/77787\/500_700.jpg",
+								"800x320": "https:\/\/seatgeek.com\/images\/performers-landscape\/h-e-r-f954e2\/77787\/800x320.jpg",
+								"banner": "https:\/\/seatgeek.com\/images\/performers-landscape\/h-e-r-593f99\/77787\/banner.jpg",
+								"block": "https:\/\/seatgeek.com\/images\/performers-landscape\/h-e-r-b590ad\/77787\/block.jpg",
+								"criteo_130_160": "https:\/\/seatgeek.com\/images\/performers-landscape\/h-e-r-f38e4f\/77787\/criteo_130_160.jpg",
+								"criteo_170_235": "https:\/\/seatgeek.com\/images\/performers-landscape\/h-e-r-611703\/77787\/criteo_170_235.jpg",
+								"criteo_205_100": "https:\/\/seatgeek.com\/images\/performers-landscape\/h-e-r-b3dba2\/77787\/criteo_205_100.jpg",
+								"criteo_400_300": "https:\/\/seatgeek.com\/images\/performers-landscape\/h-e-r-8b31a5\/77787\/criteo_400_300.jpg",
+								"fb_100x72": "https:\/\/seatgeek.com\/images\/performers-landscape\/h-e-r-f43303\/77787\/fb_100x72.jpg",
+								"fb_600_315": "https:\/\/seatgeek.com\/images\/performers-landscape\/h-e-r-49fa2b\/77787\/fb_600_315.jpg",
+								"huge": "https:\/\/seatgeek.com\/images\/performers-landscape\/h-e-r-2f1580\/77787\/huge.jpg",
+								"ipad_event_modal": "https:\/\/seatgeek.com\/images\/performers-landscape\/h-e-r-91efe5\/77787\/ipad_event_modal.jpg",
+								"ipad_header": "https:\/\/seatgeek.com\/images\/performers-landscape\/h-e-r-e5426d\/77787\/ipad_header.jpg",
+								"ipad_mini_explore": "https:\/\/seatgeek.com\/images\/performers-landscape\/h-e-r-73254d\/77787\/ipad_mini_explore.jpg",
+								"mongo": "https:\/\/seatgeek.com\/images\/performers-landscape\/h-e-r-02285e\/77787\/mongo.jpg",
+								"square_mid": "https:\/\/seatgeek.com\/images\/performers-landscape\/h-e-r-ac03cc\/77787\/square_mid.jpg",
+								"triggit_fb_ad": "https:\/\/seatgeek.com\/images\/performers-landscape\/h-e-r-a5ec20\/77787\/triggit_fb_ad.jpg"
+							},
+							"image": "https:\/\/seatgeek.com\/images\/performers-landscape\/h-e-r-2f1580\/77787\/huge.jpg",
+							"document_source": {
+								"source_type": "ELASTIC",
+								"generation_type": "FULL"
+							},
+							"last_full_index_at": "2021-11-28T00:22:09Z"
+						}
+					],
+					"popularity": 0,
+					"location": null,
+					"last_full_index_at": "2021-12-19T09:02:53Z"
+				}
+			],
+			"is_open": false,
+			"links": [],
+			"datetime_local": "2021-12-19T19:30:00",
+			"time_tbd": false,
+			"short_title": "Jason Mraz",
+			"visible_until_utc": "2021-12-20T06:30:00",
+			"stats": {
+				"listing_count": 5,
+				"average_price": 131,
+				"lowest_price_good_deals": 110,
+				"lowest_price": 110,
+				"highest_price": 180,
+				"visible_listing_count": 5,
+				"dq_bucket_counts": [
+					1,
+					1,
+					2,
+					1,
+					1,
+					1,
+					1,
+					0
+				],
+				"median_price": 119,
+				"lowest_sg_base_price": 78,
+				"lowest_sg_base_price_good_deals": 78
+			},
+			"taxonomies": [
+				{
+					"id": 2000000,
+					"name": "concert",
+					"parent_id": null,
+					"rank": 0,
+					"last_full_index_at": "2021-12-18T20:22:21Z"
+				}
+			],
+			"url": "https:\/\/seatgeek.com\/jason-mraz-tickets\/salt-lake-city-utah-george-s-and-dolores-dore-eccles-theater-2021-12-19-7-30-pm\/concert\/5490879",
+			"score": 0,
+			"announce_date": "2021-09-08T00:00:00",
+			"created_at": "2021-09-08T16:01:32",
+			"date_tbd": false,
+			"title": "Jason Mraz",
+			"popularity": 0,
+			"description": "",
+			"status": "normal",
+			"access_method": null,
+			"event_promotion": null,
+			"announcements": {},
+			"conditional": false,
+			"enddatetime_utc": null,
+			"last_full_index_at": "2021-12-19T17:46:59Z",
+			"themes": [],
+			"domain_information": []
+		},
+    }
+    
+}}

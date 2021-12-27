@@ -1,13 +1,16 @@
 {{> nav}}
-<h1 id="login-header">Login Page</h1>
-<form id="login-form">
+
+<form id="login-form" class="border mx-auto my-5 w-fit p-3 flex flex-col">
     <label for="email">Email:</label>
-    <input type="text" id="email-input" name="email">
+    <input type="text" id="email-input" name="email" class="border-solid border-2 border-black-500 p-1 m-1 text-black">
     <label for="password">Password:</label>
-    <input type="password" id="password-input" name="password">
-    <span id="err-msg" class="display-none">Username or Password is incorrect!</span>
-    <button type="submit" id="login-form-btn">Login</button>
+    <input type="password" id="password-input" name="password" class="border-solid border-2 border-black-500 p-1 m-1 text-black">
+    <span id="err-msg" class="hidden text-red-500">Username or Password is incorrect!</span>
+    <button type="submit" id="login-form-btn" class="border-solid border-2 border-gray-700 m-1 p-1">Login</button>
 </form>
-<div class="goto-container">Don't have an account yet? <button id="goto-signup-btn">Sign Up</button></div>
+
+<div id="goto-container" class="mx-auto w-fit">Don't have an account yet? 
+    <button id="goto-signup-btn" class="border-solid border-2 border-gray-700 m-1 p-1">Sign Up</button>
+</div>
 
 <script src="js/login.js"></script>

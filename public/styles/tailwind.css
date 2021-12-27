@@ -1,3 +1,68 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.deactive {
+    
+    filter: invert(49%) sepia(4%) saturate(4%) hue-rotate(322deg) brightness(101%) contrast(88%);
+}
+
+.active {
+    filter: invert(41%) sepia(65%) saturate(6599%) hue-rotate(345deg) brightness(101%) contrast(106%);
+}
+
+#favBtn:hover {
+    cursor: pointer;
+}
+
+
+/* carousel style start */
+
+.carousel {
+    position: relative;
+  }
+  
+  .carousel-display-item {
+    height: 550px;
+    width: 100%;
+    background: #999999;
+    padding: 1em;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    color: black;
+    display: none;
+  }
+  
+  .carousel-display-item-selected {
+    display: block;
+  
+  }
+  
+  .carousel-navigation {
+  width: 100%;
+  padding: 20px 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  
+  }
+  
+  .carousel-button {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: rgba(148, 1, 16, 0.5);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .carousel-button-selected {
+    background-color: rgba(148, 1, 16, 0.8);
+  }

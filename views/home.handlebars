@@ -1,20 +1,56 @@
 {{> nav}}
 
-<h1>Homepage</h1>
+<main class="flex justify-between">
+    
+    <section id="top-artists" class="m-2 w-1/3 inline-block">
+        <h2 class="text-xl font-bold text-center">Top 10 Artists!</h2>
+        <div id="top-artist-container" class="h-[700px] m-auto w-fit p-5 overflow-y-auto overflow-x-hidden">
+            {{#each topArtists.data}}
+                {{> artist-card medium='true'}}
+            {{/each}}
+        </div>
+    </section>
 
-<section id="top-artist-container">
-    <h2>Top 10 Artists of the Week!</h2>
-    {{#each topArtists.data}}
-    {{> top-artist-card}}
-    {{/each}}
-</section>
+    <section id="top-track-container" class="m-3 w-1/3 inline-block">
+        <h2 class="text-xl font-bold text-center">Top 5 Tracks!</h2>
+        <div id="top-track-container" class="">
+            <table class="table-auto w-full">
+            <thead>
+                <tr class="bg-gray-200 h-10">
+                    <th>Artist</th>
+                    <th>Track</th>
+                    <th>Duration</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each topTracks.data}}
+                    {{> track-card home='true'}}
+                {{/each}}
+            </tbody>
+            </table>
+        </div>
+    </section>
 
-<section id="home-search-container">
-    <form id="home-search-form">
-        <label for="home-search-input">Search for a band: </label>
-        <input type="text" id="home-search-input" name="home-search-input">
-        <button type="submit" id="home-search-btn">Search</button>
-    </form>
-</section>
+    <section id="upcoming-shows-container" class="m-3 w-1/3">
+        <h2 class="text-xl font-bold text-center">Upcoming concerts in your area!</h2>
+        <div id="location-container" class="m-2">
+            <table class="table-auto w-full">
+            <thead>
+                <tr class="bg-gray-200 h-10">
+                    <th>Artist</th>
+                    <th>Venue</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each shows.events}}
+                    {{> show-card}}
+                {{/each}}
+            </tbody>
+            </table>
+        </div>
+    </section>
+
+</main>
 
 <script src="/js/home.js"></script>
