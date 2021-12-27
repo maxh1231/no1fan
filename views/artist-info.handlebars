@@ -1,41 +1,54 @@
 {{> nav}}
 
-
+<!-- artist info goes here -->
 <div id="artist-wrapper" class="flex justify-between items-center p-2 m-2 space-x-4">
     <div id="artist-info mt-4">
         <div id="artist-pic"><img src="{{picture}}" class="rounded-full"></div>
         <h3 id="name" class="text-center text-xl font-bold m-2">{{name}}</h3>
-         {{#if loggedIn}}
+        {{#if loggedIn}}
         <div>
             <img src="/assets/fav.svg" alt="" class="deactive" id="favBtn">
         </div>
         {{/if}}
     </div>
-    <div id = "artist-bio" class="m-3 text-center font-bold">
+    <div id="artist-bio" class="m-3 text-center font-bold">
         {{{artistBio.artist.bio.summary}}}
     </div>
-</div>    
-
-    
-<div id="main-carousel-div" class="bg-gray-100">
-    {{> carousel}}       
 </div>
 
-   
+<!-- for album cards -->
+<div id="main-carousel-div" class="bg-gray-100">
+    <div class="carousel">
+        <h5 class="text-center text-5xl font-bold m-2 text-red-dark">Albums</h5>
+        <div id="discography-wrapper" class="bg-gray-100">Yah
+            
+            {{#each artistAlbums.data}}
+            <div class="carousel-display-item">
+                {{>carousel-card}}
+            </div>
+
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+<!-- recommended artist section -->
 <h5 class="text-center text-xl font-bold m-2">If you like {{name}} , you might like these artists</h5>
 
 <div id="recommended-wrapper" class="flex justify-center">
-    
+
     {{#each recommendedArray}}
     {{> recommended-artist-card}}
     {{/each}}
 </div>
 
+<!-- show section -->
 <div id="show-wrapper">
     <h5 class="text-center text-xl font-bold m-2">Upcoming concerts by {{name}}</h5>
     <!-- shows go here -->
 </div>
 
+<!-- footer -->
 {{> footer}}
 
 <script src="/js/artist-info.js"></script>
