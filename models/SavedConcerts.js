@@ -3,13 +3,45 @@ const sequelize = require('../config/connection');
 
 class SavedConcerts extends Model {}
 
-SavedConcerts.init({
-    user_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'user',
-            key: 'id',
+SavedConcerts.init(
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        artist_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        artist_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        venue_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        date: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'user',
+                key: 'id',
+            },
         },
     },
-});
+    {
+        sequelize,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'savedconcerts',
+    }
+);
+
+module.exports = SavedConcerts;
