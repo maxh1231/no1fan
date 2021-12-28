@@ -9,14 +9,7 @@ router.get('/', (req, res) => {
         where: {
             user_id: req.session.user_id,
         },
-        attributes: [
-            'id',
-            'concert_id',
-            'artist_name',
-            'venue_name',
-            'date',
-            'user_id',
-        ],
+        attributes: ['id', 'artist_name', 'venue_name', 'date', 'user_id'],
     })
         .then((concerts) => res.json(concerts))
         .catch((err) => {
@@ -28,7 +21,6 @@ router.get('/', (req, res) => {
 // Add a saved concert
 router.post('/', (req, res) => {
     SavedConcerts.create({
-        concert_id: req.body.concert_id,
         artist_name: req.body.artist_name,
         venue_name: req.body.venue_name,
         date: req.body.date,
@@ -46,7 +38,7 @@ router.delete('/', (req, res) => {
     SavedConcerts.destroy({
         where: {
             user_id: req.session.user_id,
-            concert_id: req.body.concert_id,
+            // concert_id: req.body.concert_id,
         },
     }),
         then((concert) => {
