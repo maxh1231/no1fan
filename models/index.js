@@ -27,4 +27,4 @@ SavedConcerts.belongsTo(User, {
     foreignKey: 'user_id',
 });
 
-module.exports = { User, ArtistFavorites, AlbumFavorites };
+module.exports = { User, ArtistFavorites, AlbumFavorites, SavedConcerts };

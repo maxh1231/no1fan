@@ -89,7 +89,10 @@ const addAttendedConcert = async (evt) => {
         let venue =
             evt.target.parentElement.previousElementSibling.textContent.trim();
         let date = evt.target.previousSibling.textContent.trim();
-        console.log(artist, venue, date);
+        let setlist_url =
+            evt.target.parentNode.previousElementSibling.previousElementSibling
+                .firstChild.href;
+        console.log(artist, venue, date, setlist_url);
         const response = await fetch('/api/savedconcerts/', {
             method: 'POST',
             headers: {
@@ -100,6 +103,7 @@ const addAttendedConcert = async (evt) => {
                 artist_name: artist,
                 venue_name: venue,
                 date: date,
+                setlist_url: setlist_url,
             }),
         });
         const postData = await response.json();

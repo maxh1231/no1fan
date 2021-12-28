@@ -1,16 +1,22 @@
 {{#if artistType}}
     <tr class='border-b'>
-        <td class='p-2 text-center'><a
+        {{#if venue.city.name}}
+            <td class='p-2 text-center'>{{venue.city.name}}</td>
+        {{else}}
+            <td class='p-2 text-center opacity-25'>No city given!</td>
+        {{/if}}
+        <td class='p-2 text-center'>{{venue.name}}</td>
+        <td class='p-2 text-center'>
+            <a
                 class='text-sky-400'
                 href='{{url}}'
                 target='_blank'
-            >{{venue.city.name}}</a></td>
-        <td class='p-2 text-center'>{{venue.name}}</td>
-        <td class='p-2 text-center'>
-            {{eventDate}}
+            >{{eventDate}}</a>
             <button
                 class='border-solid border-2 border-red-dark bg-black p-1.5 m-1 rounded-lg hover:opacity-75'
-            >I attended this show!</button>
+            >
+                I attended this show!
+            </button>
         </td>
     </tr>
 {{/if}}

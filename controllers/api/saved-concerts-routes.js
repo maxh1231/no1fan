@@ -9,7 +9,14 @@ router.get('/', (req, res) => {
         where: {
             user_id: req.session.user_id,
         },
-        attributes: ['id', 'artist_name', 'venue_name', 'date', 'user_id'],
+        attributes: [
+            'id',
+            'artist_name',
+            'venue_name',
+            'date',
+            'setlist_url',
+            'user_id',
+        ],
     })
         .then((concerts) => res.json(concerts))
         .catch((err) => {
@@ -24,6 +31,7 @@ router.post('/', (req, res) => {
         artist_name: req.body.artist_name,
         venue_name: req.body.venue_name,
         date: req.body.date,
+        setlist_url: req.body.setlist_url,
         user_id: req.session.user_id,
     })
         .then((concerts) => res.json(concerts))

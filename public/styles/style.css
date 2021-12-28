@@ -784,6 +784,10 @@ Ensure the default browser behavior of the `hidden` attribute.
           text-decoration-line: none;
 }
 
+.opacity-25 {
+  opacity: 0.25;
+}
+
 body {
   font-family: 'Ubuntu', sans-serif;
 }
