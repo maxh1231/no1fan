@@ -2,22 +2,31 @@ const router = require('express').Router();
 const { AlbumFavorites, ArtistFavorites } = require('../../models');
 
 router.get('/', (req, res) => {
-    ArtistFavorites.findAll({
-        where: {
-            user_id: req.session.user_id
-        },
-        attributes: [
-            'id',
-            'artist_id',
-            'artist_name',
-            'user_id'
-        ],
-    })
-        .then(favorites => res.json(favorites))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    if (!req.session.user_id) {
+        // console.log("User not logged in")
+        return;
+    } else {
+
+        ArtistFavorites.findAll({
+            where: {
+                user_id: req.session.user_id
+            },
+            attributes: [
+                'id',
+                'artist_id',
+                'artist_name',
+                'user_id'
+
+            ],
+
+        })
+
+            .then(favorites => res.json(favorites))
+            .catch(err => {
+                console.log(err);
+                res.status(500).json(err);
+            });
+    }
 });
 
 router.post('/', (req, res) => {

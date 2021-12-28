@@ -804,17 +804,9 @@ body {
 
 /* Input Placeholder styles */
 
-#home-search-input::-moz-placeholder {
+/* #home-search-input::placeholder {
   color: white;
-}
-
-#home-search-input:-ms-input-placeholder {
-  color: white;
-}
-
-#home-search-input::placeholder {
-  color: white;
-}
+} */
 
 /* carousel style start */
 
