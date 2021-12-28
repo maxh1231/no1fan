@@ -85,14 +85,25 @@ if (btn) {
 const addAttendedConcert = async (evt) => {
     evt.preventDefault();
     if (evt.target.tagName === 'BUTTON') {
-        console.log(
-            evt.target.parentElement.previousElementSibling
-                .previousElementSibling.textContent
-        );
-        console.log(
-            evt.target.parentElement.previousElementSibling.textContent
-        );
-        console.log(evt.target.previousSibling.textContent.trim());
+        let artist = document.getElementById('name').textContent.trim();
+        let venue =
+            evt.target.parentElement.previousElementSibling.textContent.trim();
+        let date = evt.target.previousSibling.textContent.trim();
+        console.log(artist, venue, date);
+        const response = await fetch('/api/savedconcerts/', {
+            method: 'POST',
+            headers: {
+                Accept: 'application.json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                artist_name: artist,
+                venue_name: venue,
+                date: date,
+            }),
+        });
+        const postData = await response.json();
+        console.log(postData);
     }
 };
 
