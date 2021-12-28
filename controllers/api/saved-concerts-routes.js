@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { SavedConcerts } = require('../../models');
-const withAuth = require('../../utils/auth');
+
+// Endpoint is /api/savedconcerts/
 
 // Get all saved concerts
 router.get('/', (req, res) => {

@@ -5,15 +5,21 @@
                 href='{{url}}'
                 target='_blank'
             >{{venue.city.name}}</a></td>
-        <td class='p-2 text-center'><a
+        {{!-- <td class='p-2 text-center'><a
                 class='text-sky-400'
                 {{! Update when deploying to production }}
                 href='localhost:3001/info/setlists/venue/{{format_venue_name
                     venue.name
                 }}'
                 target='_blank'
-            >{{venue.name}}</a></td>
-        <td class='p-2 text-center'>{{eventDate}}</td>
+            >{{venue.name}}</a></td> --}}
+        <td class='p-2 text-center'>{{venue.name}}</td>
+        <td class='p-2 text-center'>
+            {{eventDate}}
+            <button
+                class='border-solid border-2 border-red-dark bg-black p-1.5 m-1 rounded-lg hover:opacity-75'
+            >I attended this show!</button>
+        </td>
     </tr>
 {{/if}}
 {{#if venueType}}
