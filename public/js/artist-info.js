@@ -94,8 +94,10 @@ const getTracks = (evt) => {
     let current = '';
     if (evt.target.id === 'album-card') {
         current = evt.target.childNodes[1].innerText;
-    } else {
+    } else if (evt.target.id === 'album-picture' || evt.target.id === 'album-name') {
         current = evt.target.parentElement.childNodes[1].innerText;
+    } else {
+        return;
     }
     document.location.assign(`/info/album/${current}`);
 }
@@ -106,13 +108,12 @@ const getRecommended = (evt) => {
     let recommended = '';
     if (evt.target.id === 'recommended-artist-card') {
         recommended = evt.target.childNodes[1].innerText;
-        
-        
+    } else if (evt.target.id === 'recommended-artist-img' || evt.target.id === 'recommended-artist-name') {
+        recommended = evt.target.parentElement.childNodes[1].innerText;
     } else {
-        recommended = evt.target.parentElement.childNodes[1].innerText
+        return;
     }
-    document.location.assign(`/info/artist/${recommended}`);
-    
+    document.location.assign(`/info/artist/${recommended}`); 
 }
 
 // code for the carousel display
