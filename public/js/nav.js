@@ -45,7 +45,7 @@ const signupBtn = document.querySelector('#signup-btn')
 if (signupBtn) {signupBtn.addEventListener('click', signup)};
 
 const dashBtn = document.querySelector('#dashboard-btn')
-if (dashBtn) {dashBtn.addEventListener('click', dashboard);}
+if (dashBtn) {dashBtn.addEventListener('click', dashboard)};
 
 const logoutBtn = document.querySelector('#logout-btn');
-if (logoutBtn) {logoutBtn.addEventListener('click', logout);}
+if (logoutBtn) {logoutBtn.addEventListener('click', logout)};
