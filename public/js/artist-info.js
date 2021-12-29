@@ -109,6 +109,34 @@ const addAttendedConcert = async (evt) => {
     }
 };
 
+// Remove a concert from attended table
+const removeAttendedConcert = async (evt) => {
+    if (evt.target.tagName === 'BUTTON') {
+        let artist = document.getElementById('name').textContent.trim();
+        let venue =
+            evt.target.parentElement.previousElementSibling.textContent.trim();
+        let date = evt.target.previousSibling.textContent.trim();
+        let setlist_url =
+            evt.target.parentElement.previousElementSibling.firstChild.href;
+        console.log(artist, venue, date, setlist_url);
+        const response = await fetch('/api/savedconcerts/', {
+            method: 'POST',
+            headers: {
+                Accept: 'application.json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                artist_name: artist,
+                venue_name: venue,
+                date: date,
+                setlist_url: setlist_url,
+            }),
+        });
+        const postData = await response.json();
+        console.log(postData);
+    }
+};
+
 // function to get tracklist from an album
 const getTracks = (evt) => {
     evt.preventDefault();

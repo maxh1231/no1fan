@@ -5,19 +5,18 @@
         {{else}}
             <td class='p-2 text-center opacity-25'>No city given!</td>
         {{/if}}
-        {{! Broken -- test in production? }}
-        {{!-- <td class='p-2 text-center'><a
+        <td class='p-2 text-center'><a
                 class='text-sky-400'
-                href='localhost:3001/info/setlists/venue/{{venue.id}}'
+                href='/info/setlists/venue/{{venue.id}}'
                 target='_blank'
             >{{venue.name}}</a>
-        </td> --}}
-        <td class='p-2 text-center'><a
+        </td>
+        {{!-- <td class='p-2 text-center'><a
                 class='text-sky-400'
                 href='{{venue.url}}'
                 target='_blank'
             >{{venue.name}}</a>
-        </td>
+        </td> --}}
         <td class='p-2 text-center'>
             <a
                 class='text-sky-400'
