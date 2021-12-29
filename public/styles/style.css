@@ -888,3 +888,13 @@ body {
 .group:hover .group-hover\:opacity-75 {
   opacity: 0.75;
 }
+
+@media (min-width: 1280px) {
+  .xl\:block {
+    display: block;
+  }
+
+  .xl\:table-cell {
+    display: table-cell;
+  }
+}
