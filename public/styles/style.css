@@ -868,6 +868,10 @@ body {
   color: rgb(68 68 68 / var(--tw-text-opacity));
 }
 
+.hover\:border-2:hover {
+  border-width: 2px;
+}
+
 .hover\:underline:hover {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -879,4 +883,8 @@ body {
 
 .focus-visible\:outline-0:focus-visible {
   outline-width: 0px;
+}
+
+.group:hover .group-hover\:opacity-75 {
+  opacity: 0.75;
 }
