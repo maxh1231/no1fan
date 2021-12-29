@@ -71,3 +71,7 @@ body {
   .carousel-button-selected {
     background-color: rgba(148, 1, 16, 0.8);
   }
+
+  .carousel-button:hover {
+    opacity: 1;
+  }
