@@ -83,15 +83,13 @@ if (btn) {
 
 // Add concert to attended table
 const addAttendedConcert = async (evt) => {
-    evt.preventDefault();
     if (evt.target.tagName === 'BUTTON') {
         let artist = document.getElementById('name').textContent.trim();
         let venue =
             evt.target.parentElement.previousElementSibling.textContent.trim();
         let date = evt.target.previousSibling.textContent.trim();
         let setlist_url =
-            evt.target.parentNode.previousElementSibling.previousElementSibling
-                .firstChild.href;
+            evt.target.parentElement.previousElementSibling.firstChild.href;
         console.log(artist, venue, date, setlist_url);
         const response = await fetch('/api/savedconcerts/', {
             method: 'POST',
