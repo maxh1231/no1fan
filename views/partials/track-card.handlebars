@@ -8,7 +8,7 @@
     <td id="track-title" class="p-2">{{title}} {{#if explicit_lyrics}}<img src="https://img.shields.io/badge/-E-000??style=for-the-badge" alt="explicit badge" class="inline">{{/if}}</td>
     <td id="track-time" class="text-center p-2">{{format_time duration}}</td>
     {{#unless home}}
-    <td class="p-2 text-center">
+    <td class="p-2 text-center lg:table-cell hidden">
         {{#if preview}}
         <audio controls class="mx-auto">
             <source src="{{preview}}" type="audio/mpeg">
