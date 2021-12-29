@@ -573,6 +573,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 1.5rem;
 }
 
+.w-auto {
+  width: auto;
+}
+
 .table-auto {
   table-layout: auto;
 }
@@ -937,5 +941,11 @@ input:-webkit-autofill:active  {
 
   .lg\:flex-row {
     flex-direction: row;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:table-cell {
+    display: table-cell;
   }
 }
