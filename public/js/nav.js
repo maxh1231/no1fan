@@ -30,12 +30,11 @@ const logout = async () => {
     document.location.assign('/');
 }
 
-// const dashboard = (evt) => {
-//     evt.preventDefault();
-//     document.location.replace('/dashboard');
-// }
+const dashboard = (evt) => {
+    evt.preventDefault();
+    document.location.replace('/dashboard');
+}
 
-// document.querySelector('#dashboard-btn').addEventListener('click', dashboard);
 document.querySelector('#home-btn').addEventListener('click', home);
 document.querySelector('#home-search-form').addEventListener('submit', search);
 
@@ -45,5 +44,8 @@ if (loginBtn) {loginBtn.addEventListener('click', login)};
 const signupBtn = document.querySelector('#signup-btn')
 if (signupBtn) {signupBtn.addEventListener('click', signup)};
 
-const logoutBtn = document.querySelector('#logout-btn')
-if (logoutBtn) {logoutBtn.addEventListener('click', logout)};
+const dashBtn = document.querySelector('#dashboard-btn')
+if (dashBtn) {dashBtn.addEventListener('click', dashboard);}
+
+const logoutBtn = document.querySelector('#logout-btn');
+if (logoutBtn) {logoutBtn.addEventListener('click', logout);}
