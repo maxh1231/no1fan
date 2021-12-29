@@ -81,6 +81,15 @@ if (btn) {
     });
 }
 
+// Routes to either add or remove concert
+const concertRouter = function (evt) {
+    if (evt.target.innerHTML === 'I attended this show!') {
+        return addAttendedConcert(evt);
+    } else {
+        return removeAttendedConcert(evt);
+    }
+};
+
 // Add concert to attended table
 const addAttendedConcert = async (evt) => {
     if (evt.target.tagName === 'BUTTON') {
@@ -105,6 +114,7 @@ const addAttendedConcert = async (evt) => {
         });
         const postData = await response.json();
         console.log(postData);
+        evt.target.innerHTML = "Oops. I didn't!";
     }
 };
 
@@ -130,6 +140,7 @@ const removeAttendedConcert = async (evt) => {
         });
         const postData = await response.json();
         console.log(postData);
+        evt.target.innerHTML = 'I attended this show!';
     }
 };
 
@@ -218,6 +229,6 @@ document
 // Add listeners to each "I attended" button
 document
     .getElementById('recent-concerts-table')
-    .addEventListener('click', addAttendedConcert);
+    .addEventListener('click', concertRouter);
 
 window.onload = getHeart();
