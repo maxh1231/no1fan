@@ -1,21 +1,21 @@
 {{> nav}}
 
-<section id="top-result">
+<section id="top-result" class="flex flex-col items-center">
     <h2 id="top-result-header" class="text-xl font-bold m-2">Top Result</h2>
-    <div id="top-result-container" class="p-2 m-2">
+    <div id="top-result-container">
         {{> artist-card artists.data.[0] medium='true'}}
     </div>
 </section>
 
 <section id="track-results">
-    <h2 id="track-results-header" class="text-xl font-bold m-2">Tracks</h2>
+    <h2 id="track-results-header" class="text-xl font-bold my-2 mx-4">Tracks</h2>
     <div id="track-results-container" class="p-2 m-2">
-        <table class="table-fixed w-full">
+        <table class="table-fixed w-full rounded-t-md overflow-hidden">
             <thead>
                 <tr class="bg-gray-300 h-10">
                     <th>Name</th>
                     <th>Duration</th>
-                    <th>Preview</th>
+                    <th class="lg:table-cell hidden">Preview</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,7 +28,7 @@
 </section>
 
 <section id="artist-results">
-    <h2 id="artist-results-header" class="text-xl font-bold m-2">Artists</h2>
+    <h2 id="artist-results-header" class="text-xl font-bold my-2 mx-4">Artists</h2>
     <div id="artist-results-container" class="flex p-2 m-2 overflow-x-auto">
         {{#each artists.data}}
             {{> artist-card round='true' medium='true'}}
@@ -37,7 +37,7 @@
 </section>
 
 <section id="album-results">
-    <h2 id="album-results-header" class="text-xl font-bold m-2">Albums</h2>
+    <h2 id="album-results-header" class="text-xl font-bold my-2 mx-4">Albums</h2>
     <div id="album-results-container" class="flex p-2 m-2 overflow-x-auto">
         {{#each albums.data}}
             {{> album-card}}

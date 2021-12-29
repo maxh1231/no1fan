@@ -20,54 +20,58 @@ body {
     cursor: pointer;
 }
 
-/* Input Placeholder styles */
-/* #home-search-input::placeholder {
-  color: white;
-} */
-
 /* carousel style start */
 
 .carousel {
     position: relative;
-  }
-  
-  .carousel-display-item {
-    height: 550px;
-    width: 100%;
-    background: #999999;
-    padding: 1em;
-    font-family: "Quicksand", sans-serif;
-    font-weight: bold;
-    font-size: 2em;
-    color: black;
-    display: none;
-  }
-  
-  .carousel-display-item-selected {
-    display: block;
-  
-  }
-  
-  .carousel-navigation {
+}
+
+.carousel-display-item {
+  height: 550px;
   width: 100%;
-  padding: 20px 0;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  text-align: center;
-  
-  }
-  
-  .carousel-button {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-color: rgba(148, 1, 16, 0.5);
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-  }
-  
-  .carousel-button-selected {
-    background-color: rgba(148, 1, 16, 0.8);
-  }
+  background: #999999;
+  padding: 1em;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  font-size: 2em;
+  color: black;
+  display: none;
+}
+
+.carousel-display-item-selected {
+  display: block;
+
+}
+
+.carousel-navigation {
+width: 100%;
+padding: 20px 0;
+position: absolute;
+bottom: 0;
+left: 0;
+text-align: center;
+
+}
+
+.carousel-button {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-color: rgba(148, 1, 16, 0.5);
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.carousel-button-selected {
+  background-color: rgba(148, 1, 16, 0.8);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px #171717 inset !important;
+    -webkit-text-fill-color: #EDEDED !important;
+    font-family: 'Ubuntu', sans-serif;
+}
