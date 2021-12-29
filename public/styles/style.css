@@ -945,7 +945,27 @@ input:-webkit-autofill:active  {
 }
 
 @media (min-width: 1280px) {
+  .xl\:ml-8 {
+    margin-left: 2rem;
+  }
+
+  .xl\:mt-12 {
+    margin-top: 3rem;
+  }
+
   .xl\:table-cell {
     display: table-cell;
+  }
+
+  .xl\:flex-row {
+    flex-direction: row;
+  }
+
+  .xl\:items-center {
+    align-items: center;
+  }
+
+  .xl\:justify-start {
+    justify-content: flex-start;
   }
 }
