@@ -4,14 +4,18 @@
             class="hidden">{{artist.id}}</span></td>
     {{/if}}
     {{#if albumPage}}
-    <td class="text-center p-2">{{plus_one @index}}</td>
+    <td class="text-center p-2 w-auto">{{plus_one @index}}</td>
     {{/if}}
     <td id="track-title" class="p-2">{{title}} {{#if explicit_lyrics}}<img
             src="https://img.shields.io/badge/-E-000??style=for-the-badge" alt="explicit badge" class="inline">{{/if}}
     </td>
     <td id="track-time" class="text-center p-2">{{format_time duration}}</td>
     {{#unless home}}
+<<<<<<< HEAD
     <td class="p-2 text-center hidden xl:block">
+=======
+    <td class="p-2 text-center {{#if albumPage}}xl:table-cell{{else}}lg:table-cell{{/if}} hidden">
+>>>>>>> develop
         {{#if preview}}
         <audio controls class=" mx-auto">
             <source src="{{preview}}" type="audio/mpeg">
