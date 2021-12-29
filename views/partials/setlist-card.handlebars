@@ -5,13 +5,25 @@
         {{else}}
             <td class='p-2 text-center opacity-25'>No city given!</td>
         {{/if}}
+        {{! Broken -- test in production? }}
+        {{!-- <td class='p-2 text-center'><a
+                class='text-sky-400'
+                href='localhost:3001/info/setlists/venue/{{venue.id}}'
+                target='_blank'
+            >{{venue.name}}</a>
+        </td> --}}
         <td class='p-2 text-center'><a
+                class='text-sky-400'
+                href='{{venue.url}}'
+                target='_blank'
+            >{{venue.name}}</a>
+        </td>
+        <td class='p-2 text-center'>
+            <a
                 class='text-sky-400'
                 href='{{{url}}}'
                 target='_blank'
-            >{{venue.name}}</a></td>
-        <td class='p-2 text-center'>
-            {{eventDate}}
+            >{{eventDate}}</a>
             <button
                 class='border-solid border-2 border-red-dark bg-black p-1.5 m-1 rounded-lg hover:opacity-75'
             >
@@ -28,9 +40,14 @@
                 href='{{url}}'
                 target='_blank'
             >{{eventDate}}</a></td>
-        <td class='p-2 text-center'>{{tour.name}}</td>
+        {{#if tour.name}}
+            <td class='p-2 text-center'>{{tour.name}}</td>
+        {{else}}
+            <td class='p-2 text-center opacity-25'>No tour name given!</td>
+        {{/if}}
     </tr>
 {{/if}}
+
 {{! 
 Setlist info is returned as follows:
 
