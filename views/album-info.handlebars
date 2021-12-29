@@ -16,7 +16,7 @@
         </div>
         <div id="artist-name" class="flex flex-row items-center text-xl ">
             <img src="{{data.artist.picture_small}}" alt="" class="rounded-full">
-            <a href="/info/artist/" class="no-underline hover:underline ml-4">{{data.artist.name}}</a>
+            <a href="/info/artist/{{data.artist.id}}" class="no-underline hover:underline ml-4">{{data.artist.name}}</a>
         </div>
         <div id="album-info ">
             <span id="track-amount">{{data.nb_tracks}} tracks -</span>
@@ -45,7 +45,7 @@
         </div>
         <div id="artist-name" class="flex flex-row items-center text-xl py-8">
             <img src="{{data.artist.picture_small}}" alt="" class="rounded-full">
-            <a href="/info/artist/" class="no-underline hover:underline ml-4">{{data.artist.name}}</a>
+            <a href="/info/artist/{{data.artist.id}}" class="no-underline hover:underline ml-4">{{data.artist.name}}</a>
         </div>
         <div id="album-info ">
             <span id="track-amount">{{data.nb_tracks}} tracks -</span>
