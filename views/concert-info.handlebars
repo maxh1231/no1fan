@@ -11,6 +11,11 @@
                 Artist: {{concerts.events.[0].performers.[0].name}}
             </p>
         {{/if}}
+        {{#if locationType}}
+            <p id="venue-name">
+                Venue: {{concerts.events.0.venue.name_v2}}
+            </p>
+        {{/if}}
     </div>
     <div id="concert-info-container">
         <table class="table-fixed w-full" id="concerts-table">
