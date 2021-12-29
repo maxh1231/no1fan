@@ -46,18 +46,20 @@ router.delete('/', (req, res) => {
     SavedConcerts.destroy({
         where: {
             user_id: req.session.user_id,
-            // concert_id: req.body.concert_id,
+            artist_name: req.body.artist_name,
+            date: req.body.date,
         },
-    }),
-        then((concert) => {
-            if (!concert) {
+    })
+        .then((concerts) => {
+            if (!concerts) {
                 res.status(404).json({
                     message: 'No concert found with this id!',
                 });
                 return;
             }
-            res.json(concert);
-        }).catch((err) => {
+            res.json(concerts);
+        })
+        .catch((err) => {
             console.log(err);
             res.status(500).json(err);
         });

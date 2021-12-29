@@ -114,12 +114,10 @@ const removeAttendedConcert = async (evt) => {
         let artist = document.getElementById('name').textContent.trim();
         let venue =
             evt.target.parentElement.previousElementSibling.textContent.trim();
-        let date = evt.target.previousSibling.textContent.trim();
-        let setlist_url =
-            evt.target.parentElement.previousElementSibling.firstChild.href;
-        console.log(artist, venue, date, setlist_url);
+        let date = evt.target.previousElementSibling.textContent.trim();
+        console.log(artist, venue, date);
         const response = await fetch('/api/savedconcerts/', {
-            method: 'POST',
+            method: 'DELETE',
             headers: {
                 Accept: 'application.json',
                 'Content-Type': 'application/json',
@@ -128,7 +126,6 @@ const removeAttendedConcert = async (evt) => {
                 artist_name: artist,
                 venue_name: venue,
                 date: date,
-                setlist_url: setlist_url,
             }),
         });
         const postData = await response.json();
