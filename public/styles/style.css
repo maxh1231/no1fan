@@ -523,6 +523,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: table;
 }
 
+.table-cell {
+  display: table-cell;
+}
+
 .hidden {
   display: none;
 }
@@ -896,6 +900,17 @@ input:-webkit-autofill:active  {
   font-family: 'Ubuntu', sans-serif;
 }
 
+/* mobile play/pause button styles */
+
+.play, .pause {
+  width: 35px;
+  height: 35px;
+}
+
+.play:hover, .pause:hover {
+  filter: invert(49%) sepia(4%) saturate(4%) hue-rotate(322deg) brightness(101%) contrast(88%);
+}
+
 .placeholder\:text-gray-300::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(68 68 68 / var(--tw-text-opacity));
@@ -909,6 +924,10 @@ input:-webkit-autofill:active  {
 .placeholder\:text-gray-300::placeholder {
   --tw-text-opacity: 1;
   color: rgb(68 68 68 / var(--tw-text-opacity));
+}
+
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
 }
 
 .hover\:border-2:hover {
@@ -997,6 +1016,10 @@ input:-webkit-autofill:active  {
 
   .xl\:table-cell {
     display: table-cell;
+  }
+
+  .xl\:hidden {
+    display: none;
   }
 
   .xl\:flex-row {
