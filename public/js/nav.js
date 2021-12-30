@@ -49,7 +49,15 @@ if (signupBtn) {
     signupBtn.addEventListener('click', signup);
 }
 
+<<<<<<< HEAD
 const logoutBtn = document.querySelector('#logout-btn');
 if (logoutBtn) {
     logoutBtn.addEventListener('click', logout);
 }
+=======
+const dashBtn = document.querySelector('#dashboard-btn')
+if (dashBtn) {dashBtn.addEventListener('click', dashboard)};
+
+const logoutBtn = document.querySelector('#logout-btn');
+if (logoutBtn) {logoutBtn.addEventListener('click', logout)};
+>>>>>>> 47e6501462563ac2a756349d79c631ba11aaef1a
