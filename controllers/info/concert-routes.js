@@ -14,6 +14,7 @@ router.get('/', async (req, res) => {
     res.render('concert-info', {
         concerts,
         locationType: true,
+        loggedIn: req.session.loggedIn,
     });
 });
 
@@ -27,6 +28,7 @@ router.get('/artist/:input', async (req, res) => {
     res.render('concert-info', {
         concerts,
         artistType: true,
+        loggedIn: req.session.loggedIn,
     });
 });
 
@@ -40,6 +42,7 @@ router.get('/venue/:input', async (req, res) => {
     res.render('concert-info', {
         concerts,
         locationType: true,
+        loggedIn: req.session.loggedIn,
     });
 });
 

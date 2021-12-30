@@ -36,6 +36,7 @@ router.get('/artist/:input', async (req, res) => {
     res.render('setlist-info', {
         setlists,
         artistType: true,
+        loggedIn: req.session.loggedIn,
     });
 });
 
@@ -57,6 +58,7 @@ router.get('/venue/:input', async (req, res) => {
     res.render('setlist-info', {
         setlists,
         venueType: true,
+        loggedIn: req.session.loggedIn,
     });
 });
 

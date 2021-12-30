@@ -4,8 +4,12 @@ const fetch = require('node-fetch');
 // get home
 router.get('/', async (req, res) => {
     const artistRes = await fetch('https://api.deezer.com/chart/0/artists');
-    const trackRes = await fetch('https://api.deezer.com/chart/0/tracks&limit=10');
-    const showRes = await fetch(`https://api.seatgeek.com/2/events?geoip=true&type=concert&client_id=${process.env.SG_ID}`);
+    const trackRes = await fetch(
+        'https://api.deezer.com/chart/0/tracks&limit=10'
+    );
+    const showRes = await fetch(
+        `https://api.seatgeek.com/2/events?geoip=true&type=concert&client_id=${process.env.SG_ID}`
+    );
     if (!artistRes.ok || !trackRes.ok || !showRes) {
         alert(artistRes.statusText);
         return;
@@ -33,7 +37,7 @@ router.get('/login', (req, res) => {
 
 // get dashboard
 router.get('/dashboard', (req, res) => {
-    res.render('dashboard', { loggedIn: req.session.log });
+    res.render('dashboard', { loggedIn: req.session.loggedIn });
 });
 
 module.exports = router;
