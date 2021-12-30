@@ -33,10 +33,7 @@ router.get('/artist/:input', async (req, res) => {
         )
     ).json();
     // Render concert info with indicator that it's coming from Setlist.fm
-    res.render('setlist-info', {
-        setlists,
-        artistType: true,
-    });
+    res.render('setlist-info', { setlists, artistType: true, loggedIn: req.session.loggedIn });
 });
 
 // Get most recent setlists/shows for one venue
@@ -54,10 +51,7 @@ router.get('/venue/:input', async (req, res) => {
         )
     ).json();
     // Send setlist body back
-    res.render('setlist-info', {
-        setlists,
-        venueType: true,
-    });
+    res.render('setlist-info', { setlists, venueType: true, loggedIn: req.session.loggedIn });
 });
 
 // Exports
