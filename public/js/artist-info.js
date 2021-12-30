@@ -132,7 +132,6 @@ const addAttendedConcert = async (evt) => {
             evt.target.parentElement.previousElementSibling.textContent.trim();
         let date = evt.target.previousElementSibling.textContent.trim();
         let setlist_url = evt.target.previousElementSibling.href;
-        console.log(artist, venue, date, setlist_url);
         const response = await fetch('/api/savedconcerts/', {
             method: 'POST',
             headers: {
@@ -147,7 +146,6 @@ const addAttendedConcert = async (evt) => {
             }),
         });
         const postData = await response.json();
-        console.log(postData);
         evt.target.innerHTML = "Oops. I didn't!";
     }
 };
@@ -159,7 +157,6 @@ const removeAttendedConcert = async (evt) => {
         let venue =
             evt.target.parentElement.previousElementSibling.textContent.trim();
         let date = evt.target.previousElementSibling.textContent.trim();
-        console.log(artist, venue, date);
         const response = await fetch('/api/savedconcerts/', {
             method: 'DELETE',
             headers: {
@@ -173,7 +170,6 @@ const removeAttendedConcert = async (evt) => {
             }),
         });
         const postData = await response.json();
-        console.log(postData);
         evt.target.innerHTML = 'I attended this show!';
     }
 };
