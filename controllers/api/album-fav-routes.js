@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { AlbumFavorites, ArtistFavorites } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
     AlbumFavorites.findAll({
@@ -43,7 +44,7 @@ router.delete('/', (req, res) => {
         }
     })
         .then(favorites => {
-            if (favorites) {
+            if (!favorites) {
                 res.status(404).json({ message: 'No favorite found with this id' });
                 return;
             }

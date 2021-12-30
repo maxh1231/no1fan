@@ -1,20 +1,15 @@
-const search = (evt) => {
-    evt.preventDefault();
-    const input = document.querySelector('#home-search-input').value.trim();
-    document.location.assign(`/info/search/${input}`)
-}
-
 const getInfo = (evt) => {
     evt.preventDefault();
     let current = '';
-    if (evt.target.id === 'artist-card') {
-        current = evt.target.childNodes[1]
-          artist.innerText = data.events[i].title;
-    } else {
+    if (evt.target.id === 'artist-card' || evt.target.id === 'track-artist') {
+        current = evt.target.childNodes[1].innerText
+    } else if (evt.target.id === 'artist-img' || evt.target.id === 'artist-name') {
         current = evt.target.parentElement.childNodes[1].innerText;
+    } else {
+        return;
     }
     document.location.assign(`/info/artist/${current}`);
 }
 
 document.querySelector('#top-artist-container').addEventListener('click', getInfo);
-document.querySelector('#home-search-form').addEventListener('submit', search);
+document.querySelector('#top-track-table').addEventListener('click', getInfo);

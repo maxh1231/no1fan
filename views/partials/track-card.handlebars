@@ -1,16 +1,24 @@
-<tr class="border-b">
-    {{#if albumPage}}
-    <td class="p-2">{{plus_one @index}}</td>
+<tr class="border-b bg-gray-400">
+    {{#if home}}
+    <td id="track-artist" class="p-2 cursor-pointer hover:opacity-75">{{artist.name}}<span
+            class="hidden">{{artist.id}}</span></td>
     {{/if}}
-    <td class="p-2">{{title}}{{#if explicit_lyrics}}<img src="https://img.shields.io/badge/-EXPLICIT-000??style=for-the-badge" alt="">{{/if}}</td>
-    <td class="text-center p-2">{{format_time duration}}</td>
-    <td class="p-2 text-center">
+    {{#if albumPage}}
+    <td class="text-center p-2 w-auto">{{plus_one @index}}</td>
+    {{/if}}
+    <td id="track-title" class="p-2">{{title}} {{#if explicit_lyrics}}<img
+            src="https://img.shields.io/badge/-E-000??style=for-the-badge" alt="explicit badge" class="inline">{{/if}}
+    </td>
+    <td id="track-time" class="text-center p-2">{{format_time duration}}</td>
+    {{#unless home}}
+    <td class="p-2 text-center {{#if albumPage}}xl:table-cell{{else}}lg:table-cell{{/if}} hidden">
         {{#if preview}}
-        <audio controls class="mx-auto">
+        <audio controls class=" mx-auto">
             <source src="{{preview}}" type="audio/mpeg">
         </audio>
         {{else}}
         <span>No preview available!</span>
         {{/if}}
     </td>
+    {{/unless}}
 </tr>
