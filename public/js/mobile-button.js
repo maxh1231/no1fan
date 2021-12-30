@@ -8,4 +8,3 @@ function playAudio(url) {
 function pauseAudio() {
     playSound.pause();
 }
-
