@@ -50,6 +50,6 @@
   ### Questions
   -------------------------------------------------------------------------------------------------------
   
-  Any quesitons? Check us out on Github!: (https://github.com/Thenlie) (https://github.com/Jillium) (https://github.com/Thorulfr) (https://github.com/maxh1231)
+  Any questions? Check us out on Github!: (https://github.com/Thenlie) (https://github.com/Jillium) (https://github.com/Thorulfr) (https://github.com/maxh1231)
   
   
