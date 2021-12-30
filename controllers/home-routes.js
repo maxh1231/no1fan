@@ -30,7 +30,7 @@ router.get('/login', (req, res) => {
 
 // get dashboard
 router.get('/dashboard', (req, res) => {
-    res.render('dashboard', { loggedIn: req.session.log });
+    res.render('dashboard', { loggedIn: req.session.loggedIn });
 });
 
 module.exports = router;
