@@ -72,9 +72,15 @@
             </tr>
         </thead>
         <tbody>
+            {{#if loggedIn}}
+            {{#each pastConcerts.setlist}}
+                {{>setlist-card artistType="true" loggedIn="also true"}}
+            {{/each}}
+            {{else}}
             {{#each pastConcerts.setlist}}
                 {{>setlist-card artistType="true"}}
             {{/each}}
+            {{/if}}
         </tbody>
     </table>
 </div>
