@@ -1,12 +1,35 @@
 {{#if artistType}}
     <tr class='border-b'>
+        {{#if venue.city.name}}
+            <td class='p-2 text-center'>{{venue.city.name}}</td>
+        {{else}}
+            <td class='p-2 text-center opacity-25'>No city given!</td>
+        {{/if}}
+
         <td class='p-2 text-center'><a
                 class='text-sky-400'
-                href='{{url}}'
+                href='/info/setlists/venue/{{venue.id}}'
                 target='_blank'
-            >{{eventDate}}</a></td>
-        <td class='p-2 text-center'>{{venue.name}}</td>
-        <td class='p-2 text-center'>{{tour.name}}</td>
+            >{{venue.name}}</a>
+        </td>
+        {{!-- <td class='p-2 text-center'><a
+                class='text-sky-400'
+                href='{{venue.url}}'
+                target='_blank'
+            >{{venue.name}}</a>
+        </td> --}}
+        <td class='p-2 text-center'>
+            <a
+                class='text-sky-400'
+                href='{{{url}}}'
+                target='_blank'
+            >{{eventDate}}</a>
+            <button
+                class='border-solid border-2 border-red-dark bg-black p-1.5 m-1 rounded-lg hover:opacity-75'
+            >
+                I attended this show!
+            </button>
+        </td>
     </tr>
 {{/if}}
 {{#if venueType}}
@@ -17,9 +40,14 @@
                 href='{{url}}'
                 target='_blank'
             >{{eventDate}}</a></td>
-        <td class='p-2 text-center'>{{tour.name}}</td>
+        {{#if tour.name}}
+            <td class='p-2 text-center'>{{tour.name}}</td>
+        {{else}}
+            <td class='p-2 text-center opacity-25'>No tour name given!</td>
+        {{/if}}
     </tr>
 {{/if}}
+
 {{! 
 Setlist info is returned as follows:
 
