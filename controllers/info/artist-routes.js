@@ -53,6 +53,8 @@ router.use('/:id', async (req, res) => {
             )
         ).json()
     ).artist[0].mbid;
+
+    
     // Use MBID to get recent setlists
     const pastConcerts = await (
         await fetch(

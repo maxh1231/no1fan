@@ -34,7 +34,7 @@
 <!-- recommended artist section -->
 <h5 class="text-center text-xl font-bold m-2">If you like {{name}} , you might like these artists</h5>
 
-<div id="recommended-wrapper" class="flex justify-center">
+<div id="recommended-wrapper" class="flex justify-center overflow-x-auto">
 
     {{#each recommendedArray}}
     {{> recommended-artist-card}}
