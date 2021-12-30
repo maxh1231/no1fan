@@ -4,7 +4,7 @@
     
     <section id="top-artists" class="m-2 lg:w-1/4 inline-block">
         <h2 class="text-xl font-bold text-center m-2">Top 10 Artists</h2>
-        <div id="top-artist-container" class="h-[87vmax] m-auto w-fit p-2 overflow-y-auto overflow-x-hidden">
+        <div id="top-artist-container" class="h-[100vmax] m-auto w-fit p-2 overflow-y-auto overflow-x-hidden">
             {{#each topArtists.data}}
                 {{> artist-card medium='true'}}
             {{/each}}
@@ -16,11 +16,11 @@
         <section id="random-track" class="m-3">
             <h2 class="text-xl font-bold text-center m-2">Random Track</h2>
             <div id="random-track-container" class="w-full border rounded-md bg-gray-400 p-4">
-                <a href="/info/album/{{random.data.0.album.id}}"><img id="random-album-img" src="{{random.data.0.album.cover_medium}}" class="inline rounded-sm drop-shadow-lg"></a>
+                <img id="random-album-img" src="{{random.data.0.album.cover_medium}}" class="inline rounded-sm">
                 <div id="random-info-container" class="inline-flex flex-col align-middle m-3">
                     <a class="m-2 text-xl">{{random.data.0.title}}</a>
                     <a href="/info/artist/{{random.data.0.artist.id}}" class="m-2 text-lg hover:opacity-75">{{random.data.0.artist.name}}</a>
-                    <a href="/info/album/{{random.data.0.album.id}}" class="m-2 text-lg hover:opacity-75">{{random.data.0.album.title}}</a>
+                    <p class="m-2 text-lg">{{random.data.0.album.title}}</p>
                     {{#if random.data.0.preview}}
                     <div>
                          <audio controls class="">

@@ -426,16 +426,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 *, ::before, ::after {
   --tw-border-opacity: 1;
   border-color: rgb(102 102 102 / var(--tw-border-opacity));
-  --tw-blur: var(--tw-empty,/*!*/ /*!*/);
-  --tw-brightness: var(--tw-empty,/*!*/ /*!*/);
-  --tw-contrast: var(--tw-empty,/*!*/ /*!*/);
-  --tw-grayscale: var(--tw-empty,/*!*/ /*!*/);
-  --tw-hue-rotate: var(--tw-empty,/*!*/ /*!*/);
-  --tw-invert: var(--tw-empty,/*!*/ /*!*/);
-  --tw-saturate: var(--tw-empty,/*!*/ /*!*/);
-  --tw-sepia: var(--tw-empty,/*!*/ /*!*/);
-  --tw-drop-shadow: var(--tw-empty,/*!*/ /*!*/);
-  --tw-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
 }
 
 .m-2 {
@@ -533,8 +527,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 2.5rem;
 }
 
-.h-\[87vmax\] {
-  height: 87vmax;
+.h-\[100vmax\] {
+  height: 100vmax;
 }
 
 .h-\[325px\] {
@@ -822,11 +816,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   opacity: 0.25;
 }
 
-.drop-shadow-lg {
-  --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
-  filter: var(--tw-filter);
-}
-
 body {
   font-family: 'Ubuntu', sans-serif;
 }
@@ -925,6 +914,12 @@ input:-webkit-autofill:active  {
 
 .hover\:opacity-75:hover {
   opacity: 0.75;
+}
+
+.hover\:shadow-inner:hover {
+  --tw-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .focus-visible\:outline-0:focus-visible {
