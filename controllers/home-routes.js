@@ -13,7 +13,12 @@ router.get('/', async (req, res) => {
     const topArtists = await artistRes.json();
     const topTracks = await trackRes.json();
     const shows = await showRes.json();
-    res.render('home', { topArtists, topTracks, shows, loggedIn: req.session.loggedIn });
+    res.render('home', {
+        topArtists,
+        topTracks,
+        shows,
+        loggedIn: req.session.loggedIn,
+    });
 });
 
 // get signup
