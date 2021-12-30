@@ -33,5 +33,5 @@ module.exports = {
     format_venue_name: (name) => {
         const noSpacesName = name.replace(' ', '%20');
         return noSpacesName;
-    },
+    }
 };

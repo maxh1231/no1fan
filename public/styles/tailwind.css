@@ -75,3 +75,13 @@ input:-webkit-autofill:active  {
     -webkit-text-fill-color: #EDEDED !important;
     font-family: 'Ubuntu', sans-serif;
 }
+
+/* mobile play/pause button styles */
+.play, .pause {
+  width: 35px;
+  height: 35px;
+}
+
+.play:hover, .pause:hover {
+  filter: invert(49%) sepia(4%) saturate(4%) hue-rotate(322deg) brightness(101%) contrast(88%);
+}
