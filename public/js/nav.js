@@ -6,8 +6,8 @@ const home = (evt) => {
 const search = (evt) => {
     evt.preventDefault();
     const input = document.querySelector('#home-search-input').value.trim();
-    document.location.assign(`/info/search/${input}`)
-}
+    document.location.assign(`/info/search/${input}`);
+};
 
 const login = (evt) => {
     evt.preventDefault();
@@ -49,15 +49,12 @@ if (signupBtn) {
     signupBtn.addEventListener('click', signup);
 }
 
-<<<<<<< HEAD
+const dashBtn = document.querySelector('#dashboard-btn');
+if (dashBtn) {
+    dashBtn.addEventListener('click', dashboard);
+}
+
 const logoutBtn = document.querySelector('#logout-btn');
 if (logoutBtn) {
     logoutBtn.addEventListener('click', logout);
 }
-=======
-const dashBtn = document.querySelector('#dashboard-btn')
-if (dashBtn) {dashBtn.addEventListener('click', dashboard)};
-
-const logoutBtn = document.querySelector('#logout-btn');
-if (logoutBtn) {logoutBtn.addEventListener('click', logout)};
->>>>>>> 47e6501462563ac2a756349d79c631ba11aaef1a
