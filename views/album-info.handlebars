@@ -2,28 +2,29 @@
 
 
 {{#if loggedIn}}
-<section class="flex">
-    <div id="cover" class="my-12 ml-8">
+<section class="flex flex-col xl:flex-row">
+    <div id="cover" class="my-12 flex justify-center xl:ml-8">
         <img src="{{data.cover_medium}}" alt="">
     </div>
-    <div class="flex flex-col justify-between mx-8 mt-12 h-[250px]">
-        <div id="title" class="flex flex-row items-center text-4xl ">{{data.title}}
+    <div class="flex flex-col justify-center mx-8 h-[250px] xl:mt-12">
+        <div id="title" class="flex flex-row justify-center text-4xl xl:items-center xl:justify-start">
+            {{data.title}}
             {{#if data.explicit_lyrics}}
             <div id="explicit-bage" class="ml-4">
                 <img src="https://img.shields.io/badge/-EXPLICIT-000??style=for-the-badge" alt="">
             </div>
             {{/if}}
         </div>
-        <div id="artist-name" class="flex flex-row items-center text-xl ">
+        <div id="artist-name" class="flex flex-row justify-center items-center text-xl py-8 xl:justify-start">
             <img src="{{data.artist.picture_small}}" alt="" class="rounded-full">
-            <a href="/info/artist/" class="no-underline hover:underline ml-4">{{data.artist.name}}</a>
+            <a href="/info/artist/{{data.artist.id}}" class="no-underline hover:underline ml-4">{{data.artist.name}}</a>
         </div>
-        <div id="album-info ">
-            <span id="track-amount">{{data.nb_tracks}} tracks -</span>
-            <span id="album-duration"> {{ format_duration data.duration}} -</span>
+        <div id="album-info" class="flex flex-row justify-center">
+            <span id="track-amount">{{data.nb_tracks}}tracks - </span>
+            <span id="album-duration"> {{ format_duration data.duration}} - </span>
             <span id="date">{{ format_date data.release_date}}</span>
         </div>
-        <div class="">
+        <div class="pt-4 flex justify-center xl:justify-start">
             <img src="/assets/fav.svg" alt="" class="deactive" id="favBtn" width="40px" height="40px">
         </div>
     </div>
@@ -31,25 +32,26 @@
 {{/if}}
 
 {{#unless loggedIn}}
-<section class="flex">
-    <div id="cover" class="my-12 ml-8">
+<section class="flex flex-col xl:flex-row">
+    <div id="cover" class="my-12 flex justify-center xl:ml-8">
         <img src="{{data.cover_medium}}" alt="">
     </div>
-    <div class="flex flex-col justify-center mx-8 mt-12 h-[250px]">
-        <div id="title" class="flex flex-row items-center text-4xl">{{data.title}}
+    <div class="flex flex-col justify-center mx-8 h-[250px] xl:mt-12">
+        <div id="title" class="flex flex-row justify-center text-4xl xl:items-center xl:justify-start">
+            {{data.title}}
             {{#if data.explicit_lyrics}}
             <div id="explicit-bage" class="ml-4">
                 <img src="https://img.shields.io/badge/-EXPLICIT-000??style=for-the-badge" alt="">
             </div>
             {{/if}}
         </div>
-        <div id="artist-name" class="flex flex-row items-center text-xl py-8">
+        <div id="artist-name" class="flex flex-row justify-center items-center text-xl py-8 xl:justify-start">
             <img src="{{data.artist.picture_small}}" alt="" class="rounded-full">
-            <a href="/info/artist/" class="no-underline hover:underline ml-4">{{data.artist.name}}</a>
+            <a href="/info/artist/{{data.artist.id}}" class="no-underline hover:underline ml-4">{{data.artist.name}}</a>
         </div>
-        <div id="album-info ">
-            <span id="track-amount">{{data.nb_tracks}} tracks -</span>
-            <span id="album-duration"> {{ format_duration data.duration}} -</span>
+        <div id="album-info" class="flex flex-row justify-center">
+            <span id="track-amount">{{data.nb_tracks}}tracks - </span>
+            <span id="album-duration"> {{ format_duration data.duration}} - </span>
             <span id="date">{{ format_date data.release_date}}</span>
         </div>
     </div>
@@ -64,7 +66,7 @@
                     <th>#</th>
                     <th>Name</th>
                     <th>Duration</th>
-                    <th>Preview</th>
+                    <th class="hidden xl:table-cell">Preview</th>
                 </tr>
             </thead>
             <tbody>
@@ -76,6 +78,8 @@
     </div>
 </section>
 
+{{> footer}}
+
 {{#if loggedIn}}
-<script src="/js/tracklist.js"></script>
+<script src="/js/album-info.js"></script>
 {{/if}}
