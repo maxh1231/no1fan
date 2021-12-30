@@ -81,6 +81,41 @@ if (btn) {
     });
 }
 
+// Gets saved concerts, checks displayed concerts against them, and updates button text accordingly
+let getAttendedConcerts = async (req, res) => {
+    const response = await fetch('/api/savedconcerts', {
+        method: 'GET',
+        headers: {
+            Accept: 'application.json',
+            'Content-Type': 'application/json',
+        },
+    });
+    const attendedConcerts = await response.json();
+    let attendedConcertsSimplified = [];
+    attendedConcerts.forEach((element) => {
+        attendedConcertsSimplified.push([element.venue_name, element.date]);
+    });
+    console.log(attendedConcertsSimplified);
+    attendedConcertsSimplified = JSON.stringify(attendedConcertsSimplified);
+    let buttonsArray = document
+        .getElementById('recent-concerts-table')
+        .getElementsByTagName('button');
+    for (let i = 0; i < buttonsArray.length; i++) {
+        if (
+            attendedConcertsSimplified.includes(
+                JSON.stringify([
+                    buttonsArray[
+                        i
+                    ].parentElement.previousElementSibling.textContent.trim(),
+                    buttonsArray[i].previousElementSibling.textContent.trim(),
+                ])
+            )
+        ) {
+            buttonsArray[i].innerHTML = "Oops. I didn't!";
+        }
+    }
+};
+
 // Routes to either add or remove concert
 const concertRouter = function (evt) {
     if (evt.target.innerHTML === 'I attended this show!') {
@@ -232,3 +267,4 @@ document
     .addEventListener('click', concertRouter);
 
 window.onload = getHeart();
+window.onload = getAttendedConcerts();
