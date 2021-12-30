@@ -95,7 +95,6 @@ let getAttendedConcerts = async (req, res) => {
     attendedConcerts.forEach((element) => {
         attendedConcertsSimplified.push([element.venue_name, element.date]);
     });
-    console.log(attendedConcertsSimplified);
     attendedConcertsSimplified = JSON.stringify(attendedConcertsSimplified);
     let buttonsArray = document
         .getElementById('recent-concerts-table')
@@ -118,7 +117,7 @@ let getAttendedConcerts = async (req, res) => {
 
 // Routes to either add or remove concert
 const concertRouter = function (evt) {
-    if (evt.target.innerHTML === 'I attended this show!') {
+    if (evt.target.innerText === 'I attended this show!') {
         return addAttendedConcert(evt);
     } else {
         return removeAttendedConcert(evt);
