@@ -957,6 +957,10 @@ input:-webkit-autofill:active  {
     display: table-cell;
   }
 
+  .xl\:hidden {
+    display: none;
+  }
+
   .xl\:flex-row {
     flex-direction: row;
   }
