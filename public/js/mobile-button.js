@@ -1,8 +1,15 @@
 playSound = null;
 
 function playAudio(url) {
-    playSound = new Audio(url);
-    playSound.play();
+    if (playSound) {
+        playSound.pause();
+        playSound = new Audio(url);
+        playSound.play();
+    } else {
+        playSound = new Audio(url);
+        playSound.play();
+    }
+
 }
 
 function pauseAudio() {
