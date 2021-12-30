@@ -4,7 +4,7 @@
     
     <section id="top-artists" class="m-2 lg:w-1/4 inline-block">
         <h2 class="text-xl font-bold text-center m-2">Top 10 Artists</h2>
-        <div id="top-artist-container" class="h-screen m-auto w-fit p-2 overflow-y-auto overflow-x-hidden">
+        <div id="top-artist-container" class="h-[87vmax] m-auto w-fit p-2 overflow-y-auto overflow-x-hidden">
             {{#each topArtists.data}}
                 {{> artist-card medium='true'}}
             {{/each}}
@@ -13,18 +13,26 @@
 
     <section class="flex flex-col w-full m-2">
         
-        <section id="random-track">
-            <div id="random-track-container">
-                <img id="random-album-img" src="{{random.data.0.album.cover_small}}">
-                <div id="random-info-container">
-                    <p>{{random.data.0.title}}</p>
-                    <p>{{random.data.0.artist.name}}</p>
-                    <p>{{random.data.0.title}}</p>
+        <section id="random-track" class="m-3">
+            <h2 class="text-xl font-bold text-center m-2">Random Track</h2>
+            <div id="random-track-container" class="w-full border rounded-md bg-gray-400 p-4">
+                <img id="random-album-img" src="{{random.data.0.album.cover_medium}}" class="inline rounded-sm">
+                <div id="random-info-container" class="inline-flex flex-col align-middle m-3">
+                    <p class="m-2 text-xl">{{random.data.0.title}}</p>
+                    <p class="m-2 text-lg">{{random.data.0.artist.name}}</p>
+                    <p class="m-2 text-lg">{{random.data.0.album.title}}</p>
+                    {{#if random.data.0.preview}}
+                    <div>
+                         <audio controls class="">
+                            <source src="{{random.data.0.preview}}" type="audio/mpeg">
+                        </audio>
+                    </div>
+                    {{/if}}
                 </div>
             </div>
         </section>
 
-        <section id="top-track-container" class="m-3 inline-block">
+        <section id="top-track-container" class="m-3">
             <h2 class="text-xl font-bold text-center m-2">Top 10 Tracks</h2>
             <div id="top-track-container">
                 <table class="table-auto w-full rounded-t-md overflow-hidden">
