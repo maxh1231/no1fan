@@ -23,10 +23,9 @@
         <div id="discography-wrapper" class="bg-gray-100">
             
             {{#each artistAlbums.data}}
-            <div class="carousel-display-item">
-                {{>carousel-card}}
-            </div>
-
+                <div class="carousel-display-item">
+                    {{>carousel-card}}
+                </div>
             {{/each}}
         </div>
     </div>
@@ -43,9 +42,41 @@
 </div>
 
 <!-- show section -->
-<div id="show-wrapper">
+{{!-- Upcoming concerts --}}
+<div id="upcoming-concert-container">
     <h5 class="text-center text-xl font-bold m-2">Upcoming concerts by {{name}}</h5>
-    <!-- shows go here -->
+    <table class="table-fixed w-full" id="upcoming-concerts-table">
+        <thead>
+            <tr class="bg-gray-400 h-10">
+                <th>City</th>
+                <th>Venue</th>
+                <th>Date/Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each upcomingConcerts.events}}
+                {{>concert-card artistType="true"}}
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+{{!-- Recent concerts --}}
+<div id="recent-concert-container">
+    <h5 class="text-center text-xl font-bold m-2">Recent concerts by {{name}}</h5>
+    <table class="table-fixed w-full" id="recent-concerts-table">
+        <thead>
+            <tr class="bg-gray-400 h-10">
+                <th>City</th>
+                <th>Venue</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each pastConcerts.setlist}}
+                {{>setlist-card artistType="true"}}
+            {{/each}}
+        </tbody>
+    </table>
 </div>
 
 <!-- footer -->

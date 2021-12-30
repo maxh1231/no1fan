@@ -41,28 +41,10 @@ router.get('/artist/:input', async (req, res) => {
 
 // Get most recent setlists/shows for one venue
 router.get('/venue/:input', async (req, res) => {
-    // https://api.setlist.fm/rest/1.0/search/venues?p=1&cityName=salt%20lake%20city&name=the%20complex
-    // How to pull two different sets of params?
-    // req.body / req.params;
-    // venue/:city/:input
-    // Get venue ID to feed into Setlist API
-    const venueID = (
-        await (
-            await fetch(
-                `https://api.setlist.fm/rest/1.0/search/venues?name=${req.params.input}&p=1`,
-                {
-                    headers: {
-                        Accept: 'application/json',
-                        'x-api-key': process.env.SETLIST_API_KEY,
-                    },
-                }
-            )
-        ).json()
-    ).venue[0].id;
     // Use venue ID to get recent setlists
     const setlists = await (
         await fetch(
-            `https://api.setlist.fm/rest/1.0/venue/${venueID}/setlists?p=1`,
+            `https://api.setlist.fm/rest/1.0/venue/${req.params.input}/setlists?p=1`,
             {
                 headers: {
                     Accept: 'application/json',

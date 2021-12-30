@@ -1,16 +1,41 @@
-<tr class='border-b'>
-    <td class='p-2 text-center'>
-        <a class='text-sky-400' href='{{url}}' target='_blank'>
-            {{#if artistType}}
-                {{venue.city}}
-            {{/if}}
-            {{#if locationType}}
-                {{performers.0.name}}
-            {{/if}}
-        </a></td>
-    <td class='p-2 text-center'>{{datetime_utc}}</td>
-    <td class='p-2 text-center'>{{venue.name_v2}}</td>
-</tr>
+{{! For artists }}
+{{#if artistType}}
+    <tr class='border-b'>
+        <td class='p-2 text-center'>
+            {{venue.city}}
+        </td>
+        <td class='p-2 text-center'>
+            <a
+                class='text-sky-400'
+                href='/info/concerts/venue/{{venue.id}}'
+                target='_blank'
+            >
+                {{venue.name_v2}}
+            </a>
+        </td>
+        <td class='p-2 text-center'>
+            <a class='text-sky-400' href='{{url}}' target='_blank'>{{format_date
+                    datetime_local
+                }}</a>
+        </td>
+    </tr>
+{{/if}}
+
+{{! For venues }}
+{{#if locationType}}
+    <tr class='border-b'>
+        <td class='p-2 text-center'>
+            {{performers.0.name}}
+        </td>
+        <td class='p-2 text-center'>
+            <a class='text-sky-400' href='{{url}}' target='_blank'>{{format_date
+                    datetime_local
+                }}</a>
+        </td>
+        <td class='p-2 text-center'>{{performers.0.genres.0.name}}
+        </td>
+    </tr>
+{{/if}}
 
 {{! 
 
