@@ -13,7 +13,7 @@
     {{#unless home}}
     <td class="p-2 text-center {{#if albumPage}}table-cell{{else}}lg:table-cell hidden{{/if}}">
         {{#if preview}}
-        <audio controls class="{{#if albumPage}} hidden xl:table-cell mx-auto {{else}} mx-auto{{/if}}">
+        <audio controls class="{{#unless home}} hidden xl:table-cell mx-auto {{/unless}} mx-auto">
             <source src="{{preview}}" type="audio/mpeg">
         </audio>
         <div class="flex justify-center items-center">
