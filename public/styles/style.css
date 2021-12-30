@@ -907,6 +907,10 @@ input:-webkit-autofill:active  {
   color: rgb(68 68 68 / var(--tw-text-opacity));
 }
 
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
+}
+
 .hover\:border-2:hover {
   border-width: 2px;
 }
