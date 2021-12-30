@@ -15,6 +15,7 @@ router.get('/', async (req, res) => {
     const topTracks = await trackRes.json();
     const shows = await showRes.json();
     const random = await randomRes.json();
+    console.log(random.data[0].artist.id);
     res.render('home', { topArtists, topTracks, shows, random, loggedIn: req.session.loggedIn});
 });
 

@@ -62,7 +62,7 @@ router.use('/:id', async (req, res) => {
             {
                 headers: {
                     Accept: 'application/json',
-                    'x-api-key': process.env.SETLIST_API_KEY,
+                    'x-api-key': process.env.SETLIST_API_KEY_2,
                 },
             }
         )
