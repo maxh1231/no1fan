@@ -4,12 +4,8 @@ const fetch = require('node-fetch');
 // get home
 router.get('/', async (req, res) => {
     const artistRes = await fetch('https://api.deezer.com/chart/0/artists');
-    const trackRes = await fetch(
-        'https://api.deezer.com/chart/0/tracks&limit=5'
-    );
-    const showRes = await fetch(
-        `https://api.seatgeek.com/2/events?geoip=true&type=concert&client_id=${process.env.SEATGEEK_CLIENT_ID}`
-    );
+    const trackRes = await fetch('https://api.deezer.com/chart/0/tracks&limit=10');
+    const showRes = await fetch(`https://api.seatgeek.com/2/events?geoip=true&type=concert&client_id=${process.env.SG_ID}`);
     if (!artistRes.ok || !trackRes.ok || !showRes) {
         alert(artistRes.statusText);
         return;

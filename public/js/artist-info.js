@@ -83,34 +83,36 @@ if (btn) {
 
 // Gets saved concerts, checks displayed concerts against them, and updates button text accordingly
 let getAttendedConcerts = async (req, res) => {
-    const response = await fetch('/api/savedconcerts', {
-        method: 'GET',
-        headers: {
-            Accept: 'application.json',
-            'Content-Type': 'application/json',
-        },
-    });
-    const attendedConcerts = await response.json();
-    let attendedConcertsSimplified = [];
-    attendedConcerts.forEach((element) => {
-        attendedConcertsSimplified.push([element.venue_name, element.date]);
-    });
-    attendedConcertsSimplified = JSON.stringify(attendedConcertsSimplified);
-    let buttonsArray = document
-        .getElementById('recent-concerts-table')
-        .getElementsByTagName('button');
-    for (let i = 0; i < buttonsArray.length; i++) {
-        if (
-            attendedConcertsSimplified.includes(
-                JSON.stringify([
-                    buttonsArray[
-                        i
-                    ].parentElement.previousElementSibling.textContent.trim(),
-                    buttonsArray[i].previousElementSibling.textContent.trim(),
-                ])
-            )
-        ) {
-            buttonsArray[i].innerHTML = "Oops. I didn't!";
+    if (btn) {
+        const response = await fetch('/api/savedconcerts', {
+            method: 'GET',
+            headers: {
+                Accept: 'application.json',
+                'Content-Type': 'application/json',
+            },
+        });
+        const attendedConcerts = await response.json();
+        let attendedConcertsSimplified = [];
+        attendedConcerts.forEach((element) => {
+            attendedConcertsSimplified.push([element.venue_name, element.date]);
+        });
+        attendedConcertsSimplified = JSON.stringify(attendedConcertsSimplified);
+        let buttonsArray = document
+            .getElementById('recent-concerts-table')
+            .getElementsByTagName('button');
+        for (let i = 0; i < buttonsArray.length; i++) {
+            if (
+                attendedConcertsSimplified.includes(
+                    JSON.stringify([
+                        buttonsArray[
+                            i
+                        ].parentElement.previousElementSibling.textContent.trim(),
+                        buttonsArray[i].previousElementSibling.textContent.trim(),
+                    ])
+                )
+            ) {
+                buttonsArray[i].innerHTML = "Oops. I didn't!";
+            }
         }
     }
 };

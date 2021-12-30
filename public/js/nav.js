@@ -35,7 +35,6 @@ const dashboard = (evt) => {
     document.location.replace('/dashboard');
 };
 
-document.querySelector('#dashboard-btn').addEventListener('click', dashboard);
 document.querySelector('#home-btn').addEventListener('click', home);
 document.querySelector('#home-search-form').addEventListener('submit', search);
 
