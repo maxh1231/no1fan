@@ -25,9 +25,7 @@ router.use('/:id', async (req, res) => {
     // console.log(recommended.data.length);
     // pulls the artist bio for the page
     let searchName = artistName.name;
-    const artistBioResponse = await fetch(
-        `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${searchName}&api_key=0b84f9d0c28085fc5510cb51682d69de&format=json`
-    );
+    const artistBioResponse = await fetch(`https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${searchName}&api_key=${process.env.LASTFM_API_KEY}&format=json`);
     const artistBio = await artistBioResponse.json();
     // Get upcoming concerts
     const upcomingConcerts = await (
@@ -55,6 +53,8 @@ router.use('/:id', async (req, res) => {
             )
         ).json()
     ).artist[0].mbid;
+
+    
     // Use MBID to get recent setlists
     const pastConcerts = await (
         await fetch(
