@@ -34,6 +34,38 @@
     <div>Show Card 6</div>
 </div>
 
+<section id="user-info" class="border m-3 p-2">
+    <h2 class="text-xl font-bold border-b">User Info</h2>
+    <p>{{data.email}}</p>
+    <p>{{data.username}}</p>
+    <p>{{format_date data.createdAt}}</p>
+</section>
+
+<section id="artist-favorites" class="border m-3 p-2">
+    <h2 class="text-xl font-bold border-b">Artist Favorites</h2>
+    {{#each data.artistfavorites}}
+        <p>{{dataValues.artist_name}}</p>
+        <p class="border-b">{{dataValues.artist_id}}</p>
+    {{/each}}    
+</section>
+
+<section id="album-favorites" class="border m-3 p-2">
+    <h2 class="text-xl font-bold border-b">Album Favorites</h2>
+    {{#each data.albumfavorites}}
+        <p>{{dataValues.album_name}}</p>
+        <p class="border-b">{{dataValues.album_id}}</p>
+    {{/each}}  
+</section>
+
+<section id="saved-concerts" class="border m-3 p-2">
+    <h2 class="text-xl font-bold border-b">Concerts</h2>
+    {{#each data.savedconcerts}}
+        <p>{{dataValues.artist_name}}</p>
+        <p>{{dataValues.date}}</p>
+        <p class="border-b">{{dataValues.venue_name}}</p>
+    {{/each}}    
+</section>
+
 {{!-- Footer --}}
 {{>footer}}
 {{!-- JS link --}}
