@@ -75,7 +75,23 @@ input:-webkit-autofill:active {
     font-family: 'Ubuntu', sans-serif;
 }
 
-.text-rose-700 {
-    --tw-text-opacity: 1;
-    color: rgb(190 18 60 / var(--tw-text-opacity));
+/* mobile play/pause button styles */
+.play,
+.pause {
+    width: 35px;
+    height: 35px;
+}
+
+.play:hover,
+.pause:hover {
+    filter: invert(49%) sepia(4%) saturate(4%) hue-rotate(322deg)
+        brightness(101%) contrast(88%);
+}
+
+#artist-bio a:hover {
+    text-decoration: underline;
+}
+
+#artist-bio a {
+    color: 38bdf8;
 }

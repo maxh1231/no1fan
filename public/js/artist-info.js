@@ -212,11 +212,11 @@ const getTracks = (evt) => {
 const getRecommended = (evt) => {
     evt.preventDefault();
     let recommended = '';
-    if (evt.target.id === 'recommended-artist-card') {
+    if (evt.target.id === 'artist-card') {
         recommended = evt.target.childNodes[1].innerText;
     } else if (
-        evt.target.id === 'recommended-artist-img' ||
-        evt.target.id === 'recommended-artist-name'
+        evt.target.id === 'artist-img' ||
+        evt.target.id === 'artist-name'
     ) {
         recommended = evt.target.parentElement.childNodes[1].innerText;
     } else {
