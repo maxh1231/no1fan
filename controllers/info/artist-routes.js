@@ -42,33 +42,34 @@ router.use('/:id', async (req, res) => {
     console.log(upcomingConcerts);
 
     // Get artist MBID to feed into Setlist API
-    const artistMBID = (
-        await (
+    let pastConcerts
+    const response = await fetch(`https://api.setlist.fm/rest/1.0/search/artists?artistName=${searchName}&p=1&sort=relevance`,
+        {
+            headers: {
+                Accept: 'application/json',
+                'x-api-key': process.env.SETLIST_API_KEY,
+            },
+        }
+    )
+    if (!response.ok) {
+        pastConcerts = null
+    } else {
+        const data = await response.json()
+        const artistMBID = data.artist[0].mbid;
+        // Use MBID to get recent setlists
+        pastConcerts = await (
             await fetch(
-                `https://api.setlist.fm/rest/1.0/search/artists?artistName=${searchName}&p=1&sort=relevance`,
+                `https://api.setlist.fm/rest/1.0/artist/${artistMBID}/setlists?p=1`,
                 {
                     headers: {
                         Accept: 'application/json',
-                        'x-api-key': process.env.SETLIST_API_KEY,
+                        'x-api-key': process.env.SETLIST_API_KEY_2,
                     },
                 }
             )
-        ).json()
-    ).artist[0].mbid;
-
+        ).json();
+    }
     
-    // Use MBID to get recent setlists
-    const pastConcerts = await (
-        await fetch(
-            `https://api.setlist.fm/rest/1.0/artist/${artistMBID}/setlists?p=1`,
-            {
-                headers: {
-                    Accept: 'application/json',
-                    'x-api-key': process.env.SETLIST_API_KEY_2,
-                },
-            }
-        )
-    ).json();
 
     // pulls recommended artists into an array
     let recommendedArray = [];
