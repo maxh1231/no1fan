@@ -1097,6 +1097,10 @@ input:-webkit-autofill:active {
   opacity: 0.75;
 }
 
+.group:hover .group-hover\:opacity-50 {
+  opacity: 0.5;
+}
+
 @media (min-width: 640px) {
   .sm\:m-0 {
     margin: 0px;
