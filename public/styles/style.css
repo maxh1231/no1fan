@@ -572,6 +572,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 2.5rem;
 }
 
+.h-64 {
+  height: 16rem;
+}
+
 .h-4 {
   height: 1rem;
 }
@@ -602,10 +606,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 250px;
 }
 
-.w-fit {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+.w-3\/4 {
+  width: 75%;
 }
 
 .w-auto {
@@ -614,6 +616,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-4 {
   width: 1rem;
+}
+
+.w-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .w-250 {
