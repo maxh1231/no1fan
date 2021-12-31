@@ -22,9 +22,9 @@
 </div>
 
 <!-- for album cards -->
-<div id="main-carousel-div" class="bg-gray-100">
+<div id="main-carousel-div" class="bg-gray-100 mx-20 rounded-md">
     <div class="carousel">
-        <h5 class="text-center text-5xl font-bold m-2 text-red-dark">Albums</h5>
+        <h5 class="text-center text-5xl font-bold m-2 text-red-dark p-4">Albums</h5>
         <div id="discography-wrapper" class="bg-gray-100">
 
             {{#each artistAlbums.data}}
@@ -50,6 +50,7 @@
 {{!-- Upcoming concerts --}}
 <div id="upcoming-concert-container" class="m-4">
     <h5 class="text-center text-xl font-bold m-2">Upcoming concerts by {{name}}</h5>
+    {{#if upcomingConcerts.events}}
     <table class="table-fixed w-full rounded-t-md overflow-hidden" id="upcoming-concerts-table">
         <thead>
             <tr class="bg-gray-300 h-10">
@@ -64,10 +65,14 @@
             {{/each}}
         </tbody>
     </table>
+    {{else}}
+    <h5 class="text-center">Check back for upcoming concerts!</h5>
+    {{/if}}
 </div>
 {{!-- Recent concerts --}}
 <div id="recent-concert-container" class="m-4">
     <h5 class="text-center text-xl font-bold m-2">Recent concerts by {{name}}</h5>
+    {{#if pastConcerts.setlist}}
     <table class="table-fixed w-full rounded-t-md overflow-hidden" id="recent-concerts-table">
         <thead>
             <tr class="bg-gray-300 h-10">
@@ -87,7 +92,10 @@
             {{/each}}
             {{/if}}
         </tbody>
+        {{else}}
+        <h5 class="text-center">No Past Concerts Available</h5>
     </table>
+    {{/if}}
 </div>
 
 <!-- footer -->

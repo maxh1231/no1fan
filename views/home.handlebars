@@ -55,6 +55,7 @@
         <section id="upcoming-shows-container" class="m-3">
             <h2 class="text-xl font-bold text-center m-2">Upcoming Concerts in your Area</h2>
             <div id="location-container">
+                {{#if shows.events}}
                 <table class="table-auto w-full rounded-t-md overflow-hidden">
                 <thead>
                     <tr class="bg-gray-300 h-10 text-left">
@@ -69,6 +70,9 @@
                     {{/each}}
                 </tbody>
                 </table>
+                {{else}}
+                <h5 class="text-center">No Upcoming Concerts in your Area</h5>
+                {{/if}}
             </div>
         </section>
 
