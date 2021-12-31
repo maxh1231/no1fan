@@ -1,9 +1,7 @@
 const router = require('express').Router();
 const fetch = require('node-fetch');
 
-
-
-// renders the tracklist for album with hardcoded info
+// renders the tracklist for album
 router.get('/:id', async (req, res) => {
     let albumID = req.params.id;
     const response = await fetch(`https://api.deezer.com/album/${albumID}/`)
@@ -17,4 +15,3 @@ router.get('/:id', async (req, res) => {
 });
 
 module.exports = router;
-
