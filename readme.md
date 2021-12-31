@@ -1,23 +1,9 @@
 # #1Fan ![Badge for License](https://img.shields.io/badge/license-Open-informational)
 
   
-  
-  ## Table of Contents
-  * [Project Description](#projectDescription)
-  * [Languages Used](#LanguagesUsed)
-  * [Table of Contents](#tableofContents)
-  * [Link](#checkOutTheApplication)
-  * [Usage](#usage)
-  * [License](#license)
-  * [Contributing](#creditsAndContributors)
-  * [Questions](#questions)
-
-
-  ## Project Description 
+    ## Project Description 
   This is a group project made for a coding bootcamp with the University of Utah. It is a full stack application. It was designed to be a hub for a music fan to be able to listen to music, save favorites, get artist info, and see information about local shows and also other shows by an artist. Users are able to create an account and log in an out. The app was built using MVC to help separate concerns, and handlebars.js was used as the templating language. 
 
-  
-  
   
   ## Languages Used 
   Javascript,CSS,HTML,Node,Other
@@ -27,9 +13,6 @@
   * https://www.last.fm/api#getting-started
   * https://platform.seatgeek.com/
   * https://api.setlist.fm/docs/1.0/index.html
-
-
-
 
 
   ### Check out the application
