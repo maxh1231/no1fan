@@ -28,7 +28,7 @@
   Fork a copy of the repo and have fun!
 
   ### Credits and Contributors 
-  Leithan Crider, Jill Holmes, Benjamin Holt, Max Humphreys
+  Leithen Crider, Jill Holmes, Benjamin Holt, Max Humpherys
 
   ### License
   This application is covered under the Open license
