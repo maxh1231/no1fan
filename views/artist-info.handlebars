@@ -4,15 +4,20 @@
 <div id="artist-wrapper" class="flex justify-between items-center p-2 m-2 space-x-4">
     <div id="artist-info mt-4">
         <div id="artist-pic"><img src="{{picture}}" class="rounded-full hover:border-2"></div>
-        <h3 id="name" class="text-center text-xl font-bold m-2">{{name}}</h3>
-        {{#if loggedIn}}
-        <div>
-            <img src="/assets/fav.svg" alt="" class="deactive" id="favBtn">
-        </div>
-        {{/if}}
     </div>
-    <div id="artist-bio" class="m-3 text-center font-bold">
-        {{{artistBio.artist.bio.summary}}}
+    <div>
+        <div class="flex flex-row items-center justify-start">
+            <h3 id="name" class="text-center text-2xl font-bold m-3">{{name}}</h3>
+            {{#if loggedIn}}
+            <div>
+                <img src="/assets/fav.svg" alt="" class="deactive" id="favBtn">
+            </div>
+            {{/if}}
+        </div>
+
+        <div id="artist-bio" class="m-3 text-left font-bold">
+            {{{artistBio.artist.bio.summary}}}
+        </div>
     </div>
 </div>
 
@@ -21,33 +26,33 @@
     <div class="carousel">
         <h5 class="text-center text-5xl font-bold m-2 text-red-dark">Albums</h5>
         <div id="discography-wrapper" class="bg-gray-100">
-            
+
             {{#each artistAlbums.data}}
-                <div class="carousel-display-item">
-                    {{>carousel-card}}
-                </div>
+            <div class="carousel-display-item">
+                {{>carousel-card}}
+            </div>
             {{/each}}
         </div>
     </div>
 </div>
 
 <!-- recommended artist section -->
-<h5 class="text-center text-xl font-bold m-2">If you like {{name}} , you might like these artists</h5>
+<h5 class="text-center text-xl font-bold m-2">If you like {{name}}, you might like these artists</h5>
 
-<div id="recommended-wrapper" class="flex justify-center overflow-x-auto">
+<div id="recommended-wrapper" class="flex p-2 m-2 overflow-x-auto">
 
     {{#each recommendedArray}}
-    {{> recommended-artist-card}}
+    {{> artist-card}}
     {{/each}}
 </div>
 
 <!-- show section -->
 {{!-- Upcoming concerts --}}
-<div id="upcoming-concert-container">
+<div id="upcoming-concert-container" class="m-4">
     <h5 class="text-center text-xl font-bold m-2">Upcoming concerts by {{name}}</h5>
-    <table class="table-fixed w-full" id="upcoming-concerts-table">
+    <table class="table-fixed w-full rounded-t-md overflow-hidden" id="upcoming-concerts-table">
         <thead>
-            <tr class="bg-gray-400 h-10">
+            <tr class="bg-gray-300 h-10">
                 <th>City</th>
                 <th>Venue</th>
                 <th>Date/Time</th>
@@ -55,17 +60,17 @@
         </thead>
         <tbody>
             {{#each upcomingConcerts.events}}
-                {{>concert-card artistType="true"}}
+            {{>concert-card artistType="true"}}
             {{/each}}
         </tbody>
     </table>
 </div>
 {{!-- Recent concerts --}}
-<div id="recent-concert-container">
+<div id="recent-concert-container" class="m-4">
     <h5 class="text-center text-xl font-bold m-2">Recent concerts by {{name}}</h5>
-    <table class="table-fixed w-full" id="recent-concerts-table">
+    <table class="table-fixed w-full rounded-t-md overflow-hidden" id="recent-concerts-table">
         <thead>
-            <tr class="bg-gray-400 h-10">
+            <tr class="bg-gray-300 h-10">
                 <th>City</th>
                 <th>Venue</th>
                 <th>Date</th>
@@ -74,11 +79,11 @@
         <tbody>
             {{#if loggedIn}}
             {{#each pastConcerts.setlist}}
-                {{>setlist-card artistType="true" loggedIn="also true"}}
+            {{>setlist-card artistType="true" loggedIn="also true"}}
             {{/each}}
             {{else}}
             {{#each pastConcerts.setlist}}
-                {{>setlist-card artistType="true"}}
+            {{>setlist-card artistType="true"}}
             {{/each}}
             {{/if}}
         </tbody>

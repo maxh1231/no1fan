@@ -101,79 +101,94 @@ let getAttendedConcerts = async (req, res) => {
             .getElementById('recent-concerts-table')
             .getElementsByTagName('button');
         for (let i = 0; i < buttonsArray.length; i++) {
-            if (
-                attendedConcertsSimplified.includes(
-                    JSON.stringify([
-                        buttonsArray[
-                            i
-                        ].parentElement.previousElementSibling.textContent.trim(),
-                        buttonsArray[i].previousElementSibling.textContent.trim(),
-                    ])
-                )
-            ) {
-                buttonsArray[i].innerHTML = "Oops. I didn't!";
+            // If a green add button
+            if (buttonsArray[i].dataset.attended === 'no') {
+                // If the concert is found in the user's attended concerts
+                if (
+                    attendedConcertsSimplified.includes(
+                        JSON.stringify([
+                            buttonsArray[
+                                i
+                            ].parentElement.previousElementSibling.textContent.trim(),
+                            buttonsArray[
+                                i
+                            ].previousElementSibling.textContent.trim(),
+                        ])
+                    )
+                ) {
+                    // Hide the add button
+                    buttonsArray[i].classList.add('hidden');
+                }
+            }
+            // If a red remove button
+            if (buttonsArray[i].dataset.attended === 'yes') {
+                // If the concert is found in the user's attended concerts
+                if (
+                    attendedConcertsSimplified.includes(
+                        JSON.stringify([
+                            buttonsArray[
+                                i
+                            ].parentElement.previousElementSibling.textContent.trim(),
+                            buttonsArray[
+                                i
+                            ].parentElement.firstElementChild.textContent.trim(),
+                        ])
+                    )
+                ) {
+                    // Show the button
+                    buttonsArray[i].classList.remove('hidden');
+                }
             }
         }
     }
 };
 
-// Routes to either add or remove concert
-const concertRouter = function (evt) {
-    if (evt.target.innerText === 'I attended this show!') {
-        return addAttendedConcert(evt);
-    } else {
-        return removeAttendedConcert(evt);
-    }
-};
-
 // Add concert to attended table
 const addAttendedConcert = async (evt) => {
-    if (evt.target.tagName === 'BUTTON') {
-        let artist = document.getElementById('name').textContent.trim();
-        let venue =
-            evt.target.parentElement.previousElementSibling.textContent.trim();
-        let date = evt.target.previousElementSibling.textContent.trim();
-        let setlist_url = evt.target.previousElementSibling.href;
-        const response = await fetch('/api/savedconcerts/', {
-            method: 'POST',
-            headers: {
-                Accept: 'application.json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                artist_name: artist,
-                venue_name: venue,
-                date: date,
-                setlist_url: setlist_url,
-            }),
-        });
-        const postData = await response.json();
-        evt.target.innerHTML = "Oops. I didn't!";
-    }
+    let artist = document.getElementById('name').textContent.trim();
+    let venue =
+        evt.currentTarget.parentElement.previousElementSibling.textContent.trim();
+    let date = evt.currentTarget.previousElementSibling.textContent.trim();
+    let setlist_url = evt.currentTarget.previousElementSibling.href;
+    evt.currentTarget.classList.add('hidden');
+    evt.currentTarget.nextElementSibling.classList.remove('hidden');
+    console.log(evt.currentTarget);
+    const response = await fetch('/api/savedconcerts/', {
+        method: 'POST',
+        headers: {
+            Accept: 'application.json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            artist_name: artist,
+            venue_name: venue,
+            date: date,
+            setlist_url: setlist_url,
+        }),
+    });
 };
 
 // Remove a concert from attended table
 const removeAttendedConcert = async (evt) => {
-    if (evt.target.tagName === 'BUTTON') {
-        let artist = document.getElementById('name').textContent.trim();
-        let venue =
-            evt.target.parentElement.previousElementSibling.textContent.trim();
-        let date = evt.target.previousElementSibling.textContent.trim();
-        const response = await fetch('/api/savedconcerts/', {
-            method: 'DELETE',
-            headers: {
-                Accept: 'application.json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                artist_name: artist,
-                venue_name: venue,
-                date: date,
-            }),
-        });
-        const postData = await response.json();
-        evt.target.innerHTML = 'I attended this show!';
-    }
+    let artist = document.getElementById('name').textContent.trim();
+    let venue =
+        evt.currentTarget.parentElement.previousElementSibling.textContent.trim();
+    let date =
+        evt.currentTarget.parentElement.firstElementChild.textContent.trim();
+    evt.currentTarget.classList.add('hidden');
+    evt.currentTarget.previousElementSibling.classList.remove('hidden');
+    const response = await fetch('/api/savedconcerts/', {
+        method: 'DELETE',
+        headers: {
+            Accept: 'application.json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            artist_name: artist,
+            venue_name: venue,
+            date: date,
+        }),
+    });
 };
 
 // function to get tracklist from an album
@@ -197,11 +212,11 @@ const getTracks = (evt) => {
 const getRecommended = (evt) => {
     evt.preventDefault();
     let recommended = '';
-    if (evt.target.id === 'recommended-artist-card') {
+    if (evt.target.id === 'artist-card') {
         recommended = evt.target.childNodes[1].innerText;
     } else if (
-        evt.target.id === 'recommended-artist-img' ||
-        evt.target.id === 'recommended-artist-name'
+        evt.target.id === 'artist-img' ||
+        evt.target.id === 'artist-name'
     ) {
         recommended = evt.target.parentElement.childNodes[1].innerText;
     } else {
@@ -259,9 +274,16 @@ document
     .addEventListener('click', getRecommended);
 
 // Add listeners to each "I attended" button
-document
+let attendedButtons = document
     .getElementById('recent-concerts-table')
-    .addEventListener('click', concertRouter);
+    .getElementsByTagName('button');
+for (let i = 0; i < attendedButtons.length; i++) {
+    if (attendedButtons[i].dataset.attended === 'no') {
+        attendedButtons[i].addEventListener('click', addAttendedConcert);
+    } else if (attendedButtons[i].dataset.attended === 'yes') {
+        attendedButtons[i].addEventListener('click', removeAttendedConcert);
+    }
+}
 
 window.onload = getHeart();
 window.onload = getAttendedConcerts();
