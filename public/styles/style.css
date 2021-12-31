@@ -478,6 +478,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: auto;
 }
 
+.mx-20 {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
 .mx-3 {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
@@ -618,6 +623,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: auto;
 }
 
+.max-w-none {
+  max-width: none;
+}
+
 .table-auto {
   table-layout: auto;
 }
@@ -640,10 +649,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .items-center {
   align-items: center;
-}
-
-.justify-start {
-  justify-content: flex-start;
 }
 
 .justify-center {
@@ -1009,10 +1014,6 @@ input:-webkit-autofill:active {
   cursor: pointer;
 }
 
-.hover\:border-2:hover {
-  border-width: 2px;
-}
-
 .hover\:underline:hover {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -1072,6 +1073,16 @@ input:-webkit-autofill:active {
 
   .sm\:flex-row {
     flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:justify-start {
+    justify-content: flex-start;
   }
 }
 

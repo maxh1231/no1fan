@@ -1,5 +1,4 @@
 const artistInfo = (evt) => {
-    evt.preventDefault();
     let current = '';
     if (evt.target.id === 'artist-card') {
         current = evt.target.childNodes[1].innerText;
@@ -12,7 +11,6 @@ const artistInfo = (evt) => {
 }
 
 const albumInfo = (evt) => {
-    evt.preventDefault();
     let current = '';
     if (evt.target.id === 'album-card') {
         current = evt.target.childNodes[1].innerText;
