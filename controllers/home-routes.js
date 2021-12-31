@@ -4,9 +4,17 @@ const fetch = require('node-fetch');
 // get homepage
 router.get('/', async (req, res) => {
     const artistRes = await fetch('https://api.deezer.com/chart/0/artists');
-    const trackRes = await fetch('https://api.deezer.com/chart/0/tracks&limit=10');
-    const showRes = await fetch(`https://api.seatgeek.com/2/events?geoip=true&type=concert&client_id=${process.env.SG_ID}`);
-    const randomRes = await fetch(`https://api.deezer.com/chart/0/tracks?index=${Math.floor(Math.random() * 100) + 1}`);
+    const trackRes = await fetch(
+        'https://api.deezer.com/chart/0/tracks&limit=10'
+    );
+    const showRes = await fetch(
+        `https://api.seatgeek.com/2/events?geoip=true&type=concert&client_id=${process.env.SG_ID}`
+    );
+    const randomRes = await fetch(
+        `https://api.deezer.com/chart/0/tracks?index=${
+            Math.floor(Math.random() * 100) + 1
+        }`
+    );
     if (!artistRes.ok || !trackRes.ok || !showRes || !randomRes) {
         alert(artistRes.statusText);
         return;
@@ -15,7 +23,13 @@ router.get('/', async (req, res) => {
     const topTracks = await trackRes.json();
     const shows = await showRes.json();
     const random = await randomRes.json();
-    res.render('home', { topArtists, topTracks, shows, random, loggedIn: req.session.loggedIn});
+    res.render('home', {
+        topArtists,
+        topTracks,
+        shows,
+        random,
+        loggedIn: req.session.loggedIn,
+    });
 });
 
 router.get('/signup', (req, res) => {

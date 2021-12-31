@@ -4,15 +4,20 @@
 <div id="artist-wrapper" class="flex justify-between items-center p-2 m-2 space-x-4">
     <div id="artist-info mt-4">
         <div id="artist-pic"><img src="{{picture}}" class="rounded-full hover:border-2"></div>
-        <h3 id="name" class="text-center text-xl font-bold m-2">{{name}}</h3>
-        {{#if loggedIn}}
-        <div>
-            <img src="/assets/fav.svg" alt="" class="deactive" id="favBtn">
-        </div>
-        {{/if}}
     </div>
-    <div id="artist-bio" class="m-3 text-center font-bold">
-        {{{artistBio.artist.bio.summary}}}
+    <div>
+        <div class="flex flex-row items-center justify-start">
+            <h3 id="name" class="text-center text-2xl font-bold m-3">{{name}}</h3>
+            {{#if loggedIn}}
+            <div>
+                <img src="/assets/fav.svg" alt="" class="deactive" id="favBtn">
+            </div>
+            {{/if}}
+        </div>
+
+        <div id="artist-bio" class="m-3 text-left font-bold">
+            {{{artistBio.artist.bio.summary}}}
+        </div>
     </div>
 </div>
 
@@ -21,11 +26,11 @@
     <div class="carousel">
         <h5 class="text-center text-5xl font-bold m-2 text-red-dark">Albums</h5>
         <div id="discography-wrapper" class="bg-gray-100">
-            
+
             {{#each artistAlbums.data}}
-                <div class="carousel-display-item">
-                    {{>carousel-card}}
-                </div>
+            <div class="carousel-display-item">
+                {{>carousel-card}}
+            </div>
             {{/each}}
         </div>
     </div>
@@ -55,7 +60,7 @@
         </thead>
         <tbody>
             {{#each upcomingConcerts.events}}
-                {{>concert-card artistType="true"}}
+            {{>concert-card artistType="true"}}
             {{/each}}
         </tbody>
     </table>
@@ -74,11 +79,11 @@
         <tbody>
             {{#if loggedIn}}
             {{#each pastConcerts.setlist}}
-                {{>setlist-card artistType="true" loggedIn="also true"}}
+            {{>setlist-card artistType="true" loggedIn="also true"}}
             {{/each}}
             {{else}}
             {{#each pastConcerts.setlist}}
-                {{>setlist-card artistType="true"}}
+            {{>setlist-card artistType="true"}}
             {{/each}}
             {{/if}}
         </tbody>
