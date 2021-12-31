@@ -17,11 +17,11 @@
             </p>
         {{/if}}
     </div>
-    <div id="concert-info-container">
-        <table class="table-fixed w-full" id="concerts-table">
+    <div id="concert-info-container" class="m-3">
+        <table class="table-fixed w-full rounded-t-md overflow-hidden" id="concerts-table">
             {{#if artistType}}
                 <thead>
-                    <tr class="bg-gray-400 h-10">
+                    <tr class="bg-gray-300 h-10">
                         <th>City</th>
                         <th>Date/Time</th>
                         <th>Venue</th>
@@ -35,7 +35,7 @@
             {{/if}}
             {{#if locationType}}
                 <thead>
-                    <tr class="bg-gray-400 h-10">
+                    <tr class="bg-gray-300 h-10">
                         <th>Artist</th>
                         <th>Date/Time</th>
                         <th>Genre</th>
