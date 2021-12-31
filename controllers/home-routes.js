@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const fetch = require('node-fetch');
+const sequelize = require('../config/connection');
 const { User, ArtistFavorites, AlbumFavorites, SavedConcerts  } = require('../models');
 
 // get home
@@ -47,7 +48,7 @@ router.get('/login', (req, res) => {
 router.get('/dashboard', async (req, res) => {
     const response = await User.findOne({
         where: { id: req.session.user_id },
-        attributes: { exclude: ['password'] },
+        attributes: ['id', 'username', 'email', 'createdAt', [sequelize.literal('(SELECT COUNT(*) FROM savedconcerts WHERE user.id = savedconcerts.user_id)'), 'count']],
         include: [
             {
                 model: ArtistFavorites,
@@ -63,7 +64,6 @@ router.get('/dashboard', async (req, res) => {
             }
         ]
     });
-    // console.log(response);
     const data = response.dataValues
     console.log(data)
     res.render('dashboard', { data, loggedIn: req.session.loggedIn });

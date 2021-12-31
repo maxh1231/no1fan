@@ -36,9 +36,11 @@
 
 <section id="user-info" class="border m-3 p-2">
     <h2 class="text-xl font-bold border-b">User Info</h2>
+    <img src="https://robohash.org/{{data.username}}.png?set=set4">
     <p>{{data.email}}</p>
     <p>{{data.username}}</p>
     <p>{{format_date data.createdAt}}</p>
+    <p>Show Count: {{data.count}}</p>
 </section>
 
 <section id="artist-favorites" class="border m-3 p-2">
