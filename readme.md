@@ -1,15 +1,16 @@
-# #1Fan
+# #1Fan ![Badge for License](https://img.shields.io/badge/license-Open-informational)
 
-  ![Badge for License](https://img.shields.io/badge/license-Open-informational)
+  
   
   ## Table of Contents
-  -[Project Description](#projectDescription)
-  -[Table of Contents](#tableofContents)
-  -[Installation](#installation)
-  -[Usage](#usage)
-  -[License](#license)
-  -[Contributing](#contributing)
-  -[Questions](#questions)
+  * [Project Description](#projectDescription)
+  * [Languages Used](#LanguagesUsed)
+  * [Table of Contents](#tableofContents)
+  * [Link](#checkOutTheApplication)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contributing](#contributing)
+  * [Questions](#questions)
 
 
   ## Project Description 
@@ -22,17 +23,17 @@
   Javascript,CSS,HTML,Node,Other
 
   ## API's used
-  https://developers.deezer.com/api
-  https://www.last.fm/api#getting-started
-  https://platform.seatgeek.com/
-  https://api.setlist.fm/docs/1.0/index.html
+  * https://developers.deezer.com/api
+  * https://www.last.fm/api#getting-started
+  * https://platform.seatgeek.com/
+  * https://api.setlist.fm/docs/1.0/index.html
 
 
 
 
 
-  ### Installation Instructions
-  Clone the repository. You can install the needed dependencies by using npm i, but the application uses bcrypt for password safety and authentication, connect-session-sequelize, dotenv, express, express-handlebars, express-session, handlebars, mysql2, node-fetch and sequelize. The application can be deployed to a server hosting site. 
+  ### Check out the application
+  https://no1fan.herokuapp.com/
 
   ### What will the app be used for? 
   It is a central hub for music lovers of all genres. There is a lot of potential for future feature development. As of now, users can save favorite artists and albums, and see current and past show information for artists. They can also see shows near them. The application has artist suggestions based on searched artist. The user can also listen to song previews. 
