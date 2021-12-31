@@ -150,6 +150,9 @@ const addAttendedConcert = async (evt) => {
         evt.currentTarget.parentElement.previousElementSibling.textContent.trim();
     let date = evt.currentTarget.previousElementSibling.textContent.trim();
     let setlist_url = evt.currentTarget.previousElementSibling.href;
+    evt.currentTarget.classList.add('hidden');
+    evt.currentTarget.nextElementSibling.classList.remove('hidden');
+    console.log(evt.currentTarget);
     const response = await fetch('/api/savedconcerts/', {
         method: 'POST',
         headers: {
@@ -163,8 +166,6 @@ const addAttendedConcert = async (evt) => {
             setlist_url: setlist_url,
         }),
     });
-    const postData = await response.json();
-    // evt.currentTarget.dataset.attended = 'yes';
 };
 
 // Remove a concert from attended table
@@ -174,7 +175,8 @@ const removeAttendedConcert = async (evt) => {
         evt.currentTarget.parentElement.previousElementSibling.textContent.trim();
     let date =
         evt.currentTarget.parentElement.firstElementChild.textContent.trim();
-    console.log(artist, venue, date);
+    evt.currentTarget.classList.add('hidden');
+    evt.currentTarget.previousElementSibling.classList.remove('hidden');
     const response = await fetch('/api/savedconcerts/', {
         method: 'DELETE',
         headers: {
@@ -187,8 +189,6 @@ const removeAttendedConcert = async (evt) => {
             date: date,
         }),
     });
-    const postData = await response.json();
-    // evt.currentTarget.dataset.attended = 'no';
 };
 
 // function to get tracklist from an album
