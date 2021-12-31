@@ -100,10 +100,10 @@ let getAttendedConcerts = async (req, res) => {
         let buttonsArray = document
             .getElementById('recent-concerts-table')
             .getElementsByTagName('button');
-        // If the concert is found in the user's attended concerts
         for (let i = 0; i < buttonsArray.length; i++) {
-            // If a green button
+            // If a green add button
             if (buttonsArray[i].dataset.attended === 'no') {
+                // If the concert is found in the user's attended concerts
                 if (
                     attendedConcertsSimplified.includes(
                         JSON.stringify([
@@ -116,11 +116,13 @@ let getAttendedConcerts = async (req, res) => {
                         ])
                     )
                 ) {
+                    // Hide the add button
                     buttonsArray[i].classList.add('hidden');
                 }
             }
-            // If a red button
+            // If a red remove button
             if (buttonsArray[i].dataset.attended === 'yes') {
+                // If the concert is found in the user's attended concerts
                 if (
                     attendedConcertsSimplified.includes(
                         JSON.stringify([
@@ -133,6 +135,7 @@ let getAttendedConcerts = async (req, res) => {
                         ])
                     )
                 ) {
+                    // Show the button
                     buttonsArray[i].classList.remove('hidden');
                 }
             }
