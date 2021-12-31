@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const fetch = require('node-fetch');
 
-// get home
+// get homepage
 router.get('/', async (req, res) => {
     const artistRes = await fetch('https://api.deezer.com/chart/0/artists');
     const trackRes = await fetch(
@@ -32,17 +32,14 @@ router.get('/', async (req, res) => {
     });
 });
 
-// get signup
 router.get('/signup', (req, res) => {
     res.render('signup', { loggedIn: req.session.loggedIn, hideBtn: true });
 });
 
-// get login
 router.get('/login', (req, res) => {
     res.render('login', { loggedIn: req.session.loggedIn, hideBtn: true });
 });
 
-// get dashboard
 router.get('/dashboard', (req, res) => {
     res.render('dashboard', { loggedIn: req.session.loggedIn });
 });
