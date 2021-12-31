@@ -85,3 +85,11 @@ input:-webkit-autofill:active  {
 .play:hover, .pause:hover {
   filter: invert(49%) sepia(4%) saturate(4%) hue-rotate(322deg) brightness(101%) contrast(88%);
 }
+
+#artist-bio a:hover {
+  text-decoration: underline;
+}
+
+#artist-bio a {
+  color: 38bdf8;
+}
