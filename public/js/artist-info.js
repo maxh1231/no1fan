@@ -1,5 +1,6 @@
 // logic for the favorite button
 let btn = document.getElementById('favBtn');
+let btn2 = document.getElementById('favBtn2');
 let url = window.location.pathname;
 let artist_id = url.replace(/^\D+/g, '');
 
@@ -17,6 +18,8 @@ let getHeart = async (req, res) => {
         if (getData[i].artist_id == artist_id) {
             btn.classList.remove('deactive');
             btn.classList.add('active');
+            btn2.classList.remove('deactive');
+            btn2.classList.add('active');
         }
     }
 };
@@ -25,12 +28,16 @@ let getHeart = async (req, res) => {
 let favBtnActive = function () {
     btn.classList.remove('deactive');
     btn.classList.add('active');
+    btn2.classList.remove('deactive');
+    btn2.classList.add('active');
 };
 
 // give favorite button grey(deactive) color
 let favBtnDeactive = function () {
     btn.classList.remove('active');
     btn.classList.add('deactive');
+    btn2.classList.remove('active');
+    btn2.classList.add('deactive');
 };
 
 // add favorite artist
@@ -70,7 +77,7 @@ let deleteArtistFav = async (req, res) => {
 };
 
 if (btn) {
-    btn.addEventListener('click', function () {
+    btn2.addEventListener('click', function () {
         if (btn.classList.contains('active')) {
             favBtnDeactive();
             deleteArtistFav();

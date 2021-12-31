@@ -39,7 +39,7 @@ router.use('/:id', async (req, res) => {
             }&client_secret=${process.env.SEATGEEK_SECRET}`
         )
     ).json();
-    console.log(upcomingConcerts);
+    // console.log(upcomingConcerts);
 
     // Get artist MBID to feed into Setlist API
     let pastConcerts
