@@ -35,7 +35,7 @@
   ### Check out the application
   https://no1fan.herokuapp.com/
 
-  <img src="./public/assets/screenshot.png">
+  <img src="./public/assets/screenshot1.png">
   <img src="./public/assets/screenshot2.png">
 
   ### What will the app be used for? 
