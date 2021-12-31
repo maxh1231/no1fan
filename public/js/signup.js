@@ -37,8 +37,7 @@ const signupFormHandler = async (evt) => {
     document.location.replace('/'); // TODO: Change to Dashboard? 
 };
 
-const gotoLogin = (evt) => {
-    evt.preventDefault();
+const gotoLogin = () => {
     document.location.replace('/login');
 };
 
