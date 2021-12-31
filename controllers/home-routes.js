@@ -50,22 +50,12 @@ router.get('/dashboard', async (req, res) => {
         where: { id: req.session.user_id },
         attributes: ['id', 'username', 'email', 'createdAt', [sequelize.literal('(SELECT COUNT(*) FROM savedconcerts WHERE user.id = savedconcerts.user_id)'), 'count']],
         include: [
-            {
-                model: ArtistFavorites,
-                attributes: ['id', 'artist_id', 'artist_name', 'user_id']
-            },
-            {
-                model: AlbumFavorites,
-                attributes: ['id', 'album_id', 'album_name', 'user_id']
-            },
-            {
-                model: SavedConcerts,
-                attributes: ['id', 'artist_name', 'venue_name', 'date', 'setlist_url', 'user_id']
-            }
+            { model: ArtistFavorites },
+            { model: AlbumFavorites },
+            { model: SavedConcerts }
         ]
     });
     const data = response.dataValues
-    console.log(data)
     res.render('dashboard', { data, loggedIn: req.session.loggedIn });
 });
 
