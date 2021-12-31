@@ -1,4 +1,5 @@
 let btn = document.getElementById('favBtn');
+let btn2 = document.getElementById('favBtn2');
 let url = window.location.pathname;
 let album_id = url.replace(/^\D+/g, '')
 
@@ -15,6 +16,8 @@ let getFav = async (req, res) => {
         if (getData[i].album_id == album_id) {
             btn.classList.remove('deactive');
             btn.classList.add('active');
+            btn2.classList.remove('deactive');
+            btn2.classList.add('active');
         }
     }
 }
@@ -23,12 +26,16 @@ let getFav = async (req, res) => {
 let favBtnActive = function () {
     btn.classList.remove('deactive');
     btn.classList.add('active');
+    btn2.classList.remove('deactive');
+    btn2.classList.add('active');
 }
 
 // give Favorite Button grey(deactive) color
 let favBtnDeactive = function () {
     btn.classList.remove('active');
     btn.classList.add('deactive');
+    btn2.classList.remove('active');
+    btn2.classList.add('deactive');
 }
 // Post favorite
 let postDB = async (req, res) => {
@@ -67,7 +74,7 @@ let deleteDB = async (req, res) => {
     console.log(postData);
 }
 
-btn.addEventListener('click', function () {
+btn2.addEventListener('click', function () {
     if (btn.classList.contains('active')) {
         favBtnDeactive();
         deleteDB();
