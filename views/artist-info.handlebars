@@ -1,5 +1,5 @@
 {{> nav}}
-
+{{#if pastConcerts}}
 <!-- artist info goes here -->
 <div id="artist-wrapper" class="flex md:flex-row flex-col items-center p-2 m-2 space-x-4">
     <div id="artist-info mt-4">
@@ -97,7 +97,9 @@
     </table>
     {{/if}}
 </div>
-
+{{else}}
+TO DO: DISPLAY A DIV SAYING "NO CONTENT AVAILABLE!"
+{{/if}}
 <!-- footer -->
 {{> footer}}
 
