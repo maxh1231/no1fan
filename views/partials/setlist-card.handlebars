@@ -12,19 +12,47 @@
                 target='_blank'
             >{{venue.name}}</a>
         </td>
-        <td class='p-2 text-center'>
+        <td class='p-2 text-center flex justify-center items-center'>
             <a
                 class='text-sky-400'
                 href='{{{url}}}'
                 target='_blank'
             >{{eventDate}}</a>
-			{{#if loggedIn}}
-            <button
-                class='border-solid border-2 border-red-dark bg-black p-1.5 m-1 rounded-lg hover:opacity-75'
-            >
-                I attended this show!
-            </button>
-			{{/if}}
+            {{#if loggedIn}}
+                <button class='hover:opacity-75 px-1' data-attended='no'>
+                    <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        class='h-6 w-6 text-green-600'
+                        viewBox='0 0 18 18'
+                        fill='currentColor'
+                    >
+                        <path
+                            fill-rule='evenodd'
+                            d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z'
+                            clip-rule='evenodd'
+                            class='hover:opacity-75 px-1'
+                            data-attended='no'
+                        ></path>
+                    </svg>
+                </button>
+                <button
+                    class='hover:opacity-75 px-1 hidden'
+                    data-attended='yes'
+                >
+                    <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        class='h-6 w-6 text-rose-700'
+                        viewBox='0 0 18 18'
+                        fill='currentColor'
+                    >
+                        <path
+                            fill-rule='evenodd'
+                            d='M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z'
+                            clip-rule='evenodd'
+                        ></path>
+                    </svg>
+                </button>
+            {{/if}}
         </td>
     </tr>
 {{/if}}
