@@ -9,7 +9,7 @@
   * [Link](#checkOutTheApplication)
   * [Usage](#usage)
   * [License](#license)
-  * [Contributing](#contribute)
+  * [Contributing](#creditsAndContributors)
   * [Questions](#questions)
 
 
