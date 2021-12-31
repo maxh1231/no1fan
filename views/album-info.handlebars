@@ -20,9 +20,9 @@
             <a href="/info/artist/{{data.artist.id}}" class="no-underline hover:underline ml-4">{{data.artist.name}}</a>
         </div>
         <div id="album-info" class="flex flex-row justify-center">
-            <span id="track-amount">{{data.nb_tracks}}tracks - </span>
-            <span id="album-duration"> {{ format_duration data.duration}} - </span>
-            <span id="date">{{ format_date data.release_date}}</span>
+            <span id="track-amount" class="p-1 ">{{data.nb_tracks}} tracks |</span>
+            <span id="album-duration" class="p-1 ">{{format_duration data.duration}} |</span>
+            <span id="date" class="p-1 ">{{ format_date data.release_date}}</span>
         </div>
         <div class="pt-4 flex justify-center xl:justify-start">
             <img src="/assets/fav.svg" alt="" class="deactive" id="favBtn" width="40px" height="40px">
@@ -60,7 +60,7 @@
 
 <section id="album-tracklist">
     <div id="album-tracklist-container" class="p-2 m-2">
-        <table class="table-fixed w-full">
+        <table class="table-fixed w-full rounded-t-md overflow-hidden">
             <thead>
                 <tr class="bg-gray-300 h-10">
                     <th>#</th>
