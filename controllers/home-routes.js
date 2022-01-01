@@ -18,8 +18,7 @@ router.get('/', async (req, res) => {
         `https://api.seatgeek.com/2/events?geoip=true&type=concert&client_id=${process.env.SG_ID}`
     );
     const randomRes = await fetch(
-        `https://api.deezer.com/chart/0/tracks?index=${
-            Math.floor(Math.random() * 100) + 1
+        `https://api.deezer.com/chart/0/tracks?index=${Math.floor(Math.random() * 100) + 1
         }`
     );
     if (!artistRes.ok || !trackRes.ok || !showRes || !randomRes) {
