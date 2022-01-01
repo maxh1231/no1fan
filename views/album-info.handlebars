@@ -8,8 +8,8 @@
     </div>
     <div class="flex flex-col justify-center mx-8 h-[250px] xl:mt-12">
         <div id="title"
-            class="flex flex-col justify-center items-center text-2xl xl:flex-row xl:text-4xl xl:items-center xl:justify-start">
-            <div class="mx-auto text-center pb-2">
+            class="flex flex-col justify-center items-center text-2xl xl:flex-row xl:text-4xl  xl:justify-start">
+            <div class="pb-2">
                 <span class="">{{data.title}}</span>
             </div>
             {{#if data.explicit_lyrics}}
@@ -28,8 +28,10 @@
             <span id="date" class="p-1 ">{{ format_date data.release_date}}</span>
         </div>
         <div class="pt-4 flex justify-center xl:justify-start">
-            <img src="/assets/fav.svg" alt="" class="deactive absolute hover:animate-ping" id="favBtn" width="40px" height="40px">
-            <img src="/assets/fav.svg" alt="" class="deactive relative hover:animate-ping" id="favBtn2" width="40px" height="40px">
+            <img src="/assets/fav.svg" alt="" class="deactive absolute hover:animate-ping" id="favBtn" width="40px"
+                height="40px">
+            <img src="/assets/fav.svg" alt="" class="deactive relative hover:animate-ping" id="favBtn2" width="40px"
+                height="40px">
         </div>
     </div>
 </section>
@@ -43,7 +45,7 @@
     <div class="flex flex-col justify-center mx-8 h-[250px] xl:mt-12">
         <div id="title"
             class="flex flex-col justify-center items-center text-2xl xl:flex-row xl:text-4xl xl:items-center xl:justify-start">
-            <div class="mx-auto text-center pb-2">
+            <div class="pb-2">
                 <span class="">{{data.title}}</span>
             </div>
             {{#if data.explicit_lyrics}}
