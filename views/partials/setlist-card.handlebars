@@ -1,5 +1,5 @@
 {{#if artistType}}
-    <tr class='border-b'>
+    <tr class='border-b bg-gray-400'>
         {{#if venue.city.name}}
             <td class='p-2 text-center'>{{venue.city.name}}</td>
         {{else}}
@@ -7,35 +7,92 @@
         {{/if}}
 
         <td class='p-2 text-center'><a
-                class='text-sky-400'
+                class='text-sky-400 hover:underline'
                 href='/info/setlists/venue/{{venue.id}}'
-                target='_blank'
             >{{venue.name}}</a>
         </td>
-        <td class='p-2 text-center'>
+        <td class='p-2 text-center flex justify-center items-center'>
             <a
-                class='text-sky-400'
+                class='text-sky-400 hover:underline'
                 href='{{{url}}}'
                 target='_blank'
-            >{{eventDate}}</a>
-			{{#if loggedIn}}
-            <button
-                class='border-solid border-2 border-red-dark bg-black p-1.5 m-1 rounded-lg hover:opacity-75'
-            >
-                I attended this show!
-            </button>
-			{{/if}}
+            >{{eventDate}}<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline text-sky-400 mb-3" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+            <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" /></svg></a>
+            {{#if loggedIn}}
+                <button class='hover:opacity-75 px-1' data-attended='no'>
+                    <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        class='h-6 w-6 text-green-600 absolute hover:animate-ping'
+                        viewBox='0 0 18 18'
+                        fill='currentColor'
+                    >
+                        <path
+                            fill-rule='evenodd'
+                            d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z'
+                            clip-rule='evenodd'
+                            class='hover:opacity-75 px-1'
+                            data-attended='no'
+                        ></path>
+                    </svg>
+                    <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        class='h-6 w-6 text-green-600 relative hover:animate-ping'
+                        viewBox='0 0 18 18'
+                        fill='currentColor'
+                    >
+                        <path
+                            fill-rule='evenodd'
+                            d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z'
+                            clip-rule='evenodd'
+                            class='hover:opacity-75 px-1'
+                            data-attended='no'
+                        ></path>
+                    </svg>
+                </button>
+                <button
+                    class='hover:opacity-75 px-1 hidden'
+                    data-attended='yes'
+                >
+                    <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        class='h-6 w-6 text-red-dark absolute hover:animate-ping'
+                        viewBox='0 0 18 18'
+                        fill='currentColor'
+                    >
+                        <path
+                            fill-rule='evenodd'
+                            d='M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z'
+                            clip-rule='evenodd'
+                        ></path>
+                    </svg>
+                    <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        class='h-6 w-6 text-red-dark relative hover:animate-ping'
+                        viewBox='0 0 18 18'
+                        fill='currentColor'
+                    >
+                        <path
+                            fill-rule='evenodd'
+                            d='M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z'
+                            clip-rule='evenodd'
+                        ></path>
+                    </svg>
+                </button>
+            {{/if}}
         </td>
     </tr>
 {{/if}}
 {{#if venueType}}
-    <tr class='border-b'>
+    <tr class='border-b bg-gray-400'>
         <td class='p-2 text-center'>{{artist.name}}</td>
         <td class='p-2 text-center'><a
-                class='text-sky-400'
+                class='text-sky-400 hover:underline'
                 href='{{url}}'
                 target='_blank'
-            >{{eventDate}}</a></td>
+            >{{eventDate}}<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline text-sky-400 mb-3" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+            <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" /></svg></a></td>
         {{#if tour.name}}
             <td class='p-2 text-center'>{{tour.name}}</td>
         {{else}}

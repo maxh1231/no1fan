@@ -1,5 +1,4 @@
 const getInfo = (evt) => {
-    evt.preventDefault();
     let current = '';
     if (evt.target.id === 'artist-card' || evt.target.id === 'track-artist') {
         current = evt.target.childNodes[1].innerText

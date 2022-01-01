@@ -1,38 +1,49 @@
 {{!-- Navbar --}}
 {{> nav}}
 
-{{!-- Content --}}
-<h1 id="dashboard-header">Dashboard</h1>
-
 {{!-- Profile bar --}}
-<div id="profile-bar">
-    <div id="profile-pic">
-        <img src="https://via.placeholder.com/150/000000/FFFFFF/?Text=Badass+Profile+Pic" alt="Profile Picture">
+<section id="user-info" class="m-3 p-2 container mx-auto grid grid-cols-4 gap-4">
+    <div class="profile-pic-container justify-self-center col-auto">
+        <img src="https://robohash.org/{{data.username}}.png?set=set4&size=150x150">
     </div>
-    <div id="user-info">
-        <span id="username">User Name</span>
-        <p id="user-details">Random user details</p>
+    <div id="info-container" class="col-span-3 p-4 rounded-md border-2 border-gray-200">
+        <h2 class="text-xl font-bold border-b text-red-dark">User Info: {{data.username}}</h2>
+        <p><a href="mailto: {{data.email}}" class="text-sky-400" target='_blank'>{{data.email}}</a></p>
+        <p>Member since: {{format_date data.createdAt}}</p>
+        <p>I've attended {{data.count}} shows.</p>
     </div>
-</div>
+</section>
 
-{{!-- Favorite bands box --}}
-<div id="favorite-bands">
-    {{!-- Flexbox --}}
-    <div>Band 1</div>
-    <div>Band 2</div>
-    <div>Band 3</div>
-</div>
+{{!-- Favorites --}}
+<section id="favorites" class="m-3 p-2 container mx-auto grid grid-cols-2 gap-4">
+    {{!-- Bands --}}
+    <div id="artist-favorites" class="rounded-md border-2 border-gray-200 col-auto p-4">
+        <h2 class="text-xl font-bold border-b text-red-dark">My Favorite Artists</h2>
+        {{#each data.artistfavorites}}
+            <p><a href="/info/artist/{{dataValues.artist_id}}" class="text-sky-400">{{dataValues.artist_name}}</a></p>
+        {{/each}}    
+    </div>
+    {{!-- Albums --}}
+    <div id="album-favorites" class="rounded-md border-2 border-gray-200 col-auto p-4">
+        <h2 class="text-xl font-bold border-b text-red-dark">My Favorite Albums</h2>
+        {{#each data.albumfavorites}}
+            <p><a href="/info/album/{{dataValues.album_id}}" class="text-sky-400">{{dataValues.album_name}}</a></p>
+        {{/each}}  
+    </div>
+</section>
 
-{{!-- Shows attended box --}}
-<div id="shows-attended">
-    {{!-- Flexbox, but vertically aligned --}}
-    <div>Show Card 1</div>
-    <div>Show Card 2</div>
-    <div>Show Card 3</div>
-    <div>Show Card 4</div>
-    <div>Show Card 5</div>
-    <div>Show Card 6</div>
-</div>
+{{!-- Shows attended --}}
+<section id="concerts-container" class="m-3 p-2 container mx-auto">
+    <div id="attended-shows" class="rounded-md border-2 border-gray-200 col-auto p-4">
+        <h2 class="text-xl font-bold border-b text-red-dark">Concerts I've Attended</h2>
+        {{#each data.savedconcerts}}
+            <p>{{dataValues.artist_name}} at {{dataValues.venue_name}} – <a href={{dataValues.setlist_url}} class="text-sky-400" target="_blank">{{dataValues.date}}</a></p>
+        {{/each}}    
+    </div>
+</section>
+
+{{!-- Footer --}}
+{{>footer}}
 
 {{!-- JS link --}}
 <script src="/js/dashboard.js"></script>
