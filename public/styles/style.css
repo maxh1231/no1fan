@@ -572,12 +572,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 2.5rem;
 }
 
-.h-64 {
-  height: 16rem;
-}
-
 .h-4 {
   height: 1rem;
+}
+
+.h-64 {
+  height: 16rem;
 }
 
 .h-fit {
@@ -606,16 +606,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 250px;
 }
 
+.w-4 {
+  width: 1rem;
+}
+
 .w-3\/4 {
   width: 75%;
 }
 
 .w-auto {
   width: auto;
-}
-
-.w-4 {
-  width: 1rem;
 }
 
 .w-fit {
@@ -880,14 +880,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-weight: 700;
 }
 
-.text-red-dark {
-  --tw-text-opacity: 1;
-  color: rgb(148 1 16 / var(--tw-text-opacity));
-}
-
 .text-sky-400 {
   --tw-text-opacity: 1;
   color: rgb(56 189 248 / var(--tw-text-opacity));
+}
+
+.text-red-dark {
+  --tw-text-opacity: 1;
+  color: rgb(148 1 16 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -1093,12 +1093,12 @@ input:-webkit-autofill:active {
   outline-width: 0px;
 }
 
-.group:hover .group-hover\:opacity-75 {
-  opacity: 0.75;
-}
-
 .group:hover .group-hover\:opacity-50 {
   opacity: 0.5;
+}
+
+.group:hover .group-hover\:opacity-75 {
+  opacity: 0.75;
 }
 
 @media (min-width: 640px) {
@@ -1160,8 +1160,8 @@ input:-webkit-autofill:active {
     height: 100vh;
   }
 
-  .lg\:h-\[1208px\] {
-    height: 1208px;
+  .lg\:h-\[1307px\] {
+    height: 1307px;
   }
 
   .lg\:w-1\/4 {
