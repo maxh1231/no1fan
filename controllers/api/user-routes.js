@@ -141,10 +141,10 @@ router.post('/logout', (req, res) => {
 });
 
 // delete
-router.delete('/:id', async (req, res) => {
+router.delete('/', async  (req, res) => {
     try {
         const response = await User.destroy({
-            where: { id: req.params.id }
+            where: { id: req.session.user_id }
         });
         if (!response) {
             res.status(404).end();
@@ -156,5 +156,6 @@ router.delete('/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
 
 module.exports = router;
