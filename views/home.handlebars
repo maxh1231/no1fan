@@ -1,29 +1,40 @@
 {{> nav}}
 
 <main class="flex justify-between lg:flex-row flex-col">
-    
+
     <section id="top-artists" class="m-2 lg:w-1/4 inline-block lg:h-[100vh]">
         <h2 class="text-xl font-bold text-center m-2">Top 10 Artists</h2>
-        <div id="top-artist-container" class="lg:h-[1307px] lg:m-auto m-2 lg:w-fit p-2 lg:overflow-y-auto lg:overflow-x-hidden overflow-x-auto lg:block flex">
+        <div id="top-artist-container"
+            class="lg:h-[1307px] lg:m-auto m-2 lg:w-fit p-2 lg:overflow-y-auto lg:overflow-x-hidden overflow-x-auto lg:block flex">
             {{#each topArtists.data}}
-                {{> artist-card medium='true'}}
+            {{> artist-card medium='true'}}
             {{/each}}
         </div>
     </section>
 
     <section class="flex flex-col lg:w-full m-2">
-        
+
         <section id="random-track" class="mx-3">
             <h2 class="text-xl font-bold text-center m-2">Random Track</h2>
-            <div id="random-track-container" class="lg:w-full border rounded-md bg-gray-400 p-4 lg:block lg:text-left text-center flex flex-col">
-                <img id="random-album-img" src="{{random.data.0.album.cover_medium}}" class="inline rounded-sm h-[250px] w-[250px] lg:m-1 m-auto">
+            <div id="random-track-container"
+                class="lg:w-full border rounded-md bg-gray-400 p-4 lg:block lg:text-left text-center flex flex-col">
+                <img id="random-album-img" src="{{random.data.0.album.cover_medium}}"
+                    class="inline rounded-sm h-[250px] w-[250px] lg:m-1 m-auto">
                 <div id="random-info-container" class="inline-flex flex-col align-middle m-3">
-                    <a class="m-2 text-xl">{{random.data.0.title}}</a>
+                    <div class="flex flex-row">
+                        <p class="m-2 text-xl">
+                            {{random.data.0.title}}
+                        </p>
+                        {{#if random.data.0.explicit_lyrics}}
+                        <img src="https://img.shields.io/badge/-E-000??style=for-the-badge" alt="explicit badge"
+                            class="inline-block my-auto">
+                        {{/if}}
+                    </div>
                     <p class="m-2 text-lg">{{random.data.0.artist.name}}</p>
                     <p class="m-2 text-lg">{{random.data.0.album.title}}</p>
                     {{#if random.data.0.preview}}
                     <div class="my-2 lg:mx-0 mx-auto">
-                         <audio controls class="">
+                        <audio controls class="">
                             <source src="{{random.data.0.preview}}" type="audio/mpeg">
                         </audio>
                     </div>
@@ -36,18 +47,18 @@
             <h2 class="text-xl font-bold text-center m-2">Top 10 Tracks</h2>
             <div id="top-track-container">
                 <table class="table-auto w-full rounded-t-md overflow-hidden">
-                <thead>
-                    <tr class="bg-gray-300 h-10 text-left">
-                        <th class="p-2">Artist</th>
-                        <th class="p-2">Track</th>
-                        <th class="p-2 text-center">Duration</th>
-                    </tr>
-                </thead>
-                <tbody id="top-track-table">
-                    {{#each topTracks.data}}
+                    <thead>
+                        <tr class="bg-gray-300 h-10 text-left">
+                            <th class="p-2">Artist</th>
+                            <th class="p-2">Track</th>
+                            <th class="p-2 text-center">Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody id="top-track-table">
+                        {{#each topTracks.data}}
                         {{> track-card home='true'}}
-                    {{/each}}
-                </tbody>
+                        {{/each}}
+                    </tbody>
                 </table>
             </div>
         </section>
@@ -57,18 +68,18 @@
             <div id="location-container">
                 {{#if shows.events}}
                 <table class="table-auto w-full rounded-t-md overflow-hidden">
-                <thead>
-                    <tr class="bg-gray-300 h-10 text-left">
-                        <th class="p-2">Artist</th>
-                        <th class="p-2">Venue</th>
-                        <th class="p-2 text-center">Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#each shows.events}}
+                    <thead>
+                        <tr class="bg-gray-300 h-10 text-left">
+                            <th class="p-2">Artist</th>
+                            <th class="p-2">Venue</th>
+                            <th class="p-2 text-center">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each shows.events}}
                         {{> show-card}}
-                    {{/each}}
-                </tbody>
+                        {{/each}}
+                    </tbody>
                 </table>
                 {{else}}
                 <h5 class="text-center">No Upcoming Concerts in your Area</h5>
