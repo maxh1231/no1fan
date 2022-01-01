@@ -30,7 +30,8 @@
                             class="inline-block my-auto">
                         {{/if}}
                     </div>
-                    <p class="m-2 text-lg">{{random.data.0.artist.name}}</p>
+                    <a href="/info/artist/{{random.data.0.artist.id}}"
+                        class="m-2 text-lg no-underline hover:underline">{{random.data.0.artist.name}}</a>
                     <p class="m-2 text-lg">{{random.data.0.album.title}}</p>
                     {{#if random.data.0.preview}}
                     <div class="my-2 lg:mx-0 mx-auto">
