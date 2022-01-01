@@ -11,7 +11,11 @@ router.get('/:input', async (req, res) => {
     const artists = await artistRes.json();
     const tracks = await trackRes.json();
     const albums = await albumRes.json();
-    res.render('search', {artists: artists, tracks: tracks, albums: albums, loggedIn: req.session.loggedIn});
+    if (artists.total !== 0) {
+        res.render('search', {artists: artists, tracks: tracks, albums: albums, loggedIn: req.session.loggedIn});
+    } else {
+        res.render('search', {none: true, loggedIn: req.session.loggedIn})
+    }
 });
 
 module.exports = router;

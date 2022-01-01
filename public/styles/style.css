@@ -623,6 +623,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 1rem;
 }
 
+.h-\[150px\] {
+  height: 150px;
+}
+
 .h-64 {
   height: 16rem;
 }
@@ -655,6 +659,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-4 {
   width: 1rem;
+}
+
+.w-\[150px\] {
+  width: 150px;
 }
 
 .w-3\/4 {
@@ -747,6 +755,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-space-x-reverse: 0;
   margin-right: calc(1rem * var(--tw-space-x-reverse));
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.self-center {
+  align-self: center;
 }
 
 .justify-self-center {

@@ -1,5 +1,12 @@
 {{> nav}}
-
+{{#if none}}
+<section id="no-content" class="m-4">
+    <div id="no-content-container" class="flex md:flex-row flex-col justify-center">
+        <img src="https://robohash.org/helper.png?set=set4&size=150x150" class="m-2 self-center h-[150px] w-[150px]">
+        <span class="text-2xl self-center m-2 text-center">Oops... That is an invalid search!</span>
+    </div>
+</section>
+{{else}}
 <section id="top-result" class="flex flex-col items-center">
     <h2 id="top-result-header" class="text-xl font-bold m-2">Top Result</h2>
     <div id="top-result-container">
@@ -44,7 +51,7 @@
         {{/each}}
     </div>
 </section>
-
+{{/if}}
 {{> footer}}
 
 <script src="/js/search.js"></script>
