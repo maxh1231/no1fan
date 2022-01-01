@@ -1,7 +1,8 @@
 <tr class="border-b bg-gray-400">
     {{#if home}}
-    <td id="track-artist" class="p-2 cursor-pointer text-sky-400 hover:underline" width='40%'>{{artist.name}}<span
-            class="hidden">{{artist.id}}</span></td>
+    <td id="track-artist" class="p-2 " width='40%'>
+        <a href='/info/artist/{{artist.id}}' class="text-sky-400 hover:underline">{{artist.name}}</a>
+    </td>
     {{/if}}
     {{#if albumPage}}
     <td class="text-center p-2 w-auto">{{plus_one @index}}</td>
@@ -39,4 +40,4 @@
         {{/if}}
     </td>
     {{/unless}}
-</tr>
+</tr>   
