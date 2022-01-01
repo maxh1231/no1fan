@@ -6,6 +6,10 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
+a:hover {
+    opacity: 75%;
+}
+
 /* FavBtn styles */
 .deactive {
     filter: invert(49%) sepia(4%) saturate(4%) hue-rotate(322deg)
