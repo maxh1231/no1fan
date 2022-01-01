@@ -515,11 +515,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: 2rem;
 }
 
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .mx-20 {
   margin-left: 5rem;
   margin-right: 5rem;
@@ -528,6 +523,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mx-3 {
@@ -791,12 +791,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-bottom-right-radius: 0.125rem;
 }
 
-.border-2 {
-  border-width: 2px;
-}
-
 .border {
   border-width: 1px;
+}
+
+.border-2 {
+  border-width: 2px;
 }
 
 .border-b {
@@ -946,11 +946,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-red-dark {
   --tw-text-opacity: 1;
   color: rgb(148 1 16 / var(--tw-text-opacity));
-}
-
-.text-sky-400 {
-  --tw-text-opacity: 1;
-  color: rgb(56 189 248 / var(--tw-text-opacity));
 }
 
 .text-white {
