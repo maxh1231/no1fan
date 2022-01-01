@@ -744,10 +744,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.place-self-end {
-  place-self: end;
-}
-
 .justify-self-center {
   justify-self: center;
 }
