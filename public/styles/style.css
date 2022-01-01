@@ -1249,6 +1249,10 @@ input:-webkit-autofill:active {
     flex-direction: row;
   }
 
+  .lg\:justify-start {
+    justify-content: flex-start;
+  }
+
   .lg\:overflow-y-auto {
     overflow-y: auto;
   }
