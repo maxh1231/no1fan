@@ -273,24 +273,27 @@ document.querySelectorAll('.carousel').forEach((carousel) => {
 });
 
 // buttons to link to pages
-document
-    .querySelector('#discography-wrapper')
-    .addEventListener('click', getTracks);
-document
-    .querySelector('#recommended-wrapper')
-    .addEventListener('click', getRecommended);
+const discogWrap = document.querySelector('#discography-wrapper')
+if (discogWrap) {
+    discogWrap.addEventListener('click', getTracks);
+}
+const recWrap = document.querySelector('#recommended-wrapper')
+if (recWrap) {
+    recWrap.addEventListener('click', getRecommended);
+}    
 
 // Add listeners to each "I attended" button
-let attendedButtons = document
-    .getElementById('recent-concerts-table')
-    .getElementsByTagName('button');
-for (let i = 0; i < attendedButtons.length; i++) {
-    if (attendedButtons[i].dataset.attended === 'no') {
-        attendedButtons[i].addEventListener('click', addAttendedConcert);
-    } else if (attendedButtons[i].dataset.attended === 'yes') {
-        attendedButtons[i].addEventListener('click', removeAttendedConcert);
+let attendedButtons = document.getElementById('recent-concerts-table')
+if (attendedButtons) {
+    attendedButtons.getElementsByTagName('button');
+    for (let i = 0; i < attendedButtons.length; i++) {
+        if (attendedButtons[i].dataset.attended === 'no') {
+            attendedButtons[i].addEventListener('click', addAttendedConcert);
+        } else if (attendedButtons[i].dataset.attended === 'yes') {
+            attendedButtons[i].addEventListener('click', removeAttendedConcert);
+        }
     }
-}
+}    
 
 window.onload = getHeart();
 window.onload = getAttendedConcerts();
