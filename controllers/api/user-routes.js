@@ -150,7 +150,10 @@ router.delete('/', async  (req, res) => {
             res.status(404).end();
             return;
         }
-        res.json(response);
+        req.session.destroy(() => {
+            res.status(200).end();
+        });
+        
     }
     catch (err) {
         res.status(500).json(err);
