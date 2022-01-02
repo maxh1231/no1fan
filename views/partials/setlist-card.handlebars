@@ -1,5 +1,5 @@
 {{#if artistType}}
-    <tr class='border-b bg-gray-400'>
+    <tr class='border-b last:border-none bg-gray-400'>
         {{#if venue.city.name}}
             <td class='p-2 text-center'>{{venue.city.name}}</td>
         {{else}}
@@ -93,7 +93,7 @@
     </tr>
 {{/if}}
 {{#if venueType}}
-    <tr class='border-b bg-gray-400'>
+    <tr class='border-b last:border-none bg-gray-400'>
         <td class='p-2 text-center'>{{artist.name}}</td>
         <td class='p-2 text-center'><a
                 class='text-sky-400 hover:underline transition ease-in-out'

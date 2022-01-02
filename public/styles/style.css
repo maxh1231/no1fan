@@ -1159,6 +1159,10 @@ input:-webkit-autofill:active {
   color: rgb(68 68 68 / var(--tw-text-opacity));
 }
 
+.last\:border-none:last-child {
+  border-style: none;
+}
+
 @-webkit-keyframes ping {
   75%, 100% {
     transform: scale(2);
@@ -1213,6 +1217,10 @@ input:-webkit-autofill:active {
   border-color: rgb(237 237 237 / var(--tw-border-opacity));
 }
 
+.focus\:border-opacity-75:focus {
+  --tw-border-opacity: 0.75;
+}
+
 .focus-visible\:outline-0:focus-visible {
   outline-width: 0px;
 }
@@ -1226,6 +1234,10 @@ input:-webkit-autofill:active {
 }
 
 .group:hover .group-hover\:opacity-75 {
+  opacity: 0.75;
+}
+
+.peer:focus ~ .peer-focus\:opacity-75 {
   opacity: 0.75;
 }
 
