@@ -1019,6 +1019,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
 body {
   font-family: 'Ubuntu', sans-serif;
 }
@@ -1211,6 +1215,10 @@ input:-webkit-autofill:active {
 
 .focus-visible\:outline-0:focus-visible {
   outline-width: 0px;
+}
+
+.group:hover .group-hover\:border-opacity-75 {
+  --tw-border-opacity: 0.75;
 }
 
 .group:hover .group-hover\:opacity-50 {
