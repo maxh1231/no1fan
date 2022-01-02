@@ -1,95 +1,96 @@
 {{> nav}}
 
-
-{{#if loggedIn}}
-<section class="flex flex-col xl:flex-row">
-    <div id="cover" class="mt-12 mb-4 flex justify-center xl:ml-8">
-        <img src="{{data.cover_medium}}" alt="" class="rounded-md">
-    </div>
-    <div class="flex flex-col justify-center mx-8 h-[250px] xl:mt-12">
-        <div id="title"
-            class="flex flex-col justify-center items-center text-2xl xl:flex-row xl:text-4xl  xl:justify-start">
-            <div class="pb-2">
-                <span class="">{{data.title}}</span>
+<main class="container mx-auto">
+    {{#if loggedIn}}
+    <section class="flex flex-col xl:flex-row">
+        <div id="cover" class="mt-12 mb-4 flex justify-center xl:ml-8">
+            <img src="{{data.cover_medium}}" alt="" class="rounded-md">
+        </div>
+        <div class="flex flex-col justify-center mx-8 h-[250px] xl:mt-12">
+            <div id="title"
+                class="flex flex-col justify-center items-center text-2xl xl:flex-row xl:text-4xl  xl:justify-start">
+                <div class="pb-2">
+                    <span class="">{{data.title}}</span>
+                </div>
+                {{#if data.explicit_lyrics}}
+                <div id="explicit-bage" class="xl:ml-2">
+                    <img src="https://img.shields.io/badge/-EXPLICIT-000??style=for-the-badge" alt="">
+                </div>
+                {{/if}}
             </div>
-            {{#if data.explicit_lyrics}}
-            <div id="explicit-bage" class="xl:ml-2">
-                <img src="https://img.shields.io/badge/-EXPLICIT-000??style=for-the-badge" alt="">
+            <div id="artist-name" class="flex flex-row justify-center items-center text-xl py-6 xl:justify-start">
+                <a href="/info/artist/{{data.artist.id}}" class="flex items-center">
+                    <img src="{{data.artist.picture_small}}" alt="" class="rounded-full">
+                    <div class="no-underline hover:underline ml-4">{{data.artist.name}}</div>
+                </a>
             </div>
-            {{/if}}
-        </div>
-        <div id="artist-name" class="flex flex-row justify-center items-center text-xl py-6 xl:justify-start">
-            <a href="/info/artist/{{data.artist.id}}" class="flex items-center">
-                <img src="{{data.artist.picture_small}}" alt="" class="rounded-full">
-                <div class="no-underline hover:underline ml-4">{{data.artist.name}}</div>
-            </a>
-        </div>
-        <div id="album-info" class="flex flex-row justify-center xl:justify-start">
-            <span id="track-amount" class="p-1 ">{{data.nb_tracks}} tracks |</span>
-            <span id="album-duration" class="p-1 ">{{format_duration data.duration}} |</span>
-            <span id="date" class="p-1 ">{{ format_date data.release_date}}</span>
-        </div>
-        <div class="pt-4 flex justify-center xl:justify-start">
-            <img src="/assets/fav.svg" alt="" class="deactive absolute hover:animate-ping" id="favBtn" width="40px"
-                height="40px">
-            <img src="/assets/fav.svg" alt="" class="deactive relative hover:animate-ping" id="favBtn2" width="40px"
-                height="40px">
-        </div>
-    </div>
-</section>
-{{/if}}
-
-{{#unless loggedIn}}
-<section class="flex flex-col xl:flex-row">
-    <div id="cover" class="mt-12 mb-4 flex justify-center xl:ml-8">
-        <img src="{{data.cover_medium}}" alt="">
-    </div>
-    <div class="flex flex-col justify-center mx-8 h-[250px] xl:mt-12">
-        <div id="title"
-            class="flex flex-col justify-center items-center text-2xl xl:flex-row xl:text-4xl xl:items-center xl:justify-start">
-            <div class="pb-2">
-                <span class="">{{data.title}}</span>
+            <div id="album-info" class="flex flex-row justify-center xl:justify-start">
+                <span id="track-amount" class="p-1 ">{{data.nb_tracks}} tracks |</span>
+                <span id="album-duration" class="p-1 ">{{format_duration data.duration}} |</span>
+                <span id="date" class="p-1 ">{{ format_date data.release_date}}</span>
             </div>
-            {{#if data.explicit_lyrics}}
-            <div id="explicit-bage" class="xl:ml-2">
-                <img src="https://img.shields.io/badge/-EXPLICIT-000??style=for-the-badge" alt="">
+            <div class="pt-4 flex justify-center xl:justify-start">
+                <img src="/assets/fav.svg" alt="" class="deactive absolute hover:animate-ping" id="favBtn" width="40px"
+                    height="40px">
+                <img src="/assets/fav.svg" alt="" class="deactive relative hover:animate-ping" id="favBtn2" width="40px"
+                    height="40px">
             </div>
-            {{/if}}
         </div>
-        <div id="artist-name" class="flex flex-row justify-center items-center text-xl py-6 xl:justify-start">
-            <a href="/info/artist/{{data.artist.id}}" class="flex items-center">
-                <img src="{{data.artist.picture_small}}" alt="" class="rounded-full">
-                <div class="no-underline hover:underline ml-4">{{data.artist.name}}</div>
-            </a>
+    </section>
+    {{/if}}
+    
+    {{#unless loggedIn}}
+    <section class="flex flex-col xl:flex-row">
+        <div id="cover" class="mt-12 mb-4 flex justify-center xl:ml-8">
+            <img src="{{data.cover_medium}}" alt="">
         </div>
-        <div id="album-info" class="flex flex-row justify-center xl:justify-start">
-            <span id="track-amount" class="p-1 ">{{data.nb_tracks}} tracks |</span>
-            <span id="album-duration" class="p-1 ">{{format_duration data.duration}} |</span>
-            <span id="date" class="p-1 ">{{ format_date data.release_date}}</span>
+        <div class="flex flex-col justify-center mx-8 h-[250px] xl:mt-12">
+            <div id="title"
+                class="flex flex-col justify-center items-center text-2xl xl:flex-row xl:text-4xl xl:items-center xl:justify-start">
+                <div class="pb-2">
+                    <span class="">{{data.title}}</span>
+                </div>
+                {{#if data.explicit_lyrics}}
+                <div id="explicit-bage" class="xl:ml-2">
+                    <img src="https://img.shields.io/badge/-EXPLICIT-000??style=for-the-badge" alt="">
+                </div>
+                {{/if}}
+            </div>
+            <div id="artist-name" class="flex flex-row justify-center items-center text-xl py-6 xl:justify-start">
+                <a href="/info/artist/{{data.artist.id}}" class="flex items-center">
+                    <img src="{{data.artist.picture_small}}" alt="" class="rounded-full">
+                    <div class="no-underline hover:underline ml-4">{{data.artist.name}}</div>
+                </a>
+            </div>
+            <div id="album-info" class="flex flex-row justify-center xl:justify-start">
+                <span id="track-amount" class="p-1 ">{{data.nb_tracks}} tracks |</span>
+                <span id="album-duration" class="p-1 ">{{format_duration data.duration}} |</span>
+                <span id="date" class="p-1 ">{{ format_date data.release_date}}</span>
+            </div>
         </div>
-    </div>
-</section>
-{{/unless}}
-
-<section id="album-tracklist">
-    <div id="album-tracklist-container" class="p-2 m-2">
-        <table class="table-auto w-full rounded-md overflow-hidden">
-            <thead>
-                <tr class="bg-gray-300 h-10">
-                    <th>#</th>
-                    <th class="text-left">Name</th>
-                    <th>Duration</th>
-                    <th>Preview</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each data.tracks.data}}
-                {{>track-card albumPage='true'}}
-                {{/each}}
-            </tbody>
-        </table>
-    </div>
-</section>
+    </section>
+    {{/unless}}
+    
+    <section id="album-tracklist">
+        <div id="album-tracklist-container" class="p-2 m-2">
+            <table class="table-auto w-full rounded-md overflow-hidden">
+                <thead>
+                    <tr class="bg-gray-300 h-10">
+                        <th>#</th>
+                        <th class="text-left">Name</th>
+                        <th>Duration</th>
+                        <th>Preview</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each data.tracks.data}}
+                    {{>track-card albumPage='true'}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
 
 {{> footer}}
 <script src="/js/mobile-button.js"></script>

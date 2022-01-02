@@ -6,6 +6,10 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
+a {
+    transition: all ease;
+}
+
 a:hover {
     opacity: 75%;
 }

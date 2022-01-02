@@ -510,6 +510,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin: 0.25rem;
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .mx-8 {
   margin-left: 2rem;
   margin-right: 2rem;
@@ -523,11 +528,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
-}
-
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .mx-3 {
@@ -565,6 +565,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .ml-4 {
   margin-left: 1rem;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem;
 }
 
 .mt-4 {
@@ -1025,6 +1029,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 body {
   font-family: 'Ubuntu', sans-serif;
+}
+
+a {
+  transition: all ease;
 }
 
 a:hover {
