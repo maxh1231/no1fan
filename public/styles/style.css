@@ -1276,6 +1276,10 @@ input:-webkit-autofill:active {
     margin-right: 0px;
   }
 
+  .lg\:mr-14 {
+    margin-right: 3.5rem;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -1338,6 +1342,10 @@ input:-webkit-autofill:active {
 
   .xl\:ml-2 {
     margin-left: 0.5rem;
+  }
+
+  .xl\:mr-1 {
+    margin-right: 0.25rem;
   }
 
   .xl\:table-cell {
