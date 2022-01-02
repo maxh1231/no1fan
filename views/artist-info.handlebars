@@ -31,7 +31,7 @@
         <div id="discography-wrapper" class="bg-gray-100">
 
             {{#each artistAlbums.data}}
-            <div class="carousel-display-item">
+            <div class="carousel-display-item rounded-md">
                 {{>carousel-card}}
             </div>
             {{/each}}
@@ -54,7 +54,7 @@
 <div id="upcoming-concert-container" class="m-4">
     <h5 class="text-center text-xl font-bold m-2">Upcoming concerts by {{name}}</h5>
     {{#if upcomingConcerts.events}}
-    <table class="table-fixed w-full rounded-t-md overflow-hidden" id="upcoming-concerts-table">
+    <table class="table-fixed w-full rounded-md overflow-hidden" id="upcoming-concerts-table">
         <thead>
             <tr class="bg-gray-300 h-10">
                 <th>City</th>
@@ -76,7 +76,7 @@
 <div id="recent-concert-container" class="m-4">
     <h5 class="text-center text-xl font-bold m-2">Recent concerts by {{name}}</h5>
     {{#if pastConcerts.setlist}}
-    <table class="table-fixed w-full rounded-t-md overflow-hidden" id="recent-concerts-table">
+    <table class="table-fixed w-full rounded-md overflow-hidden" id="recent-concerts-table">
         <thead>
             <tr class="bg-gray-300 h-10">
                 <th>City</th>
@@ -95,9 +95,9 @@
             {{/each}}
             {{/if}}
         </tbody>
-        {{else}}
-        <h5 class="text-center">No Past Concerts Available</h5>
     </table>
+    {{else}}
+    <h5 class="text-center">No Past Concerts Available</h5>
     {{/if}}
 </div>
 {{else}}
