@@ -19,8 +19,10 @@
             {{/if}}
         </div>
         <div id="artist-name" class="flex flex-row justify-center items-center text-xl py-6 xl:justify-start">
-            <img src="{{data.artist.picture_small}}" alt="" class="rounded-full">
-            <a href="/info/artist/{{data.artist.id}}" class="no-underline hover:underline ml-4">{{data.artist.name}}</a>
+            <a href="/info/artist/{{data.artist.id}}" class="flex items-center">
+                <img src="{{data.artist.picture_small}}" alt="" class="rounded-full">
+                <div class="no-underline hover:underline ml-4">{{data.artist.name}}</div>
+            </a>
         </div>
         <div id="album-info" class="flex flex-row justify-center xl:justify-start">
             <span id="track-amount" class="p-1 ">{{data.nb_tracks}} tracks |</span>
@@ -55,8 +57,10 @@
             {{/if}}
         </div>
         <div id="artist-name" class="flex flex-row justify-center items-center text-xl py-6 xl:justify-start">
-            <img src="{{data.artist.picture_small}}" alt="" class="rounded-full">
-            <a href="/info/artist/{{data.artist.id}}" class="no-underline hover:underline ml-4">{{data.artist.name}}</a>
+            <a href="/info/artist/{{data.artist.id}}" class="flex items-center">
+                <img src="{{data.artist.picture_small}}" alt="" class="rounded-full">
+                <div class="no-underline hover:underline ml-4">{{data.artist.name}}</div>
+            </a>
         </div>
         <div id="album-info" class="flex flex-row justify-center xl:justify-start">
             <span id="track-amount" class="p-1 ">{{data.nb_tracks}} tracks |</span>
