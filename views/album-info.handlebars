@@ -4,7 +4,7 @@
 {{#if loggedIn}}
 <section class="flex flex-col xl:flex-row">
     <div id="cover" class="mt-12 mb-4 flex justify-center xl:ml-8">
-        <img src="{{data.cover_medium}}" alt="">
+        <img src="{{data.cover_medium}}" alt="" class="rounded-md">
     </div>
     <div class="flex flex-col justify-center mx-8 h-[250px] xl:mt-12">
         <div id="title"
@@ -69,7 +69,7 @@
 
 <section id="album-tracklist">
     <div id="album-tracklist-container" class="p-2 m-2">
-        <table class="table-auto w-full rounded-t-md overflow-hidden">
+        <table class="table-auto w-full rounded-md overflow-hidden">
             <thead>
                 <tr class="bg-gray-300 h-10">
                     <th>#</th>
