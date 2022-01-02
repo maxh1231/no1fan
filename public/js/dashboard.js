@@ -10,7 +10,7 @@ async function deleteAccount(event) {
     });
 
     if (response.ok) {
-        document.location.assign('/signup');
+        document.location.assign('/');
     } else {
         alert(response.statusText);
         return;
