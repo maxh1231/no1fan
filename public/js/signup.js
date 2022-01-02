@@ -33,8 +33,7 @@ const signupFormHandler = async (evt) => {
             return;
         }
     } 
-    console.log('user created');
-    document.location.replace('/'); // TODO: Change to Dashboard? 
+    document.location.replace('/dashboard');
 };
 
 const gotoLogin = () => {

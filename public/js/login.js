@@ -19,7 +19,7 @@ const loginFormHandler = async (evt) => {
         toggleErrMsg('#err-msg');
         return;
     }
-    document.location.replace('/'); // TODO: Change to Dashboard?
+    document.location.replace('/');
 };
 
 const gotoSignup = () => {

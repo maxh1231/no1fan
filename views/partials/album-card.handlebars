@@ -1,5 +1,5 @@
-<div id="album-card" class="group m-2 p-2 cursor-pointer bg-gray-400 border border-red-dark hover:ring-1 hover:ring-red-dark">
+<div id="album-card" class="group m-2 p-2 cursor-pointer bg-gray-400 border-2 rounded-md border-red-dark hover:ring-1 hover:ring-red-dark transition ease-in-out">
     <div id="album-id" class="hidden">{{id}}</div>
-    <img id="album-picture" src="{{#if small}}{{cover_small}}{{else}}{{cover_medium}}{{/if}}" class="rounded-md m-auto group-hover:opacity-50">
-    <div id="album-name" class="text-center {{#unless small}}w-250 m-auto{{/unless}} group-hover:opacity-75">{{title}}</div>
+    <img id="album-picture" src="{{#if small}}{{cover_small}}{{else}}{{cover_medium}}{{/if}}" class="rounded-md m-auto group-hover:opacity-50 transition ease-in-out">
+    <div id="album-name" class="text-center {{#unless small}}w-250 m-auto{{/unless}} group-hover:opacity-75 transition ease-in-out">{{title}}</div>
 </div>

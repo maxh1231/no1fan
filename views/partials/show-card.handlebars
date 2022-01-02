@@ -1,12 +1,12 @@
-<tr class='border-b bg-gray-400'>
-    <td class='p-2'>{{title}}</td>
-    <td class='p-2 text-sky-400'><a
+<tr class='border-b last:border-none bg-gray-400'>
+    <td class='p-2' width='40%'>{{title}}</td>
+    <td class='p-2 text-sky-400' width='40%'><a
             href='/info/concerts/venue/{{venue.id}}'
-            class='hover:underline'
+            class='hover:underline transition ease-in-out'
         >{{venue.name}}</a></td>
     <td class='text-center p-2 text-sky-400'><a
             href='{{venue.url}}'
-            class='hover:underline'
+            class='hover:underline transition ease-in-out'
         >{{format_date datetime_local}}
             <svg
                 xmlns='http://www.w3.org/2000/svg'

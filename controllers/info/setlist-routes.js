@@ -55,7 +55,6 @@ router.get('/venue/:input', async (req, res) => {
         )
     ).json();
     // Send setlist body back
-    console.log(setlists.setlist[0].venue)
     res.render('setlist-info', {
         setlists,
         venueType: true,

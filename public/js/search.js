@@ -22,6 +22,15 @@ const albumInfo = (evt) => {
     document.location.assign(`/info/album/${current}`);
 }
 
-document.querySelector('#artist-card').addEventListener('click', artistInfo);
-document.querySelector('#artist-results-container').addEventListener('click', artistInfo);
-document.querySelector('#album-results-container').addEventListener('click', albumInfo);
+const artistCard = document.querySelector('#artist-card');
+if (artistCard) {
+    artistCard.addEventListener('click', artistInfo);
+}
+const artistContainer = document.querySelector('#artist-results-container');
+if (artistContainer) {
+    artistContainer.addEventListener('click', artistInfo);
+}
+const albumContainer = document.querySelector('#album-results-container');
+if (albumContainer) {
+    albumContainer.addEventListener('click', albumInfo);
+}

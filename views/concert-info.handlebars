@@ -25,8 +25,8 @@
     {{/if}}
 </section>
 
-<section id="concert-info-container" class="m-3">
-    <table class="table-fixed w-full rounded-t-md overflow-hidden" id="concerts-table">
+<section id="concert-info-container" class="m-3 mt-6">
+    <table class="table-fixed rounded-md overflow-hidden container mx-auto" id="concerts-table">
         {{#if artistType}}
             <thead>
                 <tr class="bg-gray-300 h-10">
@@ -57,8 +57,5 @@
         {{/if}}
     </table>
 </section>
-
-{{!-- JS link --}}
-<script src="/js/dashboard.js"></script>
 
 {{> footer}}
