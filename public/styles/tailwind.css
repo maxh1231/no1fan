@@ -6,6 +6,10 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
+a {
+    transition: all ease;
+}
+
 a:hover {
     opacity: 75%;
 }
@@ -98,4 +102,24 @@ input:-webkit-autofill:active {
 
 #artist-bio a {
     color: 38bdf8;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #666666;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #444444;
 }

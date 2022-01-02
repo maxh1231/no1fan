@@ -14,10 +14,10 @@
     </div>
 </section>
 
-<section id="track-results">
+<section id="track-results" class="container mx-auto">
     <h2 id="track-results-header" class="text-xl font-bold my-2 mx-4">Tracks</h2>
     <div id="track-results-container" class="p-2 m-2">
-        <table class="table-fixed w-full rounded-t-md overflow-hidden">
+        <table class="table-fixed w-full rounded-md overflow-hidden">
             <thead>
                 <tr class="bg-gray-300 h-10">
                     <th>Name</th>
@@ -34,7 +34,7 @@
     </div>
 </section>
 
-<section id="artist-results">
+<section id="artist-results" class="container mx-auto">
     <h2 id="artist-results-header" class="text-xl font-bold my-2 mx-4">Artists</h2>
     <div id="artist-results-container" class="flex p-2 m-2 overflow-x-auto">
         {{#each artists.data}}
@@ -43,7 +43,7 @@
     </div>
 </section>
 
-<section id="album-results">
+<section id="album-results" class="container mx-auto">
     <h2 id="album-results-header" class="text-xl font-bold my-2 mx-4">Albums</h2>
     <div id="album-results-container" class="flex p-2 m-2 overflow-x-auto">
         {{#each albums.data}}

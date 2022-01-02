@@ -33,7 +33,7 @@ const signupFormHandler = async (evt) => {
             return;
         }
     } 
-    document.location.replace('/');
+    document.location.replace('/dashboard');
 };
 
 const gotoLogin = () => {

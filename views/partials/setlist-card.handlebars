@@ -1,5 +1,5 @@
 {{#if artistType}}
-    <tr class='border-b bg-gray-400'>
+    <tr class='border-b last:border-none bg-gray-400'>
         {{#if venue.city.name}}
             <td class='p-2 text-center'>{{venue.city.name}}</td>
         {{else}}
@@ -7,18 +7,27 @@
         {{/if}}
 
         <td class='p-2 text-center'><a
-                class='text-sky-400 hover:underline'
+                class='text-sky-400 hover:underline transition ease-in-out'
                 href='/info/setlists/venue/{{venue.id}}'
             >{{venue.name}}</a>
         </td>
         <td class='p-2 text-center flex justify-center items-center'>
             <a
-                class='text-sky-400 hover:underline'
+                class='text-sky-400 hover:underline transition ease-in-out'
                 href='{{{url}}}'
                 target='_blank'
-            >{{eventDate}}<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline text-sky-400 mb-3" viewBox="0 0 20 20" fill="currentColor">
-            <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-            <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" /></svg></a>
+            >{{eventDate}}<svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    class='h-4 w-4 inline text-sky-400 mb-3'
+                    viewBox='0 0 20 20'
+                    fill='currentColor'
+                >
+                    <path
+                        d='M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z'
+                    ></path>
+                    <path
+                        d='M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z'
+                    ></path></svg></a>
             {{#if loggedIn}}
                 <button class='hover:opacity-75 px-1' data-attended='no'>
                     <svg
@@ -84,15 +93,24 @@
     </tr>
 {{/if}}
 {{#if venueType}}
-    <tr class='border-b bg-gray-400'>
+    <tr class='border-b last:border-none bg-gray-400'>
         <td class='p-2 text-center'>{{artist.name}}</td>
         <td class='p-2 text-center'><a
-                class='text-sky-400 hover:underline'
+                class='text-sky-400 hover:underline transition ease-in-out'
                 href='{{url}}'
                 target='_blank'
-            >{{eventDate}}<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline text-sky-400 mb-3" viewBox="0 0 20 20" fill="currentColor">
-            <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-            <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" /></svg></a></td>
+            >{{eventDate}}<svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    class='h-4 w-4 inline text-sky-400 mb-3'
+                    viewBox='0 0 20 20'
+                    fill='currentColor'
+                >
+                    <path
+                        d='M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z'
+                    ></path>
+                    <path
+                        d='M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z'
+                    ></path></svg></a></td>
         {{#if tour.name}}
             <td class='p-2 text-center'>{{tour.name}}</td>
         {{else}}

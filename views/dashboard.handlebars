@@ -8,11 +8,11 @@
     </div>
     <div id="info-container" class="col-span-3 p-4 rounded-md border-2 border-gray-200">
         <h2 class="text-xl font-bold border-b text-red-dark">User Info: {{data.username}}</h2>
-        <p><a href="mailto: {{data.email}}" class="text-sky-400" target='_blank'>{{data.email}}</a></p>
+        <p><a href="mailto: {{data.email}}" class="text-sky-400 hover:opacity-75 transition ease-in-out" target='_blank'>{{data.email}}</a></p>
         <p>Member since: {{format_date data.createdAt}}</p>
         <p>I've attended {{data.count}} shows.</p>
         </br>
-        <div class="text-right"><button id="delete-account" type="button" class="text-xs text-red-dark">Delete my Account</button><div>
+        <div class="text-right"><button id="delete-account" type="button" class="text-xs text-red-dark hover:opacity-75 transition ease-in-out">Delete my Account</button><div>
     </div>
 </section>
 
@@ -22,14 +22,14 @@
     <div id="artist-favorites" class="rounded-md border-2 border-gray-200 col-auto p-4">
         <h2 class="text-xl font-bold border-b text-red-dark">My Favorite Artists</h2>
         {{#each data.artistfavorites}}
-            <p><a href="/info/artist/{{dataValues.artist_id}}" class="text-sky-400">{{dataValues.artist_name}}</a></p>
+            <p><a href="/info/artist/{{dataValues.artist_id}}" class="text-sky-400 hover:opacity-75 transition ease-in-out">{{dataValues.artist_name}}</a></p>
         {{/each}}    
     </div>
     {{!-- Albums --}}
     <div id="album-favorites" class="rounded-md border-2 border-gray-200 col-auto p-4">
         <h2 class="text-xl font-bold border-b text-red-dark">My Favorite Albums</h2>
         {{#each data.albumfavorites}}
-            <p><a href="/info/album/{{dataValues.album_id}}" class="text-sky-400">{{dataValues.album_name}}</a></p>
+            <p><a href="/info/album/{{dataValues.album_id}}" class="text-sky-400 hover:opacity-75 transition ease-in-out">{{dataValues.album_name}}</a></p>
         {{/each}}  
     </div>
 </section>
@@ -39,7 +39,7 @@
     <div id="attended-shows" class="rounded-md border-2 border-gray-200 col-auto p-4">
         <h2 class="text-xl font-bold border-b text-red-dark">Concerts I've Attended</h2>
         {{#each data.savedconcerts}}
-            <p>{{dataValues.artist_name}} at {{dataValues.venue_name}} – <a href={{dataValues.setlist_url}} class="text-sky-400" target="_blank">{{dataValues.date}}</a></p>
+            <p>{{dataValues.artist_name}} at {{dataValues.venue_name}} – <a href={{dataValues.setlist_url}} class="text-sky-400 hover:opacity-75 transition ease-in-out" target="_blank">{{dataValues.date}}</a></p>
         {{/each}}    
     </div>
 </section>
