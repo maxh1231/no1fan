@@ -19,7 +19,6 @@
   https://no1fan.herokuapp.com/
 
   <img src="./public/assets/screenshot1.png">
-  <img src="./public/assets/screenshot2.png">
 
   ## What is the app be used for? 
   Only Bands is a central hub for music lovers of all genres. There is a lot of potential for future feature development. As of now, users can save favorite artists and albums, and see current and past show information for artists. They can also see shows near them. The application has artist suggestions based on searched artist. The user can also listen to song previews. 
