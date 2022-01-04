@@ -1,10 +1,11 @@
 const router = require('express').Router();
 const { SavedConcerts } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // Endpoint is /api/savedconcerts/
 
 // Get all saved concerts
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
     SavedConcerts.findAll({
         where: {
             user_id: req.session.user_id,
@@ -26,7 +27,7 @@ router.get('/', (req, res) => {
 });
 
 // Add a saved concert
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     SavedConcerts.create({
         artist_name: req.body.artist_name,
         venue_name: req.body.venue_name,
@@ -42,7 +43,7 @@ router.post('/', (req, res) => {
 });
 
 // Delete a saved concert
-router.delete('/', (req, res) => {
+router.delete('/', withAuth, (req, res) => {
     SavedConcerts.destroy({
         where: {
             user_id: req.session.user_id,
