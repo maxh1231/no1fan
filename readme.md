@@ -90,7 +90,7 @@ https://no1fan.herokuapp.com/
 
 ### Search Page
 
-![Search Page]("./public/assets/screenshot2.png")
+![Search Page](./public/assets/screenshot2.png)
 
 ## Want to contribute?
 
