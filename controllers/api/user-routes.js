@@ -59,7 +59,7 @@ router.get('/:id', withAuth, async (req, res) => {
 });
 
 // create
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const response = await User.create({
             email: req.body.email,
