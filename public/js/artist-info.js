@@ -241,7 +241,7 @@ document.querySelectorAll('.carousel').forEach((carousel) => {
         return `<span class="carousel-button"></span>`;
     });
     // insert buttons into html before end
-    document.querySelector('.carousel').insertAdjacentHTML(
+    carousel.insertAdjacentHTML(
         'beforeend',
         `
     <div class="carousel-navigation">
