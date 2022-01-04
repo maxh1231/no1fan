@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const { AlbumFavorites, ArtistFavorites } = require('../../models');
+const { AlbumFavorites } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
     AlbumFavorites.findAll({
         where: {
             user_id: req.session.user_id
@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
         });
 });
 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     AlbumFavorites.create({
         album_id: req.body.album_id,
         album_name: req.body.album_name,
@@ -36,7 +36,7 @@ router.post('/', (req, res) => {
         });
 })
 
-router.delete('/', (req, res) => {
+router.delete('/', withAuth, (req, res) => {
     AlbumFavorites.destroy({
         where: {
             user_id: req.session.user_id,

@@ -4,7 +4,7 @@ const { User, ArtistFavorites, AlbumFavorites } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // findAll
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         const response = await User.findAll({
             attributes: { exclude: ['password'] },
@@ -31,7 +31,7 @@ router.get('/', async (req, res) => {
 });
 
 // findOne
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
     try {
         const response = await User.findOne({
             where: { id: req.params.id },
@@ -59,7 +59,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // create
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const response = await User.create({
             email: req.body.email,
@@ -85,7 +85,7 @@ router.post('/', async (req, res) => {
 });
 
 // update
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     try {
         const response = await User.update(req.body, {
             individualHooks: true,
@@ -126,7 +126,7 @@ router.post('/login', async (req, res) => {
 });
 
 // logout
-router.post('/logout', (req, res) => {
+router.post('/logout', withAuth, (req, res) => {
     try {
         if (!req.session.loggedIn) {
             res.status(404).end();
@@ -141,7 +141,7 @@ router.post('/logout', (req, res) => {
 });
 
 // delete
-router.delete('/', async  (req, res) => {
+router.delete('/', withAuth, async  (req, res) => {
     try {
         const response = await User.destroy({
             where: { id: req.session.user_id }
