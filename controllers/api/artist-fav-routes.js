@@ -1,7 +1,8 @@
 const router = require('express').Router();
-const { AlbumFavorites, ArtistFavorites } = require('../../models');
+const {  ArtistFavorites } = require('../../models');
+const withAuth = require('../../utils/auth');
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
     if (!req.session.user_id) {
         // console.log("User not logged in")
         return;
@@ -29,7 +30,7 @@ router.get('/', (req, res) => {
     }
 });
 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     ArtistFavorites.create({
         artist_id: req.body.artist_id,
         artist_name: req.body.artist_name,
@@ -44,7 +45,7 @@ router.post('/', (req, res) => {
         });
 })
 
-router.delete('/', (req, res) => {
+router.delete('/', withAuth, (req, res) => {
     ArtistFavorites.destroy({
         where: {
             user_id: req.session.user_id,
