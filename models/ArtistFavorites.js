@@ -1,9 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-
 class ArtistFavorites extends Model { }
-
 
 ArtistFavorites.init(
     {

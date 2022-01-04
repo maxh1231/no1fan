@@ -7,12 +7,7 @@ router.get('/', withAuth, (req, res) => {
         where: {
             user_id: req.session.user_id
         },
-        attributes: [
-            'id',
-            'album_id',
-            'album_name',
-            'user_id'
-        ],
+        attributes: ['id', 'album_id', 'album_name', 'user_id'],
     })
         .then(favorites => res.json(favorites))
         .catch(err => {
