@@ -295,5 +295,9 @@ if (attendBtns) {
     }
 }
 
-window.onload = getHeart();
-window.onload = getAttendedConcerts();
+if (btn) {
+    window.onload = getHeart();
+    window.onload = getAttendedConcerts();
+}
+const x = document.querySelector('.carousel');
+console.log(x.children)
