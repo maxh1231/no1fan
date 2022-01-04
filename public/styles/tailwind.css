@@ -36,10 +36,11 @@ a:hover {
 }
 
 .carousel-display-item {
-    height: 550px;
+    height: auto;
     width: 100%;
     background: #999999;
-    padding: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
     font-size: 2em;
@@ -54,7 +55,6 @@ a:hover {
 .carousel-navigation {
     width: 100%;
     padding: 20px 0;
-    position: absolute;
     bottom: 0;
     left: 0;
     text-align: center;

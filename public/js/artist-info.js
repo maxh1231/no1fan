@@ -241,7 +241,7 @@ document.querySelectorAll('.carousel').forEach((carousel) => {
         return `<span class="carousel-button"></span>`;
     });
     // insert buttons into html before end
-    carousel.insertAdjacentHTML(
+    document.querySelector('.carousel').insertAdjacentHTML(
         'beforeend',
         `
     <div class="carousel-navigation">
@@ -295,5 +295,9 @@ if (attendBtns) {
     }
 }
 
-window.onload = getHeart();
-window.onload = getAttendedConcerts();
+if (btn) {
+    window.onload = getHeart();
+    window.onload = getAttendedConcerts();
+}
+const x = document.querySelector('.carousel');
+console.log(x.children)
