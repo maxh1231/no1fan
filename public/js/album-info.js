@@ -3,7 +3,7 @@ let btn2 = document.getElementById('favBtn2');
 let url = window.location.pathname;
 let album_id = url.replace(/^\D+/g, '')
 
-let getFav = async (req, res) => {
+let getFav = async () => {
     const response = await fetch('/api/albumfavorites', {
         method: 'GET',
         headers: {
@@ -38,40 +38,31 @@ let favBtnDeactive = function () {
     btn2.classList.add('deactive');
 }
 // Post favorite
-let postDB = async (req, res) => {
+let postDB = async () => {
     let url = window.location.pathname;
     let album_id = url.replace(/^\D+/g, '')
     let album_name = document.getElementById('title').textContent;
-    const response = await fetch('/api/albumfavorites', {
+    await fetch('/api/albumfavorites', {
         method: 'POST',
         headers: {
             'Accept': 'application.json',
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-            album_id: album_id,
-            album_name: album_name,
-        })
+        body: JSON.stringify({ album_id: album_id, album_name: album_name })
     });
-    const postData = await response.json();
-    console.log(postData);
 }
 // Delete favorite
-let deleteDB = async (req, res) => {
+let deleteDB = async () => {
     let url = window.location.pathname;
     let album_id = url.replace(/^\D+/g, '')
-    const response = await fetch('/api/albumfavorites', {
+    await fetch('/api/albumfavorites', {
         method: 'DELETE',
         headers: {
             'Accept': 'application.json',
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-            album_id,
-        })
+        body: JSON.stringify({ album_id })
     });
-    const postData = await response.json();
-    console.log(postData);
 }
 
 btn2.addEventListener('click', function () {
