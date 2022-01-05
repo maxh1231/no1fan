@@ -16,7 +16,7 @@
 
 
   ## Check out the application
-  https://no1fan.herokuapp.com/
+  https://onlybands.herokuapp.com/
 
   <img src="./public/assets/screenshot1.png">
 
