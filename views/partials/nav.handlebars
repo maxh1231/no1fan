@@ -1,67 +1,24 @@
-<nav
-    class='flex justify-between p-1 bg-gray-400 items-center flex-col sm:flex-row'
->
+<nav class='flex justify-between p-1 bg-gray-400 items-center flex-col sm:flex-row'>
 
-    <img
-        src='/assets/no1fan.png'
-        id='home-btn'
-        class='w-[100px] h-[100px] p-0 cursor-pointer hover:opacity-75 transition ease-in'
-    />
+    <img src='/assets/no1fan.png' id='home-btn' class='w-[100px] h-[100px] p-0 cursor-pointer hover:opacity-75 transition ease-in'/>
 
-    <form
-        id='home-search-form'
-        class='flex justify-center sm:w-1/3 sm:ml-auto sm:mx-4 sm:m-0 mx-auto my-1 w-1/2 group'
-    >
-        <input
-            type='text'
-            id='home-search-input'
-            name='home-search-input'
-            placeholder='Search...'
-            class='w-full border-solid border-2 border-gray-200 bg-black p-1 text-white rounded-l-md placeholder:text-gray-300 focus-visible:outline-0 focus:border-opacity-75 peer group-hover:border-opacity-75 transition ease-in-out'
-        />
-        <button
-            type='submit'
-            id='home-search-btn'
-            class='border-solid border-2 border-gray-200 bg-gray-200 rounded-r-md w-10 peer-focus:opacity-75 group-hover:opacity-75 transition ease-in-out'
-        >
-            <svg
-                xmlns='http://www.w3.org/2000/svg'
-                class='h-6 w-6 m-auto'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='black'
-            >
-                <path
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                    stroke-width='2'
-                    d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'
-                ></path>
+    <form id='home-search-form' class='flex justify-center sm:w-1/3 sm:ml-auto sm:mx-4 sm:m-0 mx-auto my-1 w-1/2 group'>
+        <input type='text' id='home-search-input' name='home-search-input' placeholder='Search...' class='w-full border-solid border-2 border-gray-200 bg-black p-1 text-white rounded-l-md placeholder:text-gray-300 focus-visible:outline-0 focus:border-opacity-75 peer group-hover:border-opacity-75 transition ease-in-out'/>
+        <button type='submit' id='home-search-btn' class='border-solid border-2 border-gray-200 bg-gray-200 rounded-r-md w-10 peer-focus:opacity-75 group-hover:opacity-75 transition ease-in-out'>
+            <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 m-auto' fill='none' viewBox='0 0 24 24' stroke='black'>
+                <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' s='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
             </svg>
         </button>
     </form>
 
     <div id='btn-container'>
         {{#if loggedIn}}
-            <button
-                id='dashboard-btn'
-                class='border-solid border-2 border-red-dark bg-black p-1.5 m-1 rounded-lg hover:opacity-75 hover:ring-2 hover:ring-red-dark transition'
-            >Dashboard</button>
-            <button
-                id='logout-btn'
-                class='border-solid border-2 border-red-dark bg-black p-1.5 m-1 rounded-lg hover:opacity-75 hover:ring-2 hover:ring-red-dark transition'
-            >Logout</button>
+            <button id='dashboard-btn' class='border-solid border-2 border-red-dark bg-black p-1.5 m-1 rounded-lg hover:opacity-75 hover:ring-2 hover:ring-red-dark transition'>Dashboard</button>
+            <button id='logout-btn' class='border-solid border-2 border-red-dark bg-black p-1.5 m-1 rounded-lg hover:opacity-75 hover:ring-2 hover:ring-red-dark transition'>Logout</button>
         {{else}}
             {{#unless hideBtn}}
-                <button
-                    id='login-btn'
-                    class='border-solid border-2 border-red-dark bg-black p-1.5 m-1 rounded-lg hover:opacity-75 hover:ring-2 hover:ring-red-dark transition'
-                >Login</button>
-                <button
-                    id='signup-btn'
-                    class='border-solid border-2 border-red-dark bg-black p-1.5 m-1 rounded-lg hover:opacity-75 hover:ring-2 hover:ring-red-dark transition'
-                >Signup</button>
-
+                <button id='login-btn' class='border-solid border-2 border-red-dark bg-black p-1.5 m-1 rounded-lg hover:opacity-75 hover:ring-2 hover:ring-red-dark transition'>Login</button>
+                <button id='signup-btn' class='border-solid border-2 border-red-dark bg-black p-1.5 m-1 rounded-lg hover:opacity-75 hover:ring-2 hover:ring-red-dark transition'>Signup</button>
             {{/unless}}
         {{/if}}
     </div>
