@@ -1,4 +1,4 @@
-# Only Bands ![Badge for License](https://img.shields.io/badge/license-Open-informational)
+# Only Bands ![Badge for License](https://img.shields.io/badge/license-GNU-informational)
 
   
   ## Project Description 
