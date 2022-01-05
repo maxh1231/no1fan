@@ -188,25 +188,17 @@ document.querySelectorAll('.carousel').forEach((carousel) => {
     });
     // insert buttons into html before end
     carousel.insertAdjacentHTML('beforeend',
-        `
-    <div class="carousel-navigation">
+    `<div class="carousel-navigation">
     ${buttonsHtml.join('')}
-    </div>
-    `
-    );
+    </div> `);
     // select each button element
     const buttons = carousel.querySelectorAll('.carousel-button');
     // add event listener for each button
     buttons.forEach((button, i) => {
         button.addEventListener('click', () => {
             // un-select all the items
-            items.forEach((item) =>
-                item.classList.remove('carousel-display-item-selected')
-            );
-            buttons.forEach((button) =>
-                button.classList.remove('carousel-button-selected')
-            );
-
+            items.forEach((item) => item.classList.remove('carousel-display-item-selected'));
+            buttons.forEach((button) => button.classList.remove('carousel-button-selected'));
             items[i].classList.add('carousel-display-item-selected');
             button.classList.add('carousel-button-selected');
         });
@@ -218,13 +210,13 @@ document.querySelectorAll('.carousel').forEach((carousel) => {
 });
 
 // buttons to link to pages
-const discogWrap = document.querySelector('#discography-wrapper')
+const discogWrap = document.querySelector('#discography-wrapper');
 if (discogWrap) { discogWrap.addEventListener('click', getTracks) };
-const recWrap = document.querySelector('#recommended-wrapper')
+const recWrap = document.querySelector('#recommended-wrapper');
 if (recWrap) { recWrap.addEventListener('click', getRecommended)};    
 
 // Add listeners to each "I attended" button
-const attendBtns = document.getElementById('recent-concerts-table')
+const attendBtns = document.getElementById('recent-concerts-table');
 if (attendBtns) {
     attendedButtons = attendBtns.getElementsByTagName('button');
     for (let i = 0; i < attendedButtons.length; i++) {

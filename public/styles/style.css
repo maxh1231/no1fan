@@ -631,6 +631,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 1rem;
 }
 
+.h-auto {
+  height: auto;
+}
+
 .h-\[150px\] {
   height: 150px;
 }
@@ -847,11 +851,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(68 68 68 / var(--tw-bg-opacity));
 }
 
-.bg-gray-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(153 153 153 / var(--tw-bg-opacity));
-}
-
 .bg-gray-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(34 34 34 / var(--tw-bg-opacity));
@@ -1057,18 +1056,8 @@ a:hover {
 
 /* carousel style start */
 
-.carousel {
-  position: relative;
-}
-
 .carousel-display-item {
-  height: auto;
-  width: 100%;
-  background: #999999;
-  padding-left: 1em;
-  padding-right: 1em;
   font-family: 'Quicksand', sans-serif;
-  font-weight: bold;
   font-size: 2em;
   color: black;
   display: none;
@@ -1080,7 +1069,7 @@ a:hover {
 
 .carousel-navigation {
   width: 100%;
-  padding: 20px 0;
+  padding: 10px 0;
   bottom: 0;
   left: 0;
   text-align: center;
@@ -1092,7 +1081,7 @@ a:hover {
   display: inline-block;
   background-color: rgba(148, 1, 16, 0.5);
   border-radius: 50%;
-  margin: 0 5px;
+  margin: 3px;
   cursor: pointer;
 }
 
