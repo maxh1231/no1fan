@@ -1,12 +1,12 @@
 # #1Fan ![Badge for License](https://img.shields.io/badge/license-Open-informational)
 
   
-    ## Project Description 
-  This is a group project made for a coding bootcamp with the University of Utah. It is a full stack application. It was designed to be a hub for a music fan to be able to listen to music, save favorites, get artist info, and see information about local shows and also other shows by an artist. Users are able to create an account and log in an out. The app was built using MVC to help separate concerns, and handlebars.js was used as the templating language. 
+  ## Project Description 
+  This is a group project made for the coding bootcamp with the University of Utah. It is a full stack application. It was designed to be a hub for music fans to be able to      listen to music, save favorites, get artist info, see information about local shows and also other shows by an artist. Users are able to create an account and log in an out. The app was built using MVC to help separate concerns, and handlebars.js was used as the templating language. 
 
   
-  ## Languages Used 
-  Javascript,CSS,HTML,Node,Other
+  ## Technologies Used 
+  HTML, Tailwind.css, Node.js, Handlebars.js
 
   ## API's used
   * https://developers.deezer.com/api
@@ -22,7 +22,7 @@
   <img src="./public/assets/screenshot2.png">
 
   ### What will the app be used for? 
-  It is a central hub for music lovers of all genres. There is a lot of potential for future feature development. As of now, users can save favorite artists and albums, and see current and past show information for artists. They can also see shows near them. The application has artist suggestions based on searched artist. The user can also listen to song previews. 
+  It is a central hub for music lovers of all genres. There is a lot of potential for future feature development. As of now, users can save favorite artists and albums, see current and past show information for artists. They can also see shows near them. The application has artist suggestions based on searched artist. The user can also listen to song previews. 
 
   ### How can you contribute?
   Fork a copy of the repo and have fun!
@@ -37,6 +37,6 @@
   ### Questions
   -------------------------------------------------------------------------------------------------------
   
-  Any questions? Check us out on Github!: (https://github.com/Thenlie) (https://github.com/Jillium) (https://github.com/Thorulfr) (https://github.com/maxh1231)
+  Any questions? Check us out on Github!: ![Thenlie](https://github.com/Thenlie) ![Jillium](https://github.com/Jillium) ![Thorulfr](https://github.com/Thorulfr) ![maxh1231](https://github.com/maxh1231)
   
   
