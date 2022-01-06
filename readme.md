@@ -37,6 +37,6 @@
   ### Questions
   -------------------------------------------------------------------------------------------------------
   
-  Any questions? Check us out on Github!: ![Thenlie](https://github.com/Thenlie) ![Jillium](https://github.com/Jillium) ![Thorulfr](https://github.com/Thorulfr) ![maxh1231](https://github.com/maxh1231)
+  Any questions? Check us out on Github!: [Thenlie](https://github.com/Thenlie), [Jillium](https://github.com/Jillium), [Thorulfr](https://github.com/Thorulfr), [maxh1231](https://github.com/maxh1231)
   
   
