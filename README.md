@@ -1,4 +1,4 @@
-# Only Bands ![Badge for License](https://img.shields.io/badge/license-GPL-informational)
+# Only Bands ![Deezer](https://img.shields.io/badge/Deezer-FEAA2D?style=for-the-badge&logo=deezer&logoColor=white) ![Badge for License](https://img.shields.io/badge/license-GPL-informational) 
 
   
   ## Project Description 
