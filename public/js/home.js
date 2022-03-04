@@ -13,6 +13,4 @@ const getInfo = (evt) => {
     document.location.assign(`/info/artist/${current}`);
 };
 
-document
-    .querySelector('#top-artist-container')
-    .addEventListener('click', getInfo);
+document.querySelector('#top-artist-container').addEventListener('click', getInfo);

@@ -4,8 +4,7 @@
 
     <section id="top-artists" class="m-2 lg:w-1/4 inline-block lg:h-[100vh] lg:mr-14 xl:mr-1">
         <h2 class="text-xl font-bold text-center m-2">Top 10 Artists</h2>
-        <div id="top-artist-container"
-            class="lg:h-[1307px] lg:m-auto m-2 lg:w-fit p-2 lg:overflow-y-auto lg:overflow-x-hidden overflow-x-auto lg:block flex">
+        <div id="top-artist-container" class="lg:h-[1307px] lg:m-auto m-2 lg:w-fit p-2 lg:overflow-y-auto lg:overflow-x-hidden overflow-x-auto lg:block flex">
             {{#each topArtists.data}}
             {{> artist-card medium='true'}}
             {{/each}}
@@ -16,22 +15,18 @@
 
         <section id="random-track" class="mx-3">
             <h2 class="text-xl font-bold text-center m-2">Discover a Top Track</h2>
-            <div id="random-track-container"
-                class="lg:w-full border-2 rounded-md bg-gray-400 p-4 lg:block lg:text-left text-center flex flex-col">
-                <img id="random-album-img" src="{{random.data.0.album.cover_medium}}"
-                    class="inline rounded-md h-[250px] w-[250px] lg:m-1 m-auto">
+            <div id="random-track-container" class="lg:w-full border-2 rounded-md bg-gray-400 p-4 lg:block lg:text-left text-center flex flex-col">
+                <img id="random-album-img" src="{{random.data.0.album.cover_medium}}" class="inline rounded-md h-[250px] w-[250px] lg:m-1 m-auto">
                 <div id="random-info-container" class="inline-flex flex-col align-middle m-3">
                     <div class="flex flex-row justify-center lg:justify-start">
                         <p class="m-2 text-xl">
                             {{random.data.0.title}}
                         </p>
                         {{#if random.data.0.explicit_lyrics}}
-                        <img src="https://img.shields.io/badge/-E-000??style=for-the-badge" alt="explicit badge"
-                            class="inline-block my-auto">
+                        <img src="https://img.shields.io/badge/-E-000??style=for-the-badge" alt="explicit badge" class="inline-block my-auto">
                         {{/if}}
                     </div>
-                    <a href="/info/artist/{{random.data.0.artist.id}}"
-                        class="m-2 text-lg no-underline hover:underline">{{random.data.0.artist.name}}</a>
+                    <a href="/info/artist/{{random.data.0.artist.id}}" class="m-2 text-lg no-underline hover:underline">{{random.data.0.artist.name}}</a>
                     <p class="m-2 text-lg">{{random.data.0.album.title}}</p>
                     {{#if random.data.0.preview}}
                     <div class="my-2 lg:mx-0 mx-auto">

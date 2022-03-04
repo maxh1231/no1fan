@@ -4,7 +4,6 @@ const withAuth = require('../../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
     if (!req.session.user_id) {
-        // console.log("User not logged in")
         return;
     } else {
 
@@ -12,14 +11,7 @@ router.get('/', withAuth, (req, res) => {
             where: {
                 user_id: req.session.user_id
             },
-            attributes: [
-                'id',
-                'artist_id',
-                'artist_name',
-                'user_id'
-
-            ],
-
+            attributes: ['id', 'artist_id', 'artist_name', 'user_id'],
         })
 
             .then(favorites => res.json(favorites))

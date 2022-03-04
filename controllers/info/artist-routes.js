@@ -1,28 +1,18 @@
 const router = require('express').Router();
 const fetch = require('node-fetch');
 
-// renders the artist info page
 // info/artist
 router.use('/:id', async (req, res) => {
-    // gets artist id for the page
     let artistID = req.params.id;
     // gets artist info
-    const artistResponse = await fetch(
-        `https://api.deezer.com/artist/${artistID}`
-    );
+    const artistResponse = await fetch(`https://api.deezer.com/artist/${artistID}`);
     const artistName = await artistResponse.json();
-
     // gets album info
-    const albumResponse = await fetch(
-        `https://api.deezer.com/artist/${artistID}/albums`
-    );
+    const albumResponse = await fetch(`https://api.deezer.com/artist/${artistID}/albums`);
     const artistAlbums = await albumResponse.json();
     // gets recommended artist info
-    const recommendedResponse = await fetch(
-        `https://api.deezer.com/artist/${artistID}/related`
-    );
+    const recommendedResponse = await fetch(`https://api.deezer.com/artist/${artistID}/related`);
     const recommended = await recommendedResponse.json();
-    // console.log(recommended.data.length);
     // pulls the artist bio for the page
     let searchName = artistName.name;
     const artistBioResponse = await fetch(`https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${searchName}&api_key=${process.env.LASTFM_API_KEY}&format=json`);
@@ -30,17 +20,8 @@ router.use('/:id', async (req, res) => {
 
     // Get upcoming concerts
     const upcomingConcerts = await (
-        await fetch(
-            `https://api.seatgeek.com/2/events?performers.slug=${searchName.replace(
-                ' ',
-                '-'
-            )}&per_page=10&client_id=${
-                process.env.SEATGEEK_CLIENT_ID
-            }&client_secret=${process.env.SEATGEEK_SECRET}`
-        )
+        await fetch(`https://api.seatgeek.com/2/events?performers.slug=${searchName.replace(' ','-')}&per_page=10&client_id=${process.env.SEATGEEK_CLIENT_ID}&client_secret=${process.env.SEATGEEK_SECRET}`)
     ).json();
-    // console.log(upcomingConcerts);
-
     // Get artist MBID to feed into Setlist API
     let pastConcerts
     const response = await fetch(`https://api.setlist.fm/rest/1.0/search/artists?artistName=${searchName}&p=1&sort=relevance`,
@@ -69,7 +50,6 @@ router.use('/:id', async (req, res) => {
             )
         ).json();
     }
-    
 
     // pulls recommended artists into an array
     let recommendedArray = [];
@@ -78,17 +58,7 @@ router.use('/:id', async (req, res) => {
     }
 
     // passes data to handle bars to render in html
-    const artistData = {
-        name: artistName.name,
-        picture: artistName.picture_big,
-        Shows: 'Awesome Shows',
-        artistAlbums,
-        artistBio: artistBio,
-        upcomingConcerts: upcomingConcerts,
-        pastConcerts: pastConcerts,
-        recommendedArray,
-        loggedIn: req.session.loggedIn,
-    };
+    const artistData = { name: artistName.name, picture: artistName.picture_big, Shows: 'Awesome Shows', artistAlbums, artistBio: artistBio, upcomingConcerts: upcomingConcerts, pastConcerts: pastConcerts, recommendedArray, loggedIn: req.session.loggedIn };
     res.render('artist-info', artistData);
 });
 

@@ -33,23 +33,11 @@ const logout = async () => {
 
 document.querySelector('#home-btn').addEventListener('click', home);
 document.querySelector('#home-search-form').addEventListener('submit', search);
-
 const loginBtn = document.querySelector('#login-btn');
-if (loginBtn) {
-    loginBtn.addEventListener('click', login);
-}
-
+if (loginBtn) { loginBtn.addEventListener('click', login) };
 const signupBtn = document.querySelector('#signup-btn');
-if (signupBtn) {
-    signupBtn.addEventListener('click', signup);
-}
-
+if (signupBtn) { signupBtn.addEventListener('click', signup) };
 const dashBtn = document.querySelector('#dashboard-btn');
-if (dashBtn) {
-    dashBtn.addEventListener('click', dashboard);
-}
-
+if (dashBtn) { dashBtn.addEventListener('click', dashboard) };
 const logoutBtn = document.querySelector('#logout-btn');
-if (logoutBtn) {
-    logoutBtn.addEventListener('click', logout);
-}
+if (logoutBtn) { logoutBtn.addEventListener('click', logout) };
