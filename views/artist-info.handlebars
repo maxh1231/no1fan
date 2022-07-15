@@ -26,14 +26,13 @@
     </div>
 
     <!-- for album cards -->
-    <div id="main-carousel-div" class="bg-gray-100 mx-10 rounded-md overflow-hidden">
+    <div id="main-carousel-div" class="mx-10 rounded-md overflow-hidden">
         <div class="carousel flex flex-col">
-            <h5 class="text-center text-5xl font-bold m-2 text-red-dark p-4">Albums</h5>
-            <div id="discography-wrapper" class="bg-gray-100">
-
+            <h5 class="text-center text-5xl font-bold m-2 p-4">Albums</h5>
+            <div id="discography-wrapper">
                 {{#each artistAlbums.data}}
-                <div class="carousel-display-item rounded-md">
-                    {{>carousel-card}}
+                <div class="carousel-display-item rounded-md h-auto w-full font-bold">
+                    {{>album-card carousel="true"}}
                 </div>
                 {{/each}}
             </div>
@@ -42,15 +41,12 @@
 
     <!-- recommended artist section -->
     <h5 class="text-center text-xl font-bold m-2">If you like {{name}}, you might like these artists</h5>
-
     <div id="recommended-wrapper" class="flex p-2 m-2 overflow-x-auto">
-
         {{#each recommendedArray}}
-        {{> artist-card}}
+            {{> artist-card}}
         {{/each}}
     </div>
 
-    <!-- show section -->
     {{!-- Upcoming concerts --}}
     <div id="upcoming-concert-container" class="m-4">
         <h5 class="text-center text-xl font-bold m-2">Upcoming concerts by {{name}}</h5>
@@ -65,7 +61,7 @@
             </thead>
             <tbody>
                 {{#each upcomingConcerts.events}}
-                {{>concert-card artistType="true"}}
+                    {{>concert-card artistType="true"}}
                 {{/each}}
             </tbody>
         </table>
@@ -73,6 +69,7 @@
         <h5 class="text-center">Check back for upcoming concerts!</h5>
         {{/if}}
     </div>
+
     {{!-- Recent concerts --}}
     <div id="recent-concert-container" class="m-4">
         <h5 class="text-center text-xl font-bold m-2">Recent concerts by {{name}}</h5>
@@ -87,21 +84,23 @@
             </thead>
             <tbody>
                 {{#if loggedIn}}
-                {{#each pastConcerts.setlist}}
-                {{>setlist-card artistType="true" loggedIn="also true"}}
-                {{/each}}
+                    {{#each pastConcerts.setlist}}
+                        {{>setlist-card artistType="true" loggedIn="also true"}}
+                    {{/each}}
                 {{else}}
-                {{#each pastConcerts.setlist}}
-                {{>setlist-card artistType="true"}}
-                {{/each}}
+                    {{#each pastConcerts.setlist}}
+                        {{>setlist-card artistType="true"}}
+                    {{/each}}
                 {{/if}}
             </tbody>
         </table>
         {{else}}
-        <h5 class="text-center">No Past Concerts Available</h5>
+            <h5 class="text-center">No Past Concerts Available</h5>
         {{/if}}
     </div>
     {{else}}
+
+    {{!-- No Content --}}
     <section id="no-content" class="m-4">
         <div id="no-content-container" class="flex md:flex-row flex-col justify-center">
             <img src="https://robohash.org/helper.png?set=set4&size=150x150" class="m-2 self-center h-[150px] w-[150px]">
@@ -110,7 +109,6 @@
     </section>
     {{/if}}
 </main>
-<!-- footer -->
 {{> footer}}
 
 <script src="/js/artist-info.js"></script>

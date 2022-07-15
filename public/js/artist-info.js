@@ -5,7 +5,7 @@ let url = window.location.pathname;
 let artist_id = url.replace(/^\D+/g, '');
 
 // function to have favorite heart be active color if artist is in user's favorites
-let getHeart = async (req, res) => {
+let getHeart = async () => {
     const response = await fetch('/api/artistfavorites', {
         method: 'GET',
         headers: {
@@ -13,9 +13,9 @@ let getHeart = async (req, res) => {
             'Content-Type': 'application/json',
         },
     });
-    const getData = await response.json();
-    for (var i = 0; i < getData.length; i++) {
-        if (getData[i].artist_id == artist_id) {
+    const data = await response.json();
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].artist_id == artist_id) {
             btn.classList.remove('deactive');
             btn.classList.add('active');
             btn2.classList.remove('deactive');
@@ -41,39 +41,30 @@ let favBtnDeactive = function () {
 };
 
 // add favorite artist
-let addArtistFav = async (req, res) => {
+let addArtistFav = async () => {
     let artist_name = document.getElementById('name').textContent;
-    const response = await fetch('/api/artistfavorites', {
+    await fetch('/api/artistfavorites', {
         method: 'POST',
         headers: {
             Accept: 'application.json',
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-            artist_id: artist_id,
-            artist_name: artist_name,
-        }),
+        body: JSON.stringify({ artist_id: artist_id, artist_name: artist_name }),
     });
-    const postData = await response.json();
-    console.log(postData);
 };
 
 // delete favorite artist
-let deleteArtistFav = async (req, res) => {
+let deleteArtistFav = async () => {
     let url = window.location.pathname;
     let artist_id = url.replace(/^\D+/g, '');
-    const response = await fetch('/api/artistfavorites', {
+    await fetch('/api/artistfavorites', {
         method: 'DELETE',
         headers: {
             Accept: 'application.json',
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-            artist_id,
-        }),
+        body: JSON.stringify({ artist_id }),
     });
-    const postData = await response.json();
-    console.log(postData);
 };
 
 if (btn) {
@@ -89,7 +80,7 @@ if (btn) {
 }
 
 // Gets saved concerts, checks displayed concerts against them, and updates button text accordingly
-let getAttendedConcerts = async (req, res) => {
+let getAttendedConcerts = async () => {
     if (btn) {
         const response = await fetch('/api/savedconcerts', {
             method: 'GET',
@@ -104,45 +95,19 @@ let getAttendedConcerts = async (req, res) => {
             attendedConcertsSimplified.push([element.venue_name, element.date]);
         });
         attendedConcertsSimplified = JSON.stringify(attendedConcertsSimplified);
-        let buttonsArray = document
-            .getElementById('recent-concerts-table')
-            .getElementsByTagName('button');
+        let buttonsArray = document.getElementById('recent-concerts-table').getElementsByTagName('button');
         for (let i = 0; i < buttonsArray.length; i++) {
             // If a green add button
             if (buttonsArray[i].dataset.attended === 'no') {
                 // If the concert is found in the user's attended concerts
-                if (
-                    attendedConcertsSimplified.includes(
-                        JSON.stringify([
-                            buttonsArray[
-                                i
-                            ].parentElement.previousElementSibling.textContent.trim(),
-                            buttonsArray[
-                                i
-                            ].previousElementSibling.textContent.trim(),
-                        ])
-                    )
-                ) {
-                    // Hide the add button
+                if (attendedConcertsSimplified.includes(JSON.stringify([buttonsArray[i].parentElement.previousElementSibling.textContent.trim(), buttonsArray[i].previousElementSibling.textContent.trim()]))) {
                     buttonsArray[i].classList.add('hidden');
                 }
             }
             // If a red remove button
             if (buttonsArray[i].dataset.attended === 'yes') {
                 // If the concert is found in the user's attended concerts
-                if (
-                    attendedConcertsSimplified.includes(
-                        JSON.stringify([
-                            buttonsArray[
-                                i
-                            ].parentElement.previousElementSibling.textContent.trim(),
-                            buttonsArray[
-                                i
-                            ].parentElement.firstElementChild.textContent.trim(),
-                        ])
-                    )
-                ) {
-                    // Show the button
+                if (attendedConcertsSimplified.includes(JSON.stringify([buttonsArray[i].parentElement.previousElementSibling.textContent.trim(), buttonsArray[i].parentElement.firstElementChild.textContent.trim()]))) {
                     buttonsArray[i].classList.remove('hidden');
                 }
             }
@@ -153,48 +118,35 @@ let getAttendedConcerts = async (req, res) => {
 // Add concert to attended table
 const addAttendedConcert = async (evt) => {
     let artist = document.getElementById('name').textContent.trim();
-    let venue =
-        evt.currentTarget.parentElement.previousElementSibling.textContent.trim();
+    let venue = evt.currentTarget.parentElement.previousElementSibling.textContent.trim();
     let date = evt.currentTarget.previousElementSibling.textContent.trim();
     let setlist_url = evt.currentTarget.previousElementSibling.href;
     evt.currentTarget.classList.add('hidden');
     evt.currentTarget.nextElementSibling.classList.remove('hidden');
-    console.log(evt.currentTarget);
-    const response = await fetch('/api/savedconcerts/', {
+    await fetch('/api/savedconcerts/', {
         method: 'POST',
         headers: {
             Accept: 'application.json',
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-            artist_name: artist,
-            venue_name: venue,
-            date: date,
-            setlist_url: setlist_url,
-        }),
+        body: JSON.stringify({ artist_name: artist, venue_name: venue, date: date, setlist_url: setlist_url }),
     });
 };
 
 // Remove a concert from attended table
 const removeAttendedConcert = async (evt) => {
     let artist = document.getElementById('name').textContent.trim();
-    let venue =
-        evt.currentTarget.parentElement.previousElementSibling.textContent.trim();
-    let date =
-        evt.currentTarget.parentElement.firstElementChild.textContent.trim();
+    let venue = evt.currentTarget.parentElement.previousElementSibling.textContent.trim();
+    let date = evt.currentTarget.parentElement.firstElementChild.textContent.trim();
     evt.currentTarget.classList.add('hidden');
     evt.currentTarget.previousElementSibling.classList.remove('hidden');
-    const response = await fetch('/api/savedconcerts/', {
+    await fetch('/api/savedconcerts/', {
         method: 'DELETE',
         headers: {
             Accept: 'application.json',
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-            artist_name: artist,
-            venue_name: venue,
-            date: date,
-        }),
+        body: JSON.stringify({ artist_name: artist, venue_name: venue, date: date }),
     });
 };
 
@@ -204,10 +156,7 @@ const getTracks = (evt) => {
     let current = '';
     if (evt.target.id === 'album-card') {
         current = evt.target.childNodes[1].innerText;
-    } else if (
-        evt.target.id === 'album-picture' ||
-        evt.target.id === 'album-name'
-    ) {
+    } else if (evt.target.id === 'album-picture' || evt.target.id === 'album-name') {
         current = evt.target.parentElement.childNodes[1].innerText;
     } else {
         return;
@@ -221,10 +170,7 @@ const getRecommended = (evt) => {
     let recommended = '';
     if (evt.target.id === 'artist-card') {
         recommended = evt.target.childNodes[1].innerText;
-    } else if (
-        evt.target.id === 'artist-img' ||
-        evt.target.id === 'artist-name'
-    ) {
+    } else if (evt.target.id === 'artist-img' || evt.target.id === 'artist-name') {
         recommended = evt.target.parentElement.childNodes[1].innerText;
     } else {
         return;
@@ -241,27 +187,18 @@ document.querySelectorAll('.carousel').forEach((carousel) => {
         return `<span class="carousel-button"></span>`;
     });
     // insert buttons into html before end
-    carousel.insertAdjacentHTML(
-        'beforeend',
-        `
-    <div class="carousel-navigation">
+    carousel.insertAdjacentHTML('beforeend',
+    `<div class="carousel-navigation">
     ${buttonsHtml.join('')}
-    </div>
-    `
-    );
+    </div> `);
     // select each button element
     const buttons = carousel.querySelectorAll('.carousel-button');
     // add event listener for each button
     buttons.forEach((button, i) => {
         button.addEventListener('click', () => {
             // un-select all the items
-            items.forEach((item) =>
-                item.classList.remove('carousel-display-item-selected')
-            );
-            buttons.forEach((button) =>
-                button.classList.remove('carousel-button-selected')
-            );
-
+            items.forEach((item) => item.classList.remove('carousel-display-item-selected'));
+            buttons.forEach((button) => button.classList.remove('carousel-button-selected'));
             items[i].classList.add('carousel-display-item-selected');
             button.classList.add('carousel-button-selected');
         });
@@ -273,17 +210,13 @@ document.querySelectorAll('.carousel').forEach((carousel) => {
 });
 
 // buttons to link to pages
-const discogWrap = document.querySelector('#discography-wrapper')
-if (discogWrap) {
-    discogWrap.addEventListener('click', getTracks);
-}
-const recWrap = document.querySelector('#recommended-wrapper')
-if (recWrap) {
-    recWrap.addEventListener('click', getRecommended);
-}    
+const discogWrap = document.querySelector('#discography-wrapper');
+if (discogWrap) { discogWrap.addEventListener('click', getTracks) };
+const recWrap = document.querySelector('#recommended-wrapper');
+if (recWrap) { recWrap.addEventListener('click', getRecommended)};    
 
 // Add listeners to each "I attended" button
-const attendBtns = document.getElementById('recent-concerts-table')
+const attendBtns = document.getElementById('recent-concerts-table');
 if (attendBtns) {
     attendedButtons = attendBtns.getElementsByTagName('button');
     for (let i = 0; i < attendedButtons.length; i++) {
@@ -299,5 +232,3 @@ if (btn) {
     window.onload = getHeart();
     window.onload = getAttendedConcerts();
 }
-const x = document.querySelector('.carousel');
-console.log(x.children)

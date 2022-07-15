@@ -23,14 +23,8 @@ const albumInfo = (evt) => {
 }
 
 const artistCard = document.querySelector('#artist-card');
-if (artistCard) {
-    artistCard.addEventListener('click', artistInfo);
-}
+if (artistCard) { artistCard.addEventListener('click', artistInfo)};
 const artistContainer = document.querySelector('#artist-results-container');
-if (artistContainer) {
-    artistContainer.addEventListener('click', artistInfo);
-}
+if (artistContainer) { artistContainer.addEventListener('click', artistInfo)};
 const albumContainer = document.querySelector('#album-results-container');
-if (albumContainer) {
-    albumContainer.addEventListener('click', albumInfo);
-}
+if (albumContainer) { albumContainer.addEventListener('click', albumInfo)};

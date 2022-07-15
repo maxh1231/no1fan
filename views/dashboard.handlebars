@@ -3,14 +3,14 @@
 
 {{!-- Profile bar --}}
 <section id="user-info" class="m-3 p-2 container mx-auto grid grid-cols-4 gap-4">
-    <div class="profile-pic-container justify-self-center col-auto">
+    <div class="profile-pic-container justify-self-center col-auto border-2 border-gray-200 bg-gray-400 rounded-full p-4 flex items-center">
         <img src="https://robohash.org/{{data.username}}.png?set=set4&size=150x150">
     </div>
-    <div id="info-container" class="col-span-3 p-4 rounded-md border-2 border-gray-200">
-        <h2 class="text-xl font-bold border-b text-red-dark">User Info: {{data.username}}</h2>
-        <p><a href="mailto: {{data.email}}" class="text-sky-400 hover:opacity-75 transition ease-in-out" target='_blank'>{{data.email}}</a></p>
-        <p>Member since: {{format_date data.createdAt}}</p>
-        <p>I've attended {{data.count}} shows.</p>
+    <div id="info-container" class="col-span-3 p-4 rounded-md border-2 border-gray-200  bg-gray-400">
+        <h2 class="text-xl font-bold border-b text-red-dark p-1">{{data.username}}</h2>
+        <p class="p-1"><a href="mailto: {{data.email}}" class="text-sky-400 hover:opacity-75 transition ease-in-out" target='_blank'>{{data.email}}</a></p>
+        <p class="p-1">Member since: {{format_date data.createdAt}}</p>
+        <p class="p-1">You've attended {{data.count}} shows.</p>
         </br>
         <div class="text-right"><button id="delete-account" type="button" class="text-xs text-red-dark hover:opacity-75 transition ease-in-out">Delete my Account</button><div>
     </div>
@@ -19,15 +19,15 @@
 {{!-- Favorites --}}
 <section id="favorites" class="m-3 p-2 container mx-auto grid grid-cols-2 gap-4">
     {{!-- Bands --}}
-    <div id="artist-favorites" class="rounded-md border-2 border-gray-200 col-auto p-4">
-        <h2 class="text-xl font-bold border-b text-red-dark">My Favorite Artists</h2>
+    <div id="artist-favorites" class="rounded-md border-2 border-gray-200 col-auto p-4  bg-gray-400">
+        <h2 class="text-xl font-bold border-b text-red-dark p-1">My Favorite Artists</h2>
         {{#each data.artistfavorites}}
             <p><a href="/info/artist/{{dataValues.artist_id}}" class="text-sky-400 hover:opacity-75 transition ease-in-out">{{dataValues.artist_name}}</a></p>
         {{/each}}    
     </div>
     {{!-- Albums --}}
-    <div id="album-favorites" class="rounded-md border-2 border-gray-200 col-auto p-4">
-        <h2 class="text-xl font-bold border-b text-red-dark">My Favorite Albums</h2>
+    <div id="album-favorites" class="rounded-md border-2 border-gray-200 col-auto p-4  bg-gray-400">
+        <h2 class="text-xl font-bold border-b text-red-dark p-1">My Favorite Albums</h2>
         {{#each data.albumfavorites}}
             <p><a href="/info/album/{{dataValues.album_id}}" class="text-sky-400 hover:opacity-75 transition ease-in-out">{{dataValues.album_name}}</a></p>
         {{/each}}  
@@ -36,8 +36,8 @@
 
 {{!-- Shows attended --}}
 <section id="concerts-container" class="m-3 p-2 container mx-auto">
-    <div id="attended-shows" class="rounded-md border-2 border-gray-200 col-auto p-4">
-        <h2 class="text-xl font-bold border-b text-red-dark">Concerts I've Attended</h2>
+    <div id="attended-shows" class="rounded-md border-2 border-gray-200 col-auto p-4  bg-gray-400">
+        <h2 class="text-xl font-bold border-b text-red-dark p-1">Concerts I've Attended</h2>
         {{#each data.savedconcerts}}
             <p>{{dataValues.artist_name}} at {{dataValues.venue_name}} – <a href={{dataValues.setlist_url}} class="text-sky-400 hover:opacity-75 transition ease-in-out" target="_blank">{{dataValues.date}}</a></p>
         {{/each}}    
