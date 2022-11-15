@@ -2,7 +2,7 @@
 
   
   ## Project Description 
-  This is a group project made for a coding bootcamp with the University of Utah. It is a full stack application designed to be a hub for a music fan. They can listen to music, save favorites, get artist info, see information about local shows and more! Users are able to create an account and log in an out. The app was built using MVC paradigm to help separate concerns, and handlebars.js was used as the template engine. 
+  #1Fan is a full stack application designed to be a hub for a music fan. They can listen to music, save favorites, get artist info, see information about local shows and more! Users are able to create an account and log in an out. The app was built using MVC paradigm to help separate concerns, and handlebars.js was used as the template engine. 
 
   
   ## Languages Used 
